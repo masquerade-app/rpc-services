@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package helloworld;
+
+service Greeter {
+  rpc HelloWorld (HelloWorldRequest) returns (HelloWorldResponse) {}
+}
+
+message HelloWorldRequest {
+  int64 increment = 1;
+  string message = 2;
+}
+
+message HelloWorldResponse {
+  int64 current_count = 1;
+  string message = 2;
+}

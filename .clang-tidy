@@ -1,0 +1,3 @@
+Checks: 'abseil-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,google-*,modernize-*,performance-*'
+WarningsAsErrors: 'bugprone-*,clang-analyzer-*,cppcoreguidelines-*'
+FormatStyle: 'google'
