@@ -3,8 +3,6 @@
 
 namespace admin {
 
-const char* helloWorld();
-
 }
 
 #endif
