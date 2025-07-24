@@ -3,7 +3,7 @@
 
 
 #include <grpcpp/grpcpp.h>
-#include "helloworld.grpc.pb.h"
+#include "genproto/helloworld.grpc.pb.h"
 
 class GreeterImpl final : public helloworld::Greeter::Service {
   grpc::Status HelloWorld(grpc::ServerContext* context,  // NOLINT

@@ -1,5 +1,7 @@
 enable_testing()
 
+find_package(GTest CONFIG REQUIRED)
+
 add_executable(
   hello_test
   hello_test.cc
@@ -8,8 +10,8 @@ add_executable(
 target_include_directories(
   hello_test
   PRIVATE
-  build/_deps/googletest-src/googlemock/include
-  build/_deps/googletest-src/googletest/include
+  /deps/grpc/third_party/googletest/googletest/include
+  /deps/grpc/third_party/googletest/googlemock/include
 )
 
 target_link_libraries(

@@ -10,15 +10,14 @@ add_library(
 target_include_directories(
   genproto
   PUBLIC
-  build/_deps/grpc-src/include
-  build/_deps/grpc-src/third_party/protobuf/src
+  /deps/include
+  /deps/grpc/third_party/protobuf/src
 )
 
 target_link_libraries(
   genproto
   PUBLIC
-  protobuf
-  grpc++
+  gRPC::grpc++
 )
 
 # Generated code

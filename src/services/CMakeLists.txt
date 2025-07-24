@@ -8,13 +8,13 @@ add_library(
 target_include_directories(
   services
   PUBLIC
-  ../genproto
-  build/_deps/grpc-src/include
+  ..
+  /deps/include
 )
 
 target_link_libraries(
   services
   PUBLIC
   genproto
-  grpc++
+  gRPC::grpc++
 )
