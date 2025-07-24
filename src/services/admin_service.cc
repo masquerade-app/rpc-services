@@ -2,6 +2,5 @@
 
 namespace admin {
 
-const char* helloWorld() { return "Hello World!\n"; }
 
 }  // namespace admin
