@@ -1,10 +1,7 @@
-# Tools Required
+# Masquerade RPC Services
 
-* clang: C++ compiler
-* clang-format: C++ code formatter
-* clang-tidy: C++ code linter
-* CMake: C++ build system
-* git
-* apt-get install -y build-essential autoconf libtool pkg-config (grpc deps on linux)
-* brew install autoconf automake libtool shtool (grpc deps on macos)
-* protobuf
+## Documentation
+
+* [Google Drive](https://drive.google.com/drive/folders/1MamAvVsgAzvkRgYJdZigxZMhjg2yQ8ZD)
+* [Setting up your dev environment](docs/env-setup.md)
+* [Making and uploading code changes](docs/making-changes.md)

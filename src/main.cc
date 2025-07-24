@@ -10,12 +10,12 @@
 int main() {
   std::string server_address = "0.0.0.0:50051";
 
-  //GreeterImpl greeter_service;
+  GreeterImpl greeter_service;
 
-  //grpc::reflection::InitProtoReflectionServerBuilderPlugin();
+  grpc::reflection::InitProtoReflectionServerBuilderPlugin();
   grpc::ServerBuilder builder;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-  //builder.RegisterService(&greeter_service);
+  builder.RegisterService(&greeter_service);
 
   std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << "\n";

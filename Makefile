@@ -1,4 +1,4 @@
-.PHONY: build deps
+.PHONY: build
 
 
 format:
@@ -18,10 +18,10 @@ test:
 	@./build/src/test/hello_test
 
 all:
-	@make deep-clean
+	@make clean
 	@make format
 	@make proto
-	@make build-from-scratch
+	@make build
 	@make run
 
 clean:
