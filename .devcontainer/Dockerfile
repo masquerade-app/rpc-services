@@ -2,23 +2,25 @@
 
 # Dockerfile for dev environment
 
-FROM ubuntu:latest AS base
+FROM ubuntu:noble AS base
 #RUN useradd -m -s /bin/bash msqrd-dev
 
 # Download tool dependencies
 RUN apt-get update -y \
-    && apt-get upgrade -y \
     && apt-get install -y \
     git \
     clang \
     clang-format \
     clangd \
+    clang-tidy \
     build-essential \
     autoconf \
     libtool \
     pkg-config \
-    cmake \
     sudo \
+    sqlite3 \
+    cmake \
+    && apt-get upgrade -y \
     && apt-get clean
 
 # Build and install gRPC

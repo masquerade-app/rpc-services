@@ -1,17 +1,17 @@
 enable_testing()
+set(CMAKE_CXX_CLANG_TIDY "")
 
-find_package(GTest CONFIG REQUIRED)
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        52eb8108c5bdec04579160ae17225d66034bd723 # v1.17.0
+)
+FetchContent_MakeAvailable(googletest)
 
 add_executable(
   hello_test
   hello_test.cc
-)
-
-target_include_directories(
-  hello_test
-  PRIVATE
-  /deps/grpc/third_party/googletest/googletest/include
-  /deps/grpc/third_party/googletest/googlemock/include
 )
 
 target_link_libraries(

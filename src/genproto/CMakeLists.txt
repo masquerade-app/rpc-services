@@ -1,3 +1,5 @@
+set(CMAKE_CXX_CLANG_TIDY "")
+
 add_library(
   genproto
   STATIC
