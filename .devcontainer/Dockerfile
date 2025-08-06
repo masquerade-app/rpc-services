@@ -5,20 +5,14 @@
 FROM ubuntu:noble AS base
 #RUN useradd -m -s /bin/bash msqrd-dev
 
-# Download tool dependencies
+# Download gRPC build dependencies
 RUN apt-get update -y \
     && apt-get install -y \
     git \
-    clang \
-    clang-format \
-    clangd \
-    clang-tidy \
     build-essential \
     autoconf \
     libtool \
     pkg-config \
-    sudo \
-    sqlite3 \
     cmake \
     && apt-get upgrade -y \
     && apt-get clean
@@ -34,3 +28,13 @@ RUN cmake -DgRPC_INSTALL=ON \
       ../.. \
       && make -j 8 \
       && make install
+
+# Download project dependencies
+RUN apt-get install -y \
+    clang \
+    clang-format \
+    clangd \
+    clang-tidy \
+    sqlite3 \
+    && apt-get upgrade -y \
+    && apt-get clean

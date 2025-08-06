@@ -5,14 +5,16 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_PREFIX_PATH /deps/lib/cmake)
-set(CMAKE_BUILD_TYPE Debug)
-# set(CMAKE_CXX_CLANG_TIDY clang-tidy)
+if(STATIC_CHECK=ON)
+  set(CMAKE_CXX_CLANG_TIDY clang-tidy)
+endif()
+
 add_compile_options(
   -stdlib=libstdc++
-  -D__cpp_concepts=202002L
   -Wall
   -Wextra
   -Wno-builtin-macro-redefined
+  -D__cpp_concepts=202002L
 )
 
 project(
@@ -29,7 +31,6 @@ find_package(gRPC CONFIG REQUIRED)
 
 # Bring subdirectories into scope
 add_subdirectory(src/services)
-add_subdirectory(src/test)
 add_subdirectory(src/genproto)
 
 # Executable
@@ -54,3 +55,9 @@ target_link_libraries(
   gRPC::grpc++
   gRPC::grpc++_reflection
 )
+
+# Tests
+if(BUILD_TESTING)
+  include(CTest)
+  add_subdirectory(test)
+endif()
