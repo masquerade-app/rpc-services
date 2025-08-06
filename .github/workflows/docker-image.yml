@@ -11,7 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: whuffman36/msqrd-rpc-dev:latest
+    container: whuffman36/msqrd-rpc-dev:amd64
     steps:
     - uses: actions/checkout@v4
     - name: Generate proto files
