@@ -15,13 +15,13 @@ build-release:
 	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=OFF -DBUILD_TESTING=OFF .. && cmake --build . -j8 && cd ../
 
 build-test:
-	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=OFF -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
+	@cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DSTATIC_CHECK=OFF -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
 
 rebuild:
 	@cd build && cmake --build . && cd ../
 
-check: proto
-	@cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DSTATIC_CHECK=ON -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
+check:
+	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=ON -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
 
 run: 
 	@./build/masquerade
