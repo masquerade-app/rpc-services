@@ -14,8 +14,9 @@ jobs:
     container: whuffman36/msqrd-rpc-test:latest
     steps:
     - uses: actions/checkout@v4
-    - name: Build src, tests, static analysis
+    - name: Create build directory
       run: mkdir -p build
+    - name: Build src, tests, static analysis
       run: make check
     - name: run tests
       run: make test
