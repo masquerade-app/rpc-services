@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build src, tests, static analysis
+      run: mkdir -p build
       run: make check
     - name: run tests
       run: make test
