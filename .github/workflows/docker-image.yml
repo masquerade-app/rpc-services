@@ -15,7 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Generate proto files
-      working-directory: rpc-services
       run: make proto
     - name: Build src, tests, static analysis
       run: make check
