@@ -17,17 +17,17 @@
 #error "Protobuf C++ headers/runtime. See"
 #error "https://protobuf.dev/support/cross-version-runtime-guarantee/#cpp"
 #endif
-#include "google/protobuf/io/coded_stream.h"
 #include "google/protobuf/arena.h"
 #include "google/protobuf/arenastring.h"
+#include "google/protobuf/extension_set.h"  // IWYU pragma: export
+#include "google/protobuf/generated_message_reflection.h"
 #include "google/protobuf/generated_message_tctable_decl.h"
 #include "google/protobuf/generated_message_util.h"
-#include "google/protobuf/metadata_lite.h"
-#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/io/coded_stream.h"
 #include "google/protobuf/message.h"
 #include "google/protobuf/message_lite.h"
+#include "google/protobuf/metadata_lite.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
-#include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
 // @@protoc_insertion_point(includes)
 
@@ -50,27 +50,30 @@ struct TableStruct_helloworld_2eproto {
   static const ::uint32_t offsets[];
 };
 extern "C" {
-extern const ::google::protobuf::internal::DescriptorTable descriptor_table_helloworld_2eproto;
+extern const ::google::protobuf::internal::DescriptorTable
+    descriptor_table_helloworld_2eproto;
 }  // extern "C"
 namespace helloworld {
 class HelloWorldRequest;
 struct HelloWorldRequestDefaultTypeInternal;
-extern HelloWorldRequestDefaultTypeInternal _HelloWorldRequest_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull HelloWorldRequest_class_data_;
+extern HelloWorldRequestDefaultTypeInternal
+    _HelloWorldRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull
+    HelloWorldRequest_class_data_;
 class HelloWorldResponse;
 struct HelloWorldResponseDefaultTypeInternal;
-extern HelloWorldResponseDefaultTypeInternal _HelloWorldResponse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull HelloWorldResponse_class_data_;
+extern HelloWorldResponseDefaultTypeInternal
+    _HelloWorldResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull
+    HelloWorldResponse_class_data_;
 }  // namespace helloworld
 namespace google {
-namespace protobuf {
-}  // namespace protobuf
+namespace protobuf {}  // namespace protobuf
 }  // namespace google
 
 namespace helloworld {
 
 // ===================================================================
-
 
 // -------------------------------------------------------------------
 
@@ -81,16 +84,19 @@ class HelloWorldResponse final : public ::google::protobuf::Message
   ~HelloWorldResponse() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(HelloWorldResponse* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(HelloWorldResponse* PROTOBUF_NONNULL msg,
+                       std::destroying_delete_t) {
     SharedDtor(*msg);
     ::google::protobuf::internal::SizedDelete(msg, sizeof(HelloWorldResponse));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR HelloWorldResponse(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR HelloWorldResponse(
+      ::google::protobuf::internal::ConstantInitialized);
 
-  inline HelloWorldResponse(const HelloWorldResponse& from) : HelloWorldResponse(nullptr, from) {}
+  inline HelloWorldResponse(const HelloWorldResponse& from)
+      : HelloWorldResponse(nullptr, from) {}
   inline HelloWorldResponse(HelloWorldResponse&& from) noexcept
       : HelloWorldResponse(nullptr, ::std::move(from)) {}
   inline HelloWorldResponse& operator=(const HelloWorldResponse& from) {
@@ -99,7 +105,8 @@ class HelloWorldResponse final : public ::google::protobuf::Message
   }
   inline HelloWorldResponse& operator=(HelloWorldResponse&& from) noexcept {
     if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(
+            GetArena(), from.GetArena())) {
       InternalSwap(&from);
     } else {
       CopyFrom(from);
@@ -109,20 +116,25 @@ class HelloWorldResponse final : public ::google::protobuf::Message
 
   inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_
+        .unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_
+        .mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
   }
 
   static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL
+  GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const HelloWorldResponse& default_instance() {
@@ -133,7 +145,8 @@ class HelloWorldResponse final : public ::google::protobuf::Message
   friend void swap(HelloWorldResponse& a, HelloWorldResponse& b) { a.Swap(&b); }
   inline void Swap(HelloWorldResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(),
+                                                         other->GetArena())) {
       InternalSwap(other);
     } else {
       ::google::protobuf::internal::GenericSwap(this, other);
@@ -147,66 +160,77 @@ class HelloWorldResponse final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  HelloWorldResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<HelloWorldResponse>(arena);
+  HelloWorldResponse* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<HelloWorldResponse>(
+        arena);
   }
   using ::google::protobuf::Message::CopyFrom;
   void CopyFrom(const HelloWorldResponse& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const HelloWorldResponse& from) { HelloWorldResponse::MergeImpl(*this, from); }
+  void MergeFrom(const HelloWorldResponse& from) {
+    HelloWorldResponse::MergeImpl(*this, from);
+  }
 
-  private:
+ private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
                         const ::google::protobuf::MessageLite& from_msg);
 
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
+ public:
+  bool IsInitialized() const { return true; }
   ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ private:
   static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
   static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      const ::google::protobuf::MessageLite& msg,
+      ::uint8_t* PROTOBUF_NONNULL target,
       ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
 
-  public:
+ public:
   ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
+          stream) const {
     return _InternalSerialize(*this, target, stream);
   }
-  #else   // PROTOBUF_CUSTOM_VTABLE
+#else   // PROTOBUF_CUSTOM_VTABLE
   ::size_t ByteSizeLong() const final;
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
+          stream) const final;
+#endif  // PROTOBUF_CUSTOM_VTABLE
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
-  private:
+ private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
   void InternalSwap(HelloWorldResponse* PROTOBUF_NONNULL other);
+
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "helloworld.HelloWorldResponse"; }
+  static ::absl::string_view FullMessageName() {
+    return "helloworld.HelloWorldResponse";
+  }
 
  protected:
-  explicit HelloWorldResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  HelloWorldResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const HelloWorldResponse& from);
-  HelloWorldResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, HelloWorldResponse&& from) noexcept
+  explicit HelloWorldResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  HelloWorldResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+                     const HelloWorldResponse& from);
+  HelloWorldResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+                     HelloWorldResponse&& from) noexcept
       : HelloWorldResponse(arena) {
     *this = ::std::move(from);
   }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+  GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL
+  PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+                ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 
  public:
@@ -221,7 +245,7 @@ class HelloWorldResponse final : public ::google::protobuf::Message
     kCurrentCountFieldNumber = 1,
   };
   // string message = 2;
-  void clear_message() ;
+  void clear_message();
   const ::std::string& message() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
   void set_message(Arg_&& arg, Args_... args);
@@ -229,29 +253,27 @@ class HelloWorldResponse final : public ::google::protobuf::Message
   [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_message();
   void set_allocated_message(::std::string* PROTOBUF_NULLABLE value);
 
-  private:
+ private:
   const ::std::string& _internal_message() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_message(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
 
-  public:
+ public:
   // int64 current_count = 1;
-  void clear_current_count() ;
+  void clear_current_count();
   ::int64_t current_count() const;
   void set_current_count(::int64_t value);
 
-  private:
+ private:
   ::int64_t _internal_current_count() const;
   void _internal_set_current_count(::int64_t value);
 
-  public:
+ public:
   // @@protoc_insertion_point(class_scope:helloworld.HelloWorldResponse)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   0, 45,
-                                   2>
+  static const ::google::protobuf::internal::TcParseTable<1, 2, 0, 45, 2>
       _table_;
 
   friend class ::google::protobuf::MessageLite;
@@ -261,7 +283,8 @@ class HelloWorldResponse final : public ::google::protobuf::Message
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
   struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
@@ -275,11 +298,14 @@ class HelloWorldResponse final : public ::google::protobuf::Message
     ::int64_t current_count_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
-  union { Impl_ _impl_; };
+  union {
+    Impl_ _impl_;
+  };
   friend struct ::TableStruct_helloworld_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull HelloWorldResponse_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull
+    HelloWorldResponse_class_data_;
 // -------------------------------------------------------------------
 
 class HelloWorldRequest final : public ::google::protobuf::Message
@@ -289,16 +315,19 @@ class HelloWorldRequest final : public ::google::protobuf::Message
   ~HelloWorldRequest() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(HelloWorldRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(HelloWorldRequest* PROTOBUF_NONNULL msg,
+                       std::destroying_delete_t) {
     SharedDtor(*msg);
     ::google::protobuf::internal::SizedDelete(msg, sizeof(HelloWorldRequest));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR HelloWorldRequest(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR HelloWorldRequest(
+      ::google::protobuf::internal::ConstantInitialized);
 
-  inline HelloWorldRequest(const HelloWorldRequest& from) : HelloWorldRequest(nullptr, from) {}
+  inline HelloWorldRequest(const HelloWorldRequest& from)
+      : HelloWorldRequest(nullptr, from) {}
   inline HelloWorldRequest(HelloWorldRequest&& from) noexcept
       : HelloWorldRequest(nullptr, ::std::move(from)) {}
   inline HelloWorldRequest& operator=(const HelloWorldRequest& from) {
@@ -307,7 +336,8 @@ class HelloWorldRequest final : public ::google::protobuf::Message
   }
   inline HelloWorldRequest& operator=(HelloWorldRequest&& from) noexcept {
     if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(
+            GetArena(), from.GetArena())) {
       InternalSwap(&from);
     } else {
       CopyFrom(from);
@@ -317,20 +347,25 @@ class HelloWorldRequest final : public ::google::protobuf::Message
 
   inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_
+        .unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
+  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_
+        .mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
   }
 
   static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
+  GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL
+  GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const HelloWorldRequest& default_instance() {
@@ -341,7 +376,8 @@ class HelloWorldRequest final : public ::google::protobuf::Message
   friend void swap(HelloWorldRequest& a, HelloWorldRequest& b) { a.Swap(&b); }
   inline void Swap(HelloWorldRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(),
+                                                         other->GetArena())) {
       InternalSwap(other);
     } else {
       ::google::protobuf::internal::GenericSwap(this, other);
@@ -355,66 +391,77 @@ class HelloWorldRequest final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  HelloWorldRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<HelloWorldRequest>(arena);
+  HelloWorldRequest* PROTOBUF_NONNULL
+  New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<HelloWorldRequest>(
+        arena);
   }
   using ::google::protobuf::Message::CopyFrom;
   void CopyFrom(const HelloWorldRequest& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const HelloWorldRequest& from) { HelloWorldRequest::MergeImpl(*this, from); }
+  void MergeFrom(const HelloWorldRequest& from) {
+    HelloWorldRequest::MergeImpl(*this, from);
+  }
 
-  private:
+ private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
                         const ::google::protobuf::MessageLite& from_msg);
 
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
+ public:
+  bool IsInitialized() const { return true; }
   ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ private:
   static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
   static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      const ::google::protobuf::MessageLite& msg,
+      ::uint8_t* PROTOBUF_NONNULL target,
       ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
 
-  public:
+ public:
   ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
+          stream) const {
     return _InternalSerialize(*this, target, stream);
   }
-  #else   // PROTOBUF_CUSTOM_VTABLE
+#else   // PROTOBUF_CUSTOM_VTABLE
   ::size_t ByteSizeLong() const final;
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
+          stream) const final;
+#endif  // PROTOBUF_CUSTOM_VTABLE
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
-  private:
+ private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
   void InternalSwap(HelloWorldRequest* PROTOBUF_NONNULL other);
+
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "helloworld.HelloWorldRequest"; }
+  static ::absl::string_view FullMessageName() {
+    return "helloworld.HelloWorldRequest";
+  }
 
  protected:
-  explicit HelloWorldRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  HelloWorldRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const HelloWorldRequest& from);
-  HelloWorldRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, HelloWorldRequest&& from) noexcept
+  explicit HelloWorldRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  HelloWorldRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+                    const HelloWorldRequest& from);
+  HelloWorldRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+                    HelloWorldRequest&& from) noexcept
       : HelloWorldRequest(arena) {
     *this = ::std::move(from);
   }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+  GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL
+  PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+                ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 
  public:
@@ -429,7 +476,7 @@ class HelloWorldRequest final : public ::google::protobuf::Message
     kIncrementFieldNumber = 1,
   };
   // string message = 2;
-  void clear_message() ;
+  void clear_message();
   const ::std::string& message() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
   void set_message(Arg_&& arg, Args_... args);
@@ -437,29 +484,27 @@ class HelloWorldRequest final : public ::google::protobuf::Message
   [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_message();
   void set_allocated_message(::std::string* PROTOBUF_NULLABLE value);
 
-  private:
+ private:
   const ::std::string& _internal_message() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_message(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
 
-  public:
+ public:
   // int64 increment = 1;
-  void clear_increment() ;
+  void clear_increment();
   ::int64_t increment() const;
   void set_increment(::int64_t value);
 
-  private:
+ private:
   ::int64_t _internal_increment() const;
   void _internal_set_increment(::int64_t value);
 
-  public:
+ public:
   // @@protoc_insertion_point(class_scope:helloworld.HelloWorldRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   0, 44,
-                                   2>
+  static const ::google::protobuf::internal::TcParseTable<1, 2, 0, 44, 2>
       _table_;
 
   friend class ::google::protobuf::MessageLite;
@@ -469,7 +514,8 @@ class HelloWorldRequest final : public ::google::protobuf::Message
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
   struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
@@ -483,19 +529,18 @@ class HelloWorldRequest final : public ::google::protobuf::Message
     ::int64_t increment_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
-  union { Impl_ _impl_; };
+  union {
+    Impl_ _impl_;
+  };
   friend struct ::TableStruct_helloworld_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull HelloWorldRequest_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull
+    HelloWorldRequest_class_data_;
 
 // ===================================================================
 
-
-
-
 // ===================================================================
-
 
 #ifdef __GNUC__
 #pragma GCC diagnostic push
@@ -541,7 +586,8 @@ inline const ::std::string& HelloWorldRequest::message() const
   return _internal_message();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void HelloWorldRequest::set_message(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void HelloWorldRequest::set_message(Arg_&& arg,
+                                                           Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
@@ -557,15 +603,17 @@ inline const ::std::string& HelloWorldRequest::_internal_message() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.message_.Get();
 }
-inline void HelloWorldRequest::_internal_set_message(const ::std::string& value) {
+inline void HelloWorldRequest::_internal_set_message(
+    const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.message_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL HelloWorldRequest::_internal_mutable_message() {
+inline ::std::string* PROTOBUF_NONNULL
+HelloWorldRequest::_internal_mutable_message() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.message_.Mutable( GetArena());
+  return _impl_.message_.Mutable(GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE HelloWorldRequest::release_message() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
@@ -580,7 +628,8 @@ inline ::std::string* PROTOBUF_NULLABLE HelloWorldRequest::release_message() {
   }
   return released;
 }
-inline void HelloWorldRequest::set_allocated_message(::std::string* PROTOBUF_NULLABLE value) {
+inline void HelloWorldRequest::set_allocated_message(
+    ::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
@@ -588,7 +637,8 @@ inline void HelloWorldRequest::set_allocated_message(::std::string* PROTOBUF_NUL
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.message_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.message_.IsDefault()) {
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() &&
+      _impl_.message_.IsDefault()) {
     _impl_.message_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:helloworld.HelloWorldRequest.message)
@@ -634,7 +684,8 @@ inline const ::std::string& HelloWorldResponse::message() const
   return _internal_message();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void HelloWorldResponse::set_message(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void HelloWorldResponse::set_message(Arg_&& arg,
+                                                            Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
@@ -650,15 +701,17 @@ inline const ::std::string& HelloWorldResponse::_internal_message() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.message_.Get();
 }
-inline void HelloWorldResponse::_internal_set_message(const ::std::string& value) {
+inline void HelloWorldResponse::_internal_set_message(
+    const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.message_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL HelloWorldResponse::_internal_mutable_message() {
+inline ::std::string* PROTOBUF_NONNULL
+HelloWorldResponse::_internal_mutable_message() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.message_.Mutable( GetArena());
+  return _impl_.message_.Mutable(GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE HelloWorldResponse::release_message() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
@@ -673,7 +726,8 @@ inline ::std::string* PROTOBUF_NULLABLE HelloWorldResponse::release_message() {
   }
   return released;
 }
-inline void HelloWorldResponse::set_allocated_message(::std::string* PROTOBUF_NULLABLE value) {
+inline void HelloWorldResponse::set_allocated_message(
+    ::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
@@ -681,7 +735,8 @@ inline void HelloWorldResponse::set_allocated_message(::std::string* PROTOBUF_NU
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.message_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.message_.IsDefault()) {
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() &&
+      _impl_.message_.IsDefault()) {
     _impl_.message_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:helloworld.HelloWorldResponse.message)
@@ -693,7 +748,6 @@ inline void HelloWorldResponse::set_allocated_message(::std::string* PROTOBUF_NU
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace helloworld
-
 
 // @@protoc_insertion_point(global_scope)
 

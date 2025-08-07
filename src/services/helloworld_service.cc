@@ -1,9 +1,7 @@
 #include "helloworld_service.h"
 
-
-using grpc::Status, grpc::ServerContext,
-      helloworld::HelloWorldRequest,
-      helloworld::HelloWorldResponse;
+using grpc::Status, grpc::ServerContext, helloworld::HelloWorldRequest,
+    helloworld::HelloWorldResponse;
 
 Status GreeterImpl::HelloWorld(ServerContext* context,  // NOLINT
                                const HelloWorldRequest* request,
@@ -22,5 +20,5 @@ Status GreeterImpl::HelloWorld(ServerContext* context,  // NOLINT
   }
 
   response->set_current_count(increment);
-  return Status::OK;          
+  return Status::OK;
 }
