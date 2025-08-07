@@ -13,7 +13,7 @@ extern "C" {
 
 namespace masquerade {
 
-class SqliteDatabase {
+class SqliteDatabase final {
   std::string filename_;
   sqlite3* connection_;
 
