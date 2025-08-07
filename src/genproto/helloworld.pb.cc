@@ -268,55 +268,55 @@ PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
   return HelloWorldRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 44, 2>
-        HelloWorldRequest::_table_ = {
-            {
-                PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_._has_bits_),
-                0,     // no _extensions_
-                2, 8,  // max_field_number, fast_idx_mask
-                offsetof(decltype(_table_), field_lookup_table),
-                4294967292,  // skipmap
-                offsetof(decltype(_table_), field_entries),
-                2,                                         // num_field_entries
-                0,                                         // num_aux_entries
-                offsetof(decltype(_table_), field_names),  // no aux_entries
-                HelloWorldRequest_class_data_.base(),
-                nullptr,                            // post_loop_handler
-                ::_pbi::TcParser::GenericFallback,  // fallback
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 44, 2>
+    HelloWorldRequest::_table_ = {
+        {
+            PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_._has_bits_),
+            0,     // no _extensions_
+            2, 8,  // max_field_number, fast_idx_mask
+            offsetof(decltype(_table_), field_lookup_table),
+            4294967292,  // skipmap
+            offsetof(decltype(_table_), field_entries),
+            2,                                         // num_field_entries
+            0,                                         // num_aux_entries
+            offsetof(decltype(_table_), field_names),  // no aux_entries
+            HelloWorldRequest_class_data_.base(),
+            nullptr,                            // post_loop_handler
+            ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-                ::_pbi::TcParser::GetTable<
-                    ::helloworld::HelloWorldRequest>(),  // to_prefetch
+            ::_pbi::TcParser::GetTable<
+                ::helloworld::HelloWorldRequest>(),  // to_prefetch
 #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-            },
-            {{
-                // string message = 2;
-                {::_pbi::TcParser::FastUS1,
-                 {18, 0, 0,
-                  PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_)}},
-                // int64 increment = 1;
-                {::_pbi::TcParser::SingularVarintNoZag1<
-                     ::uint64_t, offsetof(HelloWorldRequest, _impl_.increment_),
-                     1>(),
-                 {8, 1, 0,
-                  PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_)}},
-            }},
-            {{65535, 65535}},
-            {{
-                // int64 increment = 1;
-                {PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_),
-                 _Internal::kHasBitsOffset + 1, 0,
-                 (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-                // string message = 2;
-                {PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_),
-                 _Internal::kHasBitsOffset + 0, 0,
-                 (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-                  ::_fl::kRepAString)},
-            }},
-            // no aux_entries
-            {{"\34\0\7\0\0\0\0\0"
-              "helloworld.HelloWorldRequest"
-              "message"}},
-        };
+        },
+        {{
+            // string message = 2;
+            {::_pbi::TcParser::FastUS1,
+             {18, 0, 0,
+              PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_)}},
+            // int64 increment = 1;
+            {::_pbi::TcParser::SingularVarintNoZag1<
+                 ::uint64_t, offsetof(HelloWorldRequest, _impl_.increment_),
+                 1>(),
+             {8, 1, 0,
+              PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_)}},
+        }},
+        {{65535, 65535}},
+        {{
+            // int64 increment = 1;
+            {PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_),
+             _Internal::kHasBitsOffset + 1, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+            // string message = 2;
+            {PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_),
+             _Internal::kHasBitsOffset + 0, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
+              ::_fl::kRepAString)},
+        }},
+        // no aux_entries
+        {{"\34\0\7\0\0\0\0\0"
+          "helloworld.HelloWorldRequest"
+          "message"}},
+    };
 PROTOBUF_NOINLINE void HelloWorldRequest::Clear() {
   // @@protoc_insertion_point(message_clear_start:helloworld.HelloWorldRequest)
   ::google::protobuf::internal::TSanWrite(&_impl_);
@@ -589,57 +589,56 @@ PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
   return HelloWorldResponse_class_data_.base();
 }
 PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 45, 2>
-        HelloWorldResponse::_table_ = {
-            {
-                PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_._has_bits_),
-                0,     // no _extensions_
-                2, 8,  // max_field_number, fast_idx_mask
-                offsetof(decltype(_table_), field_lookup_table),
-                4294967292,  // skipmap
-                offsetof(decltype(_table_), field_entries),
-                2,                                         // num_field_entries
-                0,                                         // num_aux_entries
-                offsetof(decltype(_table_), field_names),  // no aux_entries
-                HelloWorldResponse_class_data_.base(),
-                nullptr,                            // post_loop_handler
-                ::_pbi::TcParser::GenericFallback,  // fallback
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 45, 2>
+    HelloWorldResponse::_table_ = {
+        {
+            PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_._has_bits_),
+            0,     // no _extensions_
+            2, 8,  // max_field_number, fast_idx_mask
+            offsetof(decltype(_table_), field_lookup_table),
+            4294967292,  // skipmap
+            offsetof(decltype(_table_), field_entries),
+            2,                                         // num_field_entries
+            0,                                         // num_aux_entries
+            offsetof(decltype(_table_), field_names),  // no aux_entries
+            HelloWorldResponse_class_data_.base(),
+            nullptr,                            // post_loop_handler
+            ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-                ::_pbi::TcParser::GetTable<
-                    ::helloworld::HelloWorldResponse>(),  // to_prefetch
+            ::_pbi::TcParser::GetTable<
+                ::helloworld::HelloWorldResponse>(),  // to_prefetch
 #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-            },
-            {{
-                // string message = 2;
-                {::_pbi::TcParser::FastUS1,
-                 {18, 0, 0,
-                  PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_)}},
-                // int64 current_count = 1;
-                {::_pbi::TcParser::SingularVarintNoZag1<
-                     ::uint64_t,
-                     offsetof(HelloWorldResponse, _impl_.current_count_), 1>(),
-                 {8, 1, 0,
-                  PROTOBUF_FIELD_OFFSET(HelloWorldResponse,
-                                        _impl_.current_count_)}},
-            }},
-            {{65535, 65535}},
-            {{
-                // int64 current_count = 1;
-                {PROTOBUF_FIELD_OFFSET(HelloWorldResponse,
-                                       _impl_.current_count_),
-                 _Internal::kHasBitsOffset + 1, 0,
-                 (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-                // string message = 2;
-                {PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_),
-                 _Internal::kHasBitsOffset + 0, 0,
-                 (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-                  ::_fl::kRepAString)},
-            }},
-            // no aux_entries
-            {{"\35\0\7\0\0\0\0\0"
-              "helloworld.HelloWorldResponse"
-              "message"}},
-        };
+        },
+        {{
+            // string message = 2;
+            {::_pbi::TcParser::FastUS1,
+             {18, 0, 0,
+              PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_)}},
+            // int64 current_count = 1;
+            {::_pbi::TcParser::SingularVarintNoZag1<
+                 ::uint64_t,
+                 offsetof(HelloWorldResponse, _impl_.current_count_), 1>(),
+             {8, 1, 0,
+              PROTOBUF_FIELD_OFFSET(HelloWorldResponse,
+                                    _impl_.current_count_)}},
+        }},
+        {{65535, 65535}},
+        {{
+            // int64 current_count = 1;
+            {PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.current_count_),
+             _Internal::kHasBitsOffset + 1, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+            // string message = 2;
+            {PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_),
+             _Internal::kHasBitsOffset + 0, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
+              ::_fl::kRepAString)},
+        }},
+        // no aux_entries
+        {{"\35\0\7\0\0\0\0\0"
+          "helloworld.HelloWorldResponse"
+          "message"}},
+    };
 PROTOBUF_NOINLINE void HelloWorldResponse::Clear() {
   // @@protoc_insertion_point(message_clear_start:helloworld.HelloWorldResponse)
   ::google::protobuf::internal::TSanWrite(&_impl_);

@@ -9,18 +9,18 @@ extern "C" {
 #include <stdexcept>
 
 namespace masquerade {
+
 namespace {
 
+using Callback = int(void*, int, char**, char**);
 
-int callback(void* arg, int num_columns, char** column_texts,
-             char** column_names) {
-  if (arg != nullptr) {
-    return 1;
-  }
+int default_callback(void* arg, int num_columns, char** column_texts,
+                     char** column_names) {
   for (int i = 0; i < num_columns; ++i) {
-    std::cout << column_names[i] << ": "                                    // NOLINT
-              << (column_texts[i] == nullptr ? "NULL" : column_texts[i])    // NOLINT
-              << "\n"; 
+    std::cout << column_names[i] << ": "  // NOLINT
+              << (column_texts[i] == nullptr ? "NULL" // NOLINT
+                                             : column_texts[i])  // NOLINT
+              << "\n";
   }
   return 0;
 }
@@ -37,13 +37,16 @@ std::expected<SqliteDatabase, std::string> SqliteDatabase::create(
 }
 
 std::expected<int, std::string> SqliteDatabase::execute(
-    const char* sql_query) noexcept {
+    const char* sql_query, const std::function<Callback>& callback,
+    void* callback_arg) const noexcept {
   if (connection_ == nullptr) {
     return std::unexpected("error: no database connection");
   }
   char* error_message = nullptr;
-  int status =
-      sqlite3_exec(connection_, sql_query, callback, nullptr, &error_message);
+  int status = sqlite3_exec(
+      connection_, sql_query,
+      ((callback == nullptr) ? default_callback : callback.target<Callback>()),
+      callback_arg, &error_message);
 
   if (status != SQLITE_OK) {
     std::string error;
@@ -56,14 +59,7 @@ std::expected<int, std::string> SqliteDatabase::execute(
   return status;
 }
 
-SqliteDatabase::SqliteDatabase(const char* filename)
-    : filename_(filename), connection_(nullptr) {
-  int status = sqlite3_open(filename_.c_str(), &connection_);
-
-  if (status != SQLITE_OK) {
-    throw std::runtime_error(sqlite3_errmsg(connection_));
-  }
-}
+void SqliteDatabase::close() noexcept { sqlite3_close(connection_); }
 
 SqliteDatabase::SqliteDatabase(SqliteDatabase&& rhs) noexcept
     : filename_(std::move(rhs.filename_)), connection_(rhs.connection_) {
@@ -77,10 +73,21 @@ SqliteDatabase& SqliteDatabase::operator=(SqliteDatabase&& rhs) noexcept {
   return *this;
 }
 
+SqliteDatabase::~SqliteDatabase() noexcept { sqlite3_close(connection_); }
+
+// private:
+
+SqliteDatabase::SqliteDatabase(const char* filename)
+    : filename_(filename), connection_(nullptr) {
+  int status = sqlite3_open(filename_.c_str(), &connection_);
+
+  if (status != SQLITE_OK) {
+    throw std::runtime_error(sqlite3_errmsg(connection_));
+  }
+}
+
 const sqlite3* SqliteDatabase::connection() const noexcept {
   return connection_;
 }
-
-SqliteDatabase::~SqliteDatabase() noexcept { sqlite3_close(connection_); }
 
 }  // namespace masquerade

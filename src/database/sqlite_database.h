@@ -8,6 +8,7 @@ extern "C" {
 }
 
 #include <expected>
+#include <functional>
 #include <string>
 
 namespace masquerade {
@@ -20,7 +21,12 @@ class SqliteDatabase {
   static std::expected<SqliteDatabase, std::string> create(
       const char* filename) noexcept;
 
-  std::expected<int, std::string> execute(const char* sql_query) noexcept;
+  std::expected<int, std::string> execute(
+      const char* sql_query,
+      const std::function<int(void*, int, char**, char**)>& callback = nullptr,
+      void* callback_arg = nullptr) const noexcept;
+
+  void close() noexcept;
 
   // Movable
   SqliteDatabase(SqliteDatabase&& rhs) noexcept;

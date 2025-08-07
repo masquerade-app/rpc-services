@@ -2,19 +2,41 @@
 
 #include <gtest/gtest.h>
 
-TEST(SqliteDatabaseTest, Execute) {
-  auto db_result = masquerade::SqliteDatabase::create("test/test.db");
-  ASSERT_TRUE(db_result.has_value());
+#include <filesystem>
+#include <optional>
 
-  masquerade::SqliteDatabase db = std::move(db_result.value());
+static const char* const TEST_DATABASE_PATH =
+    "/workspaces/rpc-services/test/test.db";
 
+class SqliteDatabaseTest : public testing::Test {
+ protected:
+  std::optional<masquerade::SqliteDatabase> db;
+
+  SqliteDatabaseTest() : db(std::nullopt){};
+
+  void SetUp() override {
+    auto db_result = masquerade::SqliteDatabase::create(TEST_DATABASE_PATH);
+    ASSERT_TRUE(db_result.has_value());
+
+    db = std::move(db_result.value());
+    ASSERT_TRUE(db.has_value());
+  }
+
+  void TearDown() override {
+    db->close();
+    std::filesystem::remove(std::filesystem::path(TEST_DATABASE_PATH));
+    db = std::nullopt;
+  }
+};
+
+TEST_F(SqliteDatabaseTest, Execute) {
   const char* sql =
       "CREATE TABLE IF NOT EXISTS TEST_TABLE ("
       "NAME VARCHAR PRIMARY KEY NOT NULL,"
       "AGE INT NOT NULL"
       ");";
 
-  auto result = db.execute(sql);
+  auto result = db->execute(sql);
   EXPECT_TRUE(result.has_value());
 
   sql =
@@ -23,11 +45,11 @@ TEST(SqliteDatabaseTest, Execute) {
       "INSERT INTO TEST_TABLE (NAME, AGE) "
       "VALUES ('Nicholas', 27);";
 
-  result = db.execute(sql);
+  result = db->execute(sql);
   EXPECT_TRUE(result.has_value());
 
   sql = "SELECT * FROM TEST_TABLE";
 
-  result = db.execute(sql);
+  result = db->execute(sql);
   EXPECT_TRUE(result.has_value());
 }
