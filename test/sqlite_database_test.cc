@@ -5,8 +5,7 @@
 #include <filesystem>
 #include <optional>
 
-static const char* const TEST_DATABASE_PATH =
-    "/workspaces/rpc-services/test/test.db";
+static const auto TEST_DATABASE_PATH = std::filesystem::current_path().concat("/test.db");
 
 class SqliteDatabaseTest : public testing::Test {
  protected:
@@ -15,7 +14,7 @@ class SqliteDatabaseTest : public testing::Test {
   SqliteDatabaseTest() : db(std::nullopt){};
 
   void SetUp() override {
-    auto db_result = masquerade::SqliteDatabase::create(TEST_DATABASE_PATH);
+    auto db_result = masquerade::SqliteDatabase::create(TEST_DATABASE_PATH.c_str());
     ASSERT_TRUE(db_result.has_value());
 
     db = std::move(db_result.value());
@@ -24,7 +23,7 @@ class SqliteDatabaseTest : public testing::Test {
 
   void TearDown() override {
     db->close();
-    std::filesystem::remove(std::filesystem::path(TEST_DATABASE_PATH));
+    std::filesystem::remove(TEST_DATABASE_PATH);
     db = std::nullopt;
   }
 };
