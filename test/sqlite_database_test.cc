@@ -5,7 +5,8 @@
 #include <filesystem>
 #include <optional>
 
-static const auto TEST_DATABASE_PATH = std::filesystem::current_path().concat("/test.db");
+static const auto TEST_DATABASE_PATH =
+    std::filesystem::current_path().concat("/test.db");
 
 class SqliteDatabaseTest : public testing::Test {
  protected:
@@ -14,7 +15,8 @@ class SqliteDatabaseTest : public testing::Test {
   SqliteDatabaseTest() : db(std::nullopt){};
 
   void SetUp() override {
-    auto db_result = masquerade::SqliteDatabase::create(TEST_DATABASE_PATH.c_str());
+    auto db_result =
+        masquerade::SqliteDatabase::create(TEST_DATABASE_PATH.c_str());
     ASSERT_TRUE(db_result.has_value());
 
     db = std::move(db_result.value());

@@ -17,8 +17,8 @@ using Callback = int(void*, int, char**, char**);
 int default_callback(void* arg, int num_columns, char** column_texts,
                      char** column_names) {
   for (int i = 0; i < num_columns; ++i) {
-    std::cout << column_names[i] << ": "  // NOLINT
-              << (column_texts[i] == nullptr ? "NULL" // NOLINT
+    std::cout << column_names[i] << ": "                         // NOLINT
+              << (column_texts[i] == nullptr ? "NULL"            // NOLINT
                                              : column_texts[i])  // NOLINT
               << "\n";
   }

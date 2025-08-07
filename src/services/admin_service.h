@@ -14,7 +14,7 @@ class Account final {
   std::string phone_number_;
   std::string password_;
 
-public:
+ public:
   static Account create() noexcept;
 
   [[nodiscard]] inline uint64_t account_id() const noexcept;
@@ -43,7 +43,7 @@ public:
   Account(const Account& rhs) = delete;
   Account& operator=(const Account& rhs) = delete;
 
-private:
+ private:
   Account();
 };
 
