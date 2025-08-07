@@ -10,15 +10,16 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 add_executable(
-  hello_test
-  hello_test.cc
+  sqlite_database_test
+  sqlite_database_test.cc
 )
 
 target_link_libraries(
-  hello_test
+  sqlite_database_test
   PRIVATE
   GTest::gtest_main
+  database
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(sqlite_database_test)

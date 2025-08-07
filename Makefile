@@ -2,7 +2,7 @@
 
 
 format:
-	@clang-format -style=google -i src/*.cc src/services/*.cc src/services/*.h test/*.cc
+	@clang-format -style=google -i src/*.cc src/services/*.cc src/services/*.h src/database/*.cc src/database/*.h src/genproto/*.cc src/genproto/*.h test/*.cc
 
 proto:
 	@/deps/bin/protoc --cpp_out=src/genproto --proto_path=src/proto src/proto/*.proto
@@ -28,6 +28,10 @@ run:
 
 test:
 	@cd build && GTEST_COLOR=1 ctest -V && cd ../
+
+new-pr:
+	git checkout -b $(branch)
+	git branch --set-upstream-to=origin/main $(branch)
 
 all:
 	@make deep-clean
