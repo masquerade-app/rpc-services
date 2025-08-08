@@ -1,20 +1,25 @@
+// Copyright © 2025 William Huffman
+
 #include "../src/database/sqlite_database.h"
 
 #include <gtest/gtest.h>
 
 #include <filesystem>
 #include <optional>
+#include <utility>
 
-static const auto TEST_DATABASE_PATH = std::filesystem::current_path().concat("/test.db");
+static const auto TEST_DATABASE_PATH =
+    std::filesystem::current_path().concat("/test.db");
 
 class SqliteDatabaseTest : public testing::Test {
  protected:
   std::optional<masquerade::SqliteDatabase> db;
 
-  SqliteDatabaseTest() : db(std::nullopt){};
+  SqliteDatabaseTest() : db(std::nullopt) {}
 
   void SetUp() override {
-    auto db_result = masquerade::SqliteDatabase::create(TEST_DATABASE_PATH.c_str());
+    auto db_result =
+        masquerade::SqliteDatabase::create(TEST_DATABASE_PATH.c_str());
     ASSERT_TRUE(db_result.has_value());
 
     db = std::move(db_result.value());
@@ -29,7 +34,7 @@ class SqliteDatabaseTest : public testing::Test {
 };
 
 TEST_F(SqliteDatabaseTest, Execute) {
-  const char* sql =
+  const char *sql =
       "CREATE TABLE IF NOT EXISTS TEST_TABLE ("
       "NAME VARCHAR PRIMARY KEY NOT NULL,"
       "AGE INT NOT NULL"

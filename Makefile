@@ -2,7 +2,8 @@
 
 
 format:
-	@clang-format -style=google -i src/*.cc src/services/*.cc src/services/*.h src/database/*.cc src/database/*.h src/genproto/*.cc src/genproto/*.h test/*.cc
+	@find src -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=google -i
+	@find test -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=google -i
 
 proto:
 	@/deps/bin/protoc --cpp_out=src/genproto --proto_path=src/proto src/proto/*.proto
@@ -20,7 +21,12 @@ build-test:
 rebuild:
 	@cd build && cmake --build . && cd ../
 
+lint:
+	@cpplint --recursive --filter=-build/c++17 --exclude=build/* --exclude=src/database/sqlite3* --exclude=src/genproto/* .
+
 check:
+	@find src -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20 --suppress=*:src/genproto/*
+	@find test -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20
 	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=ON -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
 
 run: 
@@ -29,9 +35,13 @@ run:
 test:
 	@cd build && GTEST_COLOR=1 ctest -V && cd ../
 
+# make new-pr branch=<branch_name>
 new-pr:
 	git checkout -b $(branch)
 	git branch --set-upstream-to=origin/main $(branch)
+
+dev-img:
+	docker buildx build --push --platform linux/arm64,linux/amd64 --tag whuffman36/msqrd-rpc-env:latest .devcontainer
 
 all:
 	@make deep-clean

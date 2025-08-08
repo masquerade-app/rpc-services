@@ -36,5 +36,10 @@ RUN apt-get install -y \
     clangd \
     clang-tidy \
     sqlite3 \
+    python3-pip \
+    pipx \
+    cppcheck \
     && apt-get upgrade -y \
-    && apt-get clean
+    && apt-get clean \
+    && pipx install cpplint \
+    && pipx ensurepath

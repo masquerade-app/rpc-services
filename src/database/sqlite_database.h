@@ -1,19 +1,19 @@
-#ifndef MASQUERADE_RPC_SERVICES_DATABASE_DATABASE_H
-#define MASQUERADE_RPC_SERVICES_DATABASE_DATABASE_H
+// Copyright © 2025 William Huffman
 
-#include "database.h"
-
-extern "C" {
-#include "sqlite3.h"
-}
+#ifndef SRC_DATABASE_SQLITE_DATABASE_H_
+#define SRC_DATABASE_SQLITE_DATABASE_H_
 
 #include <expected>
 #include <functional>
 #include <string>
 
+extern "C" {
+#include "database/sqlite3.h"
+}
+
 namespace masquerade {
 
-class SqliteDatabase {
+class SqliteDatabase final {
   std::string filename_;
   sqlite3* connection_;
 
@@ -45,4 +45,4 @@ class SqliteDatabase {
 
 }  // namespace masquerade
 
-#endif
+#endif  // SRC_DATABASE_SQLITE_DATABASE_H_

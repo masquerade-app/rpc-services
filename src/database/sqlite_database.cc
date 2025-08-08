@@ -1,12 +1,16 @@
-#include "sqlite_database.h"
+// Copyright © 2025 William Huffman
 
-extern "C" {
-#include "sqlite3.h"
-}
+#include "database/sqlite_database.h"
 
 #include <expected>
 #include <iostream>
 #include <stdexcept>
+#include <string>
+#include <utility>
+
+extern "C" {
+#include "database/sqlite3.h"
+}
 
 namespace masquerade {
 
@@ -16,9 +20,12 @@ using Callback = int(void*, int, char**, char**);
 
 int default_callback(void* arg, int num_columns, char** column_texts,
                      char** column_names) {
+  if (arg != nullptr) {
+    return 1;
+  }
   for (int i = 0; i < num_columns; ++i) {
-    std::cout << column_names[i] << ": "  // NOLINT
-              << (column_texts[i] == nullptr ? "NULL" // NOLINT
+    std::cout << column_names[i] << ": "                         // NOLINT
+              << (column_texts[i] == nullptr ? "NULL"            // NOLINT
                                              : column_texts[i])  // NOLINT
               << "\n";
   }

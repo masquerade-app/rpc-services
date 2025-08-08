@@ -1,11 +1,18 @@
-#include "helloworld_service.h"
+// Copyright © 2025 William Huffman
+
+#include "services/helloworld_service.h"
+
+#include <string>
 
 using grpc::Status, grpc::ServerContext, helloworld::HelloWorldRequest,
     helloworld::HelloWorldResponse;
 
-Status GreeterImpl::HelloWorld(ServerContext* context,  // NOLINT
+Status GreeterImpl::HelloWorld(ServerContext* context,
                                const HelloWorldRequest* request,
                                HelloWorldResponse* response) {
+  if (context == nullptr) {
+    return Status::CANCELLED;
+  }
   const std::string& message = request->message();
   int64_t increment = request->increment();
 
