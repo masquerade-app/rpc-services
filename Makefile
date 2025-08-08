@@ -2,7 +2,8 @@
 
 
 format:
-	@clang-format -style=google -i src/*.cc src/services/*.cc src/services/*.h src/database/*.cc src/database/*.h src/genproto/*.cc src/genproto/*.h test/*.cc
+	@find src -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=google -i
+	@find test -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=google -i
 
 proto:
 	@/deps/bin/protoc --cpp_out=src/genproto --proto_path=src/proto src/proto/*.proto

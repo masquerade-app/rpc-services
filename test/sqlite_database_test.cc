@@ -31,7 +31,7 @@ class SqliteDatabaseTest : public testing::Test {
 };
 
 TEST_F(SqliteDatabaseTest, Execute) {
-  const char* sql =
+  const char *sql =
       "CREATE TABLE IF NOT EXISTS TEST_TABLE ("
       "NAME VARCHAR PRIMARY KEY NOT NULL,"
       "AGE INT NOT NULL"
