@@ -1,9 +1,12 @@
+// Copyright © 2025 William Huffman
+
 #include "../src/database/sqlite_database.h"
 
 #include <gtest/gtest.h>
 
 #include <filesystem>
 #include <optional>
+#include <utility>
 
 static const auto TEST_DATABASE_PATH =
     std::filesystem::current_path().concat("/test.db");
@@ -12,7 +15,7 @@ class SqliteDatabaseTest : public testing::Test {
  protected:
   std::optional<masquerade::SqliteDatabase> db;
 
-  SqliteDatabaseTest() : db(std::nullopt){};
+  SqliteDatabaseTest() : db(std::nullopt) {}
 
   void SetUp() override {
     auto db_result =

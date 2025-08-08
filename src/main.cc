@@ -1,3 +1,5 @@
+// Copyright © 2025 William Huffman
+
 #include <cstdlib>
 #include <string>
 

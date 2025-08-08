@@ -1,5 +1,7 @@
-#ifndef MASQUERADE_RPC_SERVICES_SERVICES_ADMIN_SERVICE_H
-#define MASQUERADE_RPC_SERVICES_SERVICES_ADMIN_SERVICE_H
+// Copyright © 2025 William Huffman
+
+#ifndef SRC_SERVICES_ADMIN_SERVICE_H_
+#define SRC_SERVICES_ADMIN_SERVICE_H_
 
 #include <cstdint>
 #include <string>
@@ -49,4 +51,4 @@ class Account final {
 
 }  // namespace masquerade
 
-#endif
+#endif  // SRC_SERVICES_ADMIN_SERVICE_H_

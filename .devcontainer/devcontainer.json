@@ -3,14 +3,6 @@
 {
 	"name": "masquerade:rpc-services:dev",
   "image": "whuffman36/msqrd-rpc-env",
-  /*
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-	  "context": "..",
-		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-		"dockerfile": "Dockerfile"
-	},
-  */
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
@@ -34,7 +26,8 @@
         "eamodio.gitlens",
         "vscode-icons-team.vscode-icons",
         "zxh404.vscode-proto3",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "mine.cpplint"
       ]
     }
   }

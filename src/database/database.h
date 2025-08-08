@@ -1,5 +1,7 @@
-#ifndef MASQUERADE_RPC_SERVICES_DATABASE_DATABASE_H
-#define MASQUERADE_RPC_SERVICES_DATABASE_DATABASE_H
+// Copyright © 2025 William Huffman
+
+#ifndef SRC_DATABASE_DATABASE_H_
+#define SRC_DATABASE_DATABASE_H_
 
 #include <optional>
 #include <string>
@@ -20,4 +22,4 @@ class Database {
 
 }  // namespace masquerade
 
-#endif
+#endif  // SRC_DATABASE_DATABASE_H_
