@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Create build directory
       run: mkdir -p build
+    - name: Run linters
+      run: make lint
     - name: Build src, tests, static analysis
       run: make check
     - name: run tests

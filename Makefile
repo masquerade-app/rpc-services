@@ -21,10 +21,12 @@ build-test:
 rebuild:
 	@cd build && cmake --build . && cd ../
 
-check:
+lint:
 	@find src -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20 --suppress=*:src/genproto/*
 	@find test -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20
-	@cpplint --recursive --filter=-build/c++17 --exclude=build/* --exclude=src/database/sqlite3* --exclude=src/genproto/* .
+	@"$(which cpplint)" --recursive --filter=-build/c++17 --exclude=build/* --exclude=src/database/sqlite3* --exclude=src/genproto/* .
+
+check:
 	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=ON -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
 
 run: 
