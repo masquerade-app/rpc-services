@@ -22,7 +22,7 @@ rebuild:
 	@cd build && cmake --build . && cd ../
 
 lint:
-	@cpplint --recursive --filter=-build/c++17 --exclude=build/* --exclude=src/database/sqlite3* --exclude=src/genproto/* .
+	@cpplint --recursive --quiet .
 
 check:
 	@find src -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20 --suppress=*:src/genproto/*
@@ -39,6 +39,7 @@ test:
 new-pr:
 	git checkout -b $(branch)
 	git branch --set-upstream-to=origin/main $(branch)
+	git branch
 
 dev-img:
 	docker buildx build --push --platform linux/arm64,linux/amd64 --tag whuffman36/msqrd-rpc-env:latest .devcontainer
