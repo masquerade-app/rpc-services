@@ -23,6 +23,7 @@ find_package(protobuf CONFIG REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 
 # Bring subdirectories into scope
+add_subdirectory(src/util)
 add_subdirectory(src/services)
 add_subdirectory(src/genproto)
 add_subdirectory(src/database)

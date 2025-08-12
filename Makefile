@@ -35,10 +35,10 @@ run:
 test:
 	@cd build && GTEST_COLOR=1 ctest -V && cd ../
 
-# make new-pr branch=<branch_name>
+# make new-pr b=<branch_name>
 new-pr:
-	git checkout -b $(branch)
-	git branch --set-upstream-to=origin/main $(branch)
+	git checkout -b $(b)
+	git branch --set-upstream-to=origin/main $(b)
 	git branch
 
 dev-img:

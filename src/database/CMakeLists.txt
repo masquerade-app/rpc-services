@@ -1,7 +1,13 @@
 add_library(
   sqlite
   STATIC
-  sqlite3.c
+  sqlite/sqlite3.c
+)
+
+add_library(
+  sql_formatter
+  STATIC
+  sql_formatter.cc
 )
 
 add_library(
@@ -10,9 +16,7 @@ add_library(
   sqlite_database.cc
 )
 
-target_include_directories(
-  database
-  PUBLIC
+include_directories(
   ..
 )
 
@@ -20,4 +24,5 @@ target_link_libraries(
   database
   PUBLIC
   sqlite
+  sql_formatter
 )
