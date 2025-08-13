@@ -1,54 +1,236 @@
 // Copyright © 2025 William Huffman
 
-#include "services/admin_service.h"
+#include "src/services/admin_service.h"
+
+#include <grpcpp/grpcpp.h>
 
 #include <expected>
+#include <format>
+#include <initializer_list>
+#include <iostream>
 #include <string>
+#include <unordered_map>
+
+#include "src/database/sqlite_database.h"
+#include "src/genproto/admin.pb.h"
+#include "src/util/global.h"
+
+using std::string;
 
 namespace masquerade {
+namespace {
 
-Account Account::create() noexcept {
-  Account account;
-  return account;
+static uint64_t NEXT_ID = 0;  // NOLINT
+
+static bool valid_rpc(std::initializer_list<bool> checks) {
+  for (const bool check : checks) {
+    if (!check) {
+      return false;
+    }
+  }
+  return true;
 }
 
-[[nodiscard]] inline uint64_t Account::account_id() const noexcept {
-  return account_id_;
+}  // namespace
+
+grpc::Status AdminService::CreateAccount(grpc::ServerContext* context,
+                                         const admin::Account* request,
+                                         admin::AdminResponse* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_first_name(), request->has_last_name(),
+                  request->has_phone_number(), request->has_password()})) {
+    std::cerr << "[ERROR]: malformed request\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  auto db = SqliteDatabase::create(global::DB_FILE);
+  if (!db.has_value()) {
+    std::cerr << "[ERROR]: failed to create database: " << db.error() << "\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  const string sql0 = std::format(
+      "SELECT ACCOUNT_ID FROM ACCOUNTS"
+      "WHERE PHONE_NUMBER={}",
+      request->phone_number());
+
+  std::unordered_map<string, string> results;
+
+  auto db_result =
+      db->execute(sql0.c_str(), SqliteDatabase::capture_output, &results);
+
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: failed to read database: " << db_result.value()
+              << "\n";
+    return grpc::Status::CANCELLED;
+  }
+  if (!results.empty()) {
+    std::cerr << "[ERROR]: user with that phone number already exists\n";
+    return grpc::Status::CANCELLED;
+  }
+  // TODO(whuffman36): sanitize inputs
+  // TODO(whuffman36): make user id thread safe
+
+  const uint64_t account_id = NEXT_ID++;
+  const string sql1 = std::format(
+      "INSERT INTO ACCOUNTS"
+      "(ACCOUNT_ID,FIRST_NAME,LAST_NAME,PHONE_NUMBER,PASSWORD)"
+      "VALUES ({}, {}, {}, {}, {});",
+      account_id, request->first_name(), request->last_name(),
+      request->phone_number(), request->password());
+
+  db_result = db->execute(sql1.c_str());
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: " << db_result.value() << "\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  return grpc::Status::OK;
 }
 
-[[nodiscard]] inline std::string_view Account::first_name() const noexcept {
-  return first_name_;
+grpc::Status AdminService::GetAccount(grpc::ServerContext* context,
+                                      const admin::AccountRequest* request,
+                                      admin::Account* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_account_id()})) {
+    std::cerr << "[ERROR]: malformed request\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  auto db = SqliteDatabase::create(global::DB_FILE);
+  if (!db.has_value()) {
+    std::cerr << "[ERROR]: failed to create database: " << db.error() << "\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  const string sql0 = std::format(
+      "SELECT * FROM ACCOUNTS"
+      "WHERE ACCOUNT_ID={}",
+      request->account_id());
+
+  std::unordered_map<string, string> results;
+  auto db_result =
+      db->execute(sql0.c_str(), SqliteDatabase::capture_output, &results);
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: failed to read database: " << db_result.value()
+              << "\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  std::cout << "[INFO]: sql output:\n";
+  for (auto [key, val] : results) {
+    std::cout << "row: " << key << "\n";
+    std::cout << "column: " << val << "\n";
+  }
+
+  response->set_first_name(results["FIRST_NAME"]);
+  response->set_last_name(results["LAST_NAME"]);
+  response->set_phone_number(results["PHONE_NUMBER"]);
+  response->set_password(results["PASSWORD"]);
+  return grpc::Status::OK;
 }
 
-[[nodiscard]] inline std::string_view Account::last_name() const noexcept {
-  return last_name_;
+grpc::Status AdminService::UpdateAccount(grpc::ServerContext* context,
+                                         const admin::Account* request,
+                                         admin::AdminResponse* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_first_name(), request->has_last_name(),
+                  request->has_phone_number(), request->has_password()})) {
+    std::cerr << "[ERROR]: malformed request\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  auto db = SqliteDatabase::create(global::DB_FILE);
+  if (!db.has_value()) {
+    std::cerr << "[ERROR]: failed to create database: " << db.error() << "\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  const string sql0 = std::format(
+      "SELECT * FROM ACCOUNTS"
+      "WHERE ACCOUNT_ID={}",
+      request->account_id());
+
+  std::unordered_map<string, string> sql_results;
+
+  auto db_result =
+      db->execute(sql0.c_str(), SqliteDatabase::capture_output, &sql_results);
+
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: failed to read database: " << db_result.value()
+              << "\n";
+    return grpc::Status::CANCELLED;
+  }
+  if (sql_results.empty()) {
+    std::cerr << "[ERROR]: user " << request->first_name() << " ("
+              << request->account_id() << ") does not exist\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  const string sql1 = std::format(
+      "INSERT INTO ACCOUNTS"
+      "(ACCOUNT_ID,FIRST_NAME,LAST_NAME,PHONE_NUMBER,PASSWORD)"
+      "VALUES ({}, {}, {}, {}, {});",
+      request->account_id(), request->first_name(), request->last_name(),
+      request->phone_number(), request->password());
+
+  db_result = db->execute(sql1.c_str());
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: " << db_result.value() << "\n";
+    return grpc::Status::CANCELLED;
+  }
+  return grpc::Status::OK;
 }
 
-[[nodiscard]] inline std::string_view Account::phone_number() const noexcept {
-  return phone_number_;
-}
+grpc::Status AdminService::DeleteAccount(grpc::ServerContext* context,
+                                         const admin::AccountRequest* request,
+                                         admin::AdminResponse* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_account_id()})) {
+    std::cerr << "[ERROR]: malformed request\n";
+    return grpc::Status::CANCELLED;
+  }
 
-Account& Account::set_first_name(std::string_view name) noexcept {
-  first_name_ = name;
-  return *this;
-}
+  auto db = SqliteDatabase::create(global::DB_FILE);
+  if (!db.has_value()) {
+    std::cerr << "[ERROR]: failed to create database: " << db.error() << "\n";
+    return grpc::Status::CANCELLED;
+  }
 
-Account& Account::set_last_name(std::string_view name) noexcept {
-  last_name_ = name;
-  return *this;
-}
+  const string sql0 = std::format(
+      "SELECT * FROM ACCOUNTS"
+      "WHERE ACCOUNT_ID={}",
+      request->account_id());
 
-Account& Account::set_phone_number(std::string_view phone_number) noexcept {
-  phone_number_ = phone_number;
-  return *this;
-}
+  std::unordered_map<string, string> sql_results;
 
-Account& Account::set_password(std::string_view password) noexcept {
-  password_ = password;
-  return *this;
-}
+  auto db_result =
+      db->execute(sql0.c_str(), SqliteDatabase::capture_output, &sql_results);
 
-// private:
-Account::Account() : account_id_(0) {}
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: failed to read database: " << db_result.value()
+              << "\n";
+    return grpc::Status::CANCELLED;
+  }
+  if (sql_results.empty()) {
+    std::cerr << "[ERROR]: user " << request->account_id()
+              << " does not exist\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  const string sql1 = std::format(
+      "DELETE FROM ACCOUNTS"
+      "WHERE ACCOUNT_ID='{}';",
+      request->account_id());
+
+  db_result = db->execute(sql1.c_str());
+  if (db_result.has_value()) {
+    std::cerr << "[ERROR]: " << db_result.value() << "\n";
+    return grpc::Status::CANCELLED;
+  }
+
+  std::cout << "[INFO]: account deleted: " << request->account_id() << "\n";
+  return grpc::Status::OK;
+}
 
 }  // namespace masquerade

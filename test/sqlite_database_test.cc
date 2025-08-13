@@ -1,6 +1,6 @@
 // Copyright © 2025 William Huffman
 
-#include "../src/database/sqlite_database.h"
+#include "src/database/sqlite_database.h"
 
 #include <gtest/gtest.h>
 
@@ -41,7 +41,7 @@ TEST_F(SqliteDatabaseTest, Execute) {
       ");";
 
   auto result = db->execute(sql);
-  EXPECT_TRUE(result.has_value());
+  EXPECT_FALSE(result.has_value());
 
   sql =
       "INSERT INTO TEST_TABLE (NAME, AGE) "
@@ -50,10 +50,10 @@ TEST_F(SqliteDatabaseTest, Execute) {
       "VALUES ('Nicholas', 27);";
 
   result = db->execute(sql);
-  EXPECT_TRUE(result.has_value());
+  EXPECT_FALSE(result.has_value());
 
   sql = "SELECT * FROM TEST_TABLE";
 
   result = db->execute(sql);
-  EXPECT_TRUE(result.has_value());
+  EXPECT_FALSE(result.has_value());
 }
