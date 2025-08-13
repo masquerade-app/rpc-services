@@ -9,6 +9,7 @@
 #include "src/genproto/admin.pb.h"
 
 namespace masquerade {
+
 struct AdminService final : public admin::Admin::Service {
   grpc::Status CreateAccount(grpc::ServerContext* context,
                              const admin::Account* request,

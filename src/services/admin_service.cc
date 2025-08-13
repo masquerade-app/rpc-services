@@ -70,6 +70,7 @@ grpc::Status AdminService::CreateAccount(grpc::ServerContext* context,
   }
   if (!results.empty()) {
     util::log(Log::ERROR, "user with that phone number already exists");
+
     return grpc::Status::CANCELLED;
   }
   // TODO(whuffman36): sanitize inputs

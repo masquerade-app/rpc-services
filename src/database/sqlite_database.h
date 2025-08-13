@@ -11,6 +11,7 @@
 extern "C" {
 #include "src/database/sqlite/sqlite3.h"
 }
+
 #include "src/util/error.h"
 #include "src/util/move_semantics.h"
 

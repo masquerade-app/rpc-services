@@ -54,6 +54,7 @@ optional<Error> SqliteDatabase::execute(const char* sql_query,
       error = error_message;
       sqlite3_free(error_message);
     }
+
     return {Error(error)};
   }
   return {std::nullopt};
@@ -66,6 +67,7 @@ int SqliteDatabase::capture_output(void* out, int num_columns, char** columns,
   if (out == nullptr) {
     return 1;
   }
+
   auto* out_map = static_cast<unordered_map<string, string>*>(out);
 
   for (int i = 0; i < num_columns; ++i) {
