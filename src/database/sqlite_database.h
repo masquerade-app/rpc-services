@@ -11,15 +11,17 @@
 extern "C" {
 #include "src/database/sqlite/sqlite3.h"
 }
+
+#include "src/util/error.h"
 #include "src/util/move_semantics.h"
 
 namespace masquerade {
 
 struct SqliteDatabase final {
-  static std::expected<SqliteDatabase, std::string> create(
+  static std::expected<SqliteDatabase, util::Error> Create(
       const char* filename) noexcept;
 
-  std::optional<std::string> execute(
+  std::optional<util::Error> execute(
       const char* sql_query,
       const std::function<int(void*, int, char**, char**)>& callback = nullptr,
       void* callback_arg = nullptr) const noexcept;

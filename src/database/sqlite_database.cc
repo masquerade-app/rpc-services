@@ -3,7 +3,6 @@
 #include "src/database/sqlite_database.h"
 
 #include <expected>
-#include <iostream>
 #include <stdexcept>
 #include <string>
 #include <unordered_map>
@@ -12,29 +11,36 @@
 extern "C" {
 #include "src/database/sqlite/sqlite3.h"
 }
+#include "src/util/error.h"
 
 namespace masquerade {
 
 namespace {
 
+using std::expected;
+using std::optional;
+using std::string;
+using std::unordered_map;
+using util::Error;
+
 using Callback = int(void*, int, char**, char**);
 
 }  // namespace
 
-std::expected<SqliteDatabase, std::string> SqliteDatabase::create(
+expected<SqliteDatabase, Error> SqliteDatabase::Create(
     const char* filename) noexcept {
   try {
     return {SqliteDatabase(filename)};
   } catch (std::runtime_error& e) {
-    return std::unexpected(e.what());
+    return std::unexpected(Error(e.what()));
   }
 }
 
-std::optional<std::string> SqliteDatabase::execute(
-    const char* sql_query, const std::function<Callback>& callback,
-    void* callback_arg) const noexcept {
+optional<Error> SqliteDatabase::execute(const char* sql_query,
+                                        const std::function<Callback>& callback,
+                                        void* callback_arg) const noexcept {
   if (connection_ == nullptr) {
-    return {"error: no database connection"};
+    return {Error("error: no database connection")};
   }
   char* error_message = nullptr;
   int status = sqlite3_exec(
@@ -48,7 +54,8 @@ std::optional<std::string> SqliteDatabase::execute(
       error = error_message;
       sqlite3_free(error_message);
     }
-    return {error};
+
+    return {Error(error)};
   }
   return {std::nullopt};
 }
@@ -60,8 +67,8 @@ int SqliteDatabase::capture_output(void* out, int num_columns, char** columns,
   if (out == nullptr) {
     return 1;
   }
-  auto* out_map =
-      static_cast<std::unordered_map<std::string, std::string>*>(out);
+
+  auto* out_map = static_cast<unordered_map<string, string>*>(out);
 
   for (int i = 0; i < num_columns; ++i) {
     out_map->insert(std::make_pair(column_names[i], columns[i]));  // NOLINT

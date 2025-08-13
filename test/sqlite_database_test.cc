@@ -8,6 +8,8 @@
 #include <optional>
 #include <utility>
 
+#include "src/util/error.h"
+
 static const auto TEST_DATABASE_PATH =
     std::filesystem::current_path().concat("/test.db");
 
@@ -19,10 +21,10 @@ class SqliteDatabaseTest : public testing::Test {
 
   void SetUp() override {
     auto db_result =
-        masquerade::SqliteDatabase::create(TEST_DATABASE_PATH.c_str());
+        masquerade::SqliteDatabase::Create(TEST_DATABASE_PATH.c_str());
     ASSERT_TRUE(db_result.has_value());
 
-    db = std::move(db_result.value());
+    db.emplace(std::move(*db_result));
     ASSERT_TRUE(db.has_value());
   }
 
