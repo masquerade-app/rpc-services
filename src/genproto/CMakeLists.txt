@@ -12,7 +12,6 @@ add_library(
 target_include_directories(
   genproto
   PUBLIC
-  /deps/include
   /deps/grpc/third_party/protobuf/src
 )
 

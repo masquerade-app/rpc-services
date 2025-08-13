@@ -22,6 +22,9 @@ find_package(utf8_range CONFIG REQUIRED)
 find_package(protobuf CONFIG REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 
+include_directories(.)
+include_directories(/deps/include)
+
 # Bring subdirectories into scope
 add_subdirectory(src/util)
 add_subdirectory(src/services)
@@ -32,14 +35,6 @@ add_subdirectory(src/database)
 add_executable(
   masquerade
   src/main.cc
-)
-
-# Include paths
-target_include_directories(
-  masquerade
-  PRIVATE
-  src/services
-  /deps/include
 )
 
 # Dependencies

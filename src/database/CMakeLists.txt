@@ -16,10 +16,6 @@ add_library(
   sqlite_database.cc
 )
 
-include_directories(
-  ..
-)
-
 target_link_libraries(
   database
   PUBLIC

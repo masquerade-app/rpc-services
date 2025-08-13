@@ -4,13 +4,6 @@ add_library(
   admin_service.cc
 )
 
-target_include_directories(
-  services
-  PUBLIC
-  ..
-  /deps/include
-)
-
 target_link_libraries(
   services
   PUBLIC

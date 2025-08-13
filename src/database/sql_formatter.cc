@@ -1,6 +1,6 @@
 // Copyright © 2025 William Huffman
 
-#include "database/sql_formatter.h"
+#include "src/database/sql_formatter.h"
 
 #include <format>
 #include <initializer_list>

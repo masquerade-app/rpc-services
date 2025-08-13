@@ -8,7 +8,7 @@
 #include <memory>
 #include <string>
 
-#include "services/admin_service.h"
+#include "src/services/admin_service.h"
 
 int main() {
   std::string server_address = "0.0.0.0:50051";

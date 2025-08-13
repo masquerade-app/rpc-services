@@ -1,6 +1,6 @@
 // Copyright © 2025 William Huffman
 
-#include "services/admin_service.h"
+#include "src/services/admin_service.h"
 
 #include <grpcpp/grpcpp.h>
 
@@ -11,9 +11,9 @@
 #include <string>
 #include <unordered_map>
 
-#include "database/sqlite_database.h"
-#include "genproto/admin.pb.h"
-#include "util/global.h"
+#include "src/database/sqlite_database.h"
+#include "src/genproto/admin.pb.h"
+#include "src/util/global.h"
 
 using std::string;
 

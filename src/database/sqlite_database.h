@@ -9,9 +9,9 @@
 #include <string>
 
 extern "C" {
-#include "database/sqlite/sqlite3.h"
+#include "src/database/sqlite/sqlite3.h"
 }
-#include "util/move_semantics.h"
+#include "src/util/move_semantics.h"
 
 namespace masquerade {
 

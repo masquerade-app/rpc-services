@@ -1,6 +1,6 @@
 // Copyright © 2025 William Huffman
 
-#include "database/sqlite_database.h"
+#include "src/database/sqlite_database.h"
 
 #include <expected>
 #include <iostream>
@@ -10,7 +10,7 @@
 #include <utility>
 
 extern "C" {
-#include "database/sqlite/sqlite3.h"
+#include "src/database/sqlite/sqlite3.h"
 }
 
 namespace masquerade {

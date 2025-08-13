@@ -5,8 +5,8 @@
 
 #include <grpcpp/grpcpp.h>
 
-#include "genproto/admin.grpc.pb.h"
-#include "genproto/admin.pb.h"
+#include "src/genproto/admin.grpc.pb.h"
+#include "src/genproto/admin.pb.h"
 
 namespace masquerade {
 struct AdminService : public admin::Admin::Service {
