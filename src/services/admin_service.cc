@@ -3,6 +3,7 @@
 #include "services/admin_service.h"
 
 #include <grpcpp/grpcpp.h>
+
 #include <expected>
 #include <format>
 #include <initializer_list>
@@ -15,7 +16,6 @@
 #include "util/global.h"
 
 using std::string;
-
 
 namespace masquerade {
 namespace {
@@ -36,10 +36,9 @@ static bool valid_rpc(std::initializer_list<bool> checks) {
 grpc::Status AdminService::CreateAccount(grpc::ServerContext* context,
                                          const admin::Account* request,
                                          admin::AdminResponse* response) {
-  if (!valid_rpc({request != nullptr, response != nullptr,
-                  context != nullptr, request->has_first_name(),
-                  request->has_last_name(), request->has_phone_number(),
-                  request->has_password()})) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_first_name(), request->has_last_name(),
+                  request->has_phone_number(), request->has_password()})) {
     std::cerr << "[ERROR]: malformed request\n";
     return grpc::Status::CANCELLED;
   }
@@ -89,12 +88,11 @@ grpc::Status AdminService::CreateAccount(grpc::ServerContext* context,
   return grpc::Status::OK;
 }
 
-
 grpc::Status AdminService::GetAccount(grpc::ServerContext* context,
-                        const admin::AccountRequest* request,
-                        admin::Account* response) {
-  if (!valid_rpc({request != nullptr, response != nullptr,
-                  context != nullptr, request->has_account_id()})) {
+                                      const admin::AccountRequest* request,
+                                      admin::Account* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_account_id()})) {
     std::cerr << "[ERROR]: malformed request\n";
     return grpc::Status::CANCELLED;
   }
@@ -114,8 +112,8 @@ grpc::Status AdminService::GetAccount(grpc::ServerContext* context,
   auto db_result =
       db->execute(sql0.c_str(), SqliteDatabase::capture_output, &results);
   if (db_result.has_value()) {
-    std::cerr << "[ERROR]: failed to read database: "
-              << db_result.value() << "\n";
+    std::cerr << "[ERROR]: failed to read database: " << db_result.value()
+              << "\n";
     return grpc::Status::CANCELLED;
   }
 
@@ -132,14 +130,12 @@ grpc::Status AdminService::GetAccount(grpc::ServerContext* context,
   return grpc::Status::OK;
 }
 
-
 grpc::Status AdminService::UpdateAccount(grpc::ServerContext* context,
-                           const admin::Account* request,
-                           admin::AdminResponse* response) {
-  if (!valid_rpc({request != nullptr, response != nullptr,
-                  context != nullptr, request->has_first_name(),
-                  request->has_last_name(), request->has_phone_number(),
-                  request->has_password()})) {
+                                         const admin::Account* request,
+                                         admin::AdminResponse* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_first_name(), request->has_last_name(),
+                  request->has_phone_number(), request->has_password()})) {
     std::cerr << "[ERROR]: malformed request\n";
     return grpc::Status::CANCELLED;
   }
@@ -166,8 +162,8 @@ grpc::Status AdminService::UpdateAccount(grpc::ServerContext* context,
     return grpc::Status::CANCELLED;
   }
   if (sql_results.empty()) {
-    std::cerr << "[ERROR]: user " << request->first_name()
-              << " (" << request->account_id() << ") does not exist\n";
+    std::cerr << "[ERROR]: user " << request->first_name() << " ("
+              << request->account_id() << ") does not exist\n";
     return grpc::Status::CANCELLED;
   }
 
@@ -186,12 +182,11 @@ grpc::Status AdminService::UpdateAccount(grpc::ServerContext* context,
   return grpc::Status::OK;
 }
 
-
 grpc::Status AdminService::DeleteAccount(grpc::ServerContext* context,
-                           const admin::AccountRequest* request,
-                           admin::AdminResponse* response) {
-  if (!valid_rpc({request != nullptr, response != nullptr,
-                  context != nullptr, request->has_account_id()})) {
+                                         const admin::AccountRequest* request,
+                                         admin::AdminResponse* response) {
+  if (!valid_rpc({request != nullptr, response != nullptr, context != nullptr,
+                  request->has_account_id()})) {
     std::cerr << "[ERROR]: malformed request\n";
     return grpc::Status::CANCELLED;
   }

@@ -11,7 +11,7 @@ namespace masquerade {
 
 struct SqlFormatter {
   inline std::string& insert_into(std::string_view table,
-                                    std::string_view table_schema) noexcept;
+                                  std::string_view table_schema) noexcept;
 
   inline std::string& select(std::string_view field) noexcept;
 

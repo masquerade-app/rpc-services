@@ -13,7 +13,6 @@ extern "C" {
 }
 #include "util/move_semantics.h"
 
-
 namespace masquerade {
 
 struct SqliteDatabase final {

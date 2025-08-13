@@ -5,12 +5,11 @@
 
 #include <filesystem>
 
-
 namespace masquerade::global {
 
-const char* DB_FILE = std::filesystem::current_path()  // NOLINT
-                               .concat("/database/main.db")  // NOLINT
-                               .c_str();  // NOLINT
+const char* DB_FILE = std::filesystem::current_path()   // NOLINT
+                          .concat("/database/main.db")  // NOLINT
+                          .c_str();                     // NOLINT
 
 }  // namespace masquerade::global
 

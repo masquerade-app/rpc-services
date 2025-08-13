@@ -15,12 +15,12 @@ namespace masquerade {
 
 string& SqlFormatter::insert_into(string_view table,
                                   string_view table_schema) noexcept {
-  sql_ =  std::format("INSERT INTO {} {} ", table, table_schema);
+  sql_ = std::format("INSERT INTO {} {} ", table, table_schema);
   return sql_;
 }
 
 string& SqlFormatter::select(string_view field) noexcept {
-  sql_ =  std::format("SELECT {}", field);
+  sql_ = std::format("SELECT {}", field);
   return sql_;
 }
 
@@ -41,7 +41,7 @@ consteval string& SqlFormatter::equals() noexcept {
 
 string& SqlFormatter::value(string_view value) noexcept {
   sql_.append(std::format("'{}'", value));
-  return  sql_;
+  return sql_;
 }
 
 string& SqlFormatter::values(initializer_list<string_view> values) noexcept {

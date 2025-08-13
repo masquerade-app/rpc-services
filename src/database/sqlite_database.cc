@@ -56,7 +56,7 @@ std::optional<std::string> SqliteDatabase::execute(
 void SqliteDatabase::close() noexcept { sqlite3_close(connection_); }
 
 int SqliteDatabase::capture_output(void* out, int num_columns, char** columns,
-                   char** column_names) {  // NOLINT
+                                   char** column_names) {  // NOLINT
   if (out == nullptr) {
     return 1;
   }

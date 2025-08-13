@@ -637,43 +637,43 @@ PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
   return CheckMatchResponse_class_data_.base();
 }
 PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<0, 1, 0, 0, 2>
-        CheckMatchResponse::_table_ = {
-            {
-                PROTOBUF_FIELD_OFFSET(CheckMatchResponse, _impl_._has_bits_),
-                0,     // no _extensions_
-                1, 0,  // max_field_number, fast_idx_mask
-                offsetof(decltype(_table_), field_lookup_table),
-                4294967294,  // skipmap
-                offsetof(decltype(_table_), field_entries),
-                1,                                         // num_field_entries
-                0,                                         // num_aux_entries
-                offsetof(decltype(_table_), field_names),  // no aux_entries
-                CheckMatchResponse_class_data_.base(),
-                nullptr,                            // post_loop_handler
-                ::_pbi::TcParser::GenericFallback,  // fallback
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<0, 1, 0, 0, 2>
+    CheckMatchResponse::_table_ = {
+        {
+            PROTOBUF_FIELD_OFFSET(CheckMatchResponse, _impl_._has_bits_),
+            0,     // no _extensions_
+            1, 0,  // max_field_number, fast_idx_mask
+            offsetof(decltype(_table_), field_lookup_table),
+            4294967294,  // skipmap
+            offsetof(decltype(_table_), field_entries),
+            1,                                         // num_field_entries
+            0,                                         // num_aux_entries
+            offsetof(decltype(_table_), field_names),  // no aux_entries
+            CheckMatchResponse_class_data_.base(),
+            nullptr,                            // post_loop_handler
+            ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-                ::_pbi::TcParser::GetTable<
-                    ::matching::CheckMatchResponse>(),  // to_prefetch
+            ::_pbi::TcParser::GetTable<
+                ::matching::CheckMatchResponse>(),  // to_prefetch
 #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-            },
-            {{
-                // optional bool matched = 1;
-                {::_pbi::TcParser::SingularVarintNoZag1<
-                     bool, offsetof(CheckMatchResponse, _impl_.matched_), 0>(),
-                 {8, 0, 0,
-                  PROTOBUF_FIELD_OFFSET(CheckMatchResponse, _impl_.matched_)}},
-            }},
-            {{65535, 65535}},
-            {{
-                // optional bool matched = 1;
-                {PROTOBUF_FIELD_OFFSET(CheckMatchResponse, _impl_.matched_),
-                 _Internal::kHasBitsOffset + 0, 0,
-                 (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-            }},
-            // no aux_entries
-            {{}},
-        };
+        },
+        {{
+            // optional bool matched = 1;
+            {::_pbi::TcParser::SingularVarintNoZag1<
+                 bool, offsetof(CheckMatchResponse, _impl_.matched_), 0>(),
+             {8, 0, 0,
+              PROTOBUF_FIELD_OFFSET(CheckMatchResponse, _impl_.matched_)}},
+        }},
+        {{65535, 65535}},
+        {{
+            // optional bool matched = 1;
+            {PROTOBUF_FIELD_OFFSET(CheckMatchResponse, _impl_.matched_),
+             _Internal::kHasBitsOffset + 0, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+        }},
+        // no aux_entries
+        {{}},
+    };
 PROTOBUF_NOINLINE void CheckMatchResponse::Clear() {
   // @@protoc_insertion_point(message_clear_start:matching.CheckMatchResponse)
   ::google::protobuf::internal::TSanWrite(&_impl_);
