@@ -83,7 +83,8 @@ int SqliteDatabase::CaptureOutput(void* out, int num_columns, char** columns,
   return 0;
 }
 
-optional<Error> SqliteDatabase::InitFromFile(SqliteDatabase& db, const char* filename) noexcept {
+optional<Error> SqliteDatabase::InitFromFile(const SqliteDatabase& db,
+                                             const char* filename) noexcept {
   if (!std::filesystem::exists(filename)) {
     return {Error("file not found")};
   }

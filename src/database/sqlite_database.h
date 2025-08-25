@@ -28,7 +28,8 @@ struct SqliteDatabase final {
   static int CaptureOutput(void* out, int num_columns, char** columns,
                            char** column_names) noexcept;
 
-  static std::optional<util::Error> InitFromFile(SqliteDatabase& db, const char* filename) noexcept;
+  static std::optional<util::Error> InitFromFile(const SqliteDatabase& db,
+                                                 const char* filename) noexcept;
 
   // Movable
   SqliteDatabase(SqliteDatabase&& rhs) noexcept;
