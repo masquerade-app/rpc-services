@@ -13,50 +13,51 @@ using std::string_view;
 
 namespace masquerade {
 
-string& SqlFormatter::insert_into(string_view table,
-                                  string_view table_schema) noexcept {
-  sql_ = std::format("INSERT INTO {} {} ", table, table_schema);
-  return sql_;
+SqlFormatter SqlFormatter::Query() noexcept { return SqlFormatter{}; }
+
+SqlFormatter& SqlFormatter::insert_into(string_view table, string_view table_schema) noexcept {
+  sql_ = std::format("INSERT INTO {} {}", table, table_schema);
+  return *this;
 }
 
-string& SqlFormatter::select(string_view field) noexcept {
+SqlFormatter& SqlFormatter::select(string_view field) noexcept {
   sql_ = std::format("SELECT {}", field);
-  return sql_;
+  return *this;
 }
 
-string& SqlFormatter::from(string_view table) noexcept {
+SqlFormatter& SqlFormatter::from(string_view table) noexcept {
   sql_.append(std::format(" FROM {}", table));
-  return sql_;
+  return *this;
 }
 
-string& SqlFormatter::where(string_view field) noexcept {
+SqlFormatter& SqlFormatter::where(string_view field) noexcept {
   sql_.append(std::format(" WHERE {}", field));
-  return sql_;
+  return *this;
 }
 
-consteval string& SqlFormatter::equals() noexcept {
+SqlFormatter& SqlFormatter::equals() noexcept {
   sql_.append("=");
-  return sql_;
+  return *this;
 }
 
-string& SqlFormatter::value(string_view value) noexcept {
-  sql_.append(std::format("'{}'", value));
-  return sql_;
+SqlFormatter& SqlFormatter::value(string_view value) noexcept {
+  sql_.append(std::format("{}", value));
+  return *this;
 }
 
-string& SqlFormatter::values(initializer_list<string_view> values) noexcept {
+SqlFormatter& SqlFormatter::values(initializer_list<string_view> values) noexcept {
   sql_.append(" VALUES (");
   for (const auto& value : values) {
-    sql_.append(std::format("'{}',", value));
+    sql_.append(std::format("{},", value));
   }
   sql_.back() = ')';
-  return sql_;
+  return *this;
 }
 
 // Trailing underscore due to delete being a keyword in C++.
-consteval string& SqlFormatter::delete_() noexcept {
+SqlFormatter& SqlFormatter::delete_() noexcept {
   sql_ = "DELETE";
-  return sql_;
+  return *this;
 }
 
 [[nodiscard]] const string& SqlFormatter::format() noexcept {

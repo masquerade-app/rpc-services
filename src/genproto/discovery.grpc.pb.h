@@ -37,9 +37,7 @@ namespace discovery {
 
 class Discovery final {
  public:
-  static constexpr char const* service_full_name() {
-    return "discovery.Discovery";
-  }
+  static constexpr char const* service_full_name() { return "discovery.Discovery"; }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
@@ -73,9 +71,8 @@ class Discovery final {
       this
     };
   };
-  static std::unique_ptr<Stub> NewStub(
-      const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-      const ::grpc::StubOptions& options = ::grpc::StubOptions());
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel,
+                                       const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
   class Service : public ::grpc::Service {
    public:

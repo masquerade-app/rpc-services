@@ -40,89 +40,71 @@ class Profile final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status CreateProfile(
-        ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
-        ::profile::ProfileResponse* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
-    AsyncCreateProfile(::grpc::ClientContext* context,
-                       const ::profile::ProfileCard& request,
+    virtual ::grpc::Status CreateProfile(::grpc::ClientContext* context,
+                                         const ::profile::ProfileCard& request,
+                                         ::profile::ProfileResponse* response) = 0;
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
+    AsyncCreateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::profile::ProfileResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>(
           AsyncCreateProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
-    PrepareAsyncCreateProfile(::grpc::ClientContext* context,
-                              const ::profile::ProfileCard& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
+    PrepareAsyncCreateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::profile::ProfileResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>(
           PrepareAsyncCreateProfileRaw(context, request, cq));
     }
     virtual ::grpc::Status GetProfile(::grpc::ClientContext* context,
                                       const ::profile::ProfileRequest& request,
                                       ::profile::ProfileCard* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>
-    AsyncGetProfile(::grpc::ClientContext* context,
-                    const ::profile::ProfileRequest& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>
+    AsyncGetProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
                     ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>(
           AsyncGetProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>
-    PrepareAsyncGetProfile(::grpc::ClientContext* context,
-                           const ::profile::ProfileRequest& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>
+    PrepareAsyncGetProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
                            ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>>(
           PrepareAsyncGetProfileRaw(context, request, cq));
     }
-    virtual ::grpc::Status UpdateProfile(
-        ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
-        ::profile::ProfileResponse* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
-    AsyncUpdateProfile(::grpc::ClientContext* context,
-                       const ::profile::ProfileCard& request,
+    virtual ::grpc::Status UpdateProfile(::grpc::ClientContext* context,
+                                         const ::profile::ProfileCard& request,
+                                         ::profile::ProfileResponse* response) = 0;
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
+    AsyncUpdateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::profile::ProfileResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>(
           AsyncUpdateProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
-    PrepareAsyncUpdateProfile(::grpc::ClientContext* context,
-                              const ::profile::ProfileCard& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
+    PrepareAsyncUpdateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::profile::ProfileResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>(
           PrepareAsyncUpdateProfileRaw(context, request, cq));
     }
-    virtual ::grpc::Status ClearProfile(
-        ::grpc::ClientContext* context,
-        const ::profile::ProfileRequest& request,
-        ::profile::ProfileResponse* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
-    AsyncClearProfile(::grpc::ClientContext* context,
-                      const ::profile::ProfileRequest& request,
+    virtual ::grpc::Status ClearProfile(::grpc::ClientContext* context,
+                                        const ::profile::ProfileRequest& request,
+                                        ::profile::ProfileResponse* response) = 0;
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
+    AsyncClearProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
                       ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::profile::ProfileResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>(
           AsyncClearProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>
     PrepareAsyncClearProfile(::grpc::ClientContext* context,
                              const ::profile::ProfileRequest& request,
                              ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::profile::ProfileResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>>(
           PrepareAsyncClearProfileRaw(context, request, cq));
     }
     class async_interface {
@@ -166,41 +148,31 @@ class Profile final {
     class async_interface* experimental_async() { return async(); }
 
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::profile::ProfileResponse>*
-    AsyncCreateProfileRaw(::grpc::ClientContext* context,
-                          const ::profile::ProfileCard& request,
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>*
+    AsyncCreateProfileRaw(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                           ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::profile::ProfileResponse>*
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>*
     PrepareAsyncCreateProfileRaw(::grpc::ClientContext* context,
                                  const ::profile::ProfileCard& request,
                                  ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>*
-    AsyncGetProfileRaw(::grpc::ClientContext* context,
-                       const ::profile::ProfileRequest& request,
-                       ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>* AsyncGetProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
+        ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileCard>*
     PrepareAsyncGetProfileRaw(::grpc::ClientContext* context,
                               const ::profile::ProfileRequest& request,
                               ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::profile::ProfileResponse>*
-    AsyncUpdateProfileRaw(::grpc::ClientContext* context,
-                          const ::profile::ProfileCard& request,
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>*
+    AsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                           ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::profile::ProfileResponse>*
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>*
     PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context,
                                  const ::profile::ProfileCard& request,
                                  ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::profile::ProfileResponse>*
-    AsyncClearProfileRaw(::grpc::ClientContext* context,
-                         const ::profile::ProfileRequest& request,
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>*
+    AsyncClearProfileRaw(::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
                          ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::profile::ProfileResponse>*
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::profile::ProfileResponse>*
     PrepareAsyncClearProfileRaw(::grpc::ClientContext* context,
                                 const ::profile::ProfileRequest& request,
                                 ::grpc::CompletionQueue* cq) = 0;
@@ -212,117 +184,88 @@ class Profile final {
     ::grpc::Status CreateProfile(::grpc::ClientContext* context,
                                  const ::profile::ProfileCard& request,
                                  ::profile::ProfileResponse* response) override;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
-    AsyncCreateProfile(::grpc::ClientContext* context,
-                       const ::profile::ProfileCard& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
+    AsyncCreateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
           AsyncCreateProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
-    PrepareAsyncCreateProfile(::grpc::ClientContext* context,
-                              const ::profile::ProfileCard& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
+    PrepareAsyncCreateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
           PrepareAsyncCreateProfileRaw(context, request, cq));
     }
     ::grpc::Status GetProfile(::grpc::ClientContext* context,
                               const ::profile::ProfileRequest& request,
                               ::profile::ProfileCard* response) override;
-    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileCard>>
-    AsyncGetProfile(::grpc::ClientContext* context,
-                    const ::profile::ProfileRequest& request,
-                    ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileCard>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileCard>> AsyncGetProfile(
+        ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileCard>>(
           AsyncGetProfileRaw(context, request, cq));
     }
     std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileCard>>
-    PrepareAsyncGetProfile(::grpc::ClientContext* context,
-                           const ::profile::ProfileRequest& request,
+    PrepareAsyncGetProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
                            ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileCard>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileCard>>(
           PrepareAsyncGetProfileRaw(context, request, cq));
     }
     ::grpc::Status UpdateProfile(::grpc::ClientContext* context,
                                  const ::profile::ProfileCard& request,
                                  ::profile::ProfileResponse* response) override;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
-    AsyncUpdateProfile(::grpc::ClientContext* context,
-                       const ::profile::ProfileCard& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
+    AsyncUpdateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
           AsyncUpdateProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
-    PrepareAsyncUpdateProfile(::grpc::ClientContext* context,
-                              const ::profile::ProfileCard& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
+    PrepareAsyncUpdateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
           PrepareAsyncUpdateProfileRaw(context, request, cq));
     }
     ::grpc::Status ClearProfile(::grpc::ClientContext* context,
                                 const ::profile::ProfileRequest& request,
                                 ::profile::ProfileResponse* response) override;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
-    AsyncClearProfile(::grpc::ClientContext* context,
-                      const ::profile::ProfileRequest& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
+    AsyncClearProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
                       ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
           AsyncClearProfileRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>
     PrepareAsyncClearProfile(::grpc::ClientContext* context,
                              const ::profile::ProfileRequest& request,
                              ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>>(
           PrepareAsyncClearProfileRaw(context, request, cq));
     }
     class async final : public StubInterface::async_interface {
      public:
-      void CreateProfile(::grpc::ClientContext* context,
-                         const ::profile::ProfileCard* request,
+      void CreateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard* request,
                          ::profile::ProfileResponse* response,
                          std::function<void(::grpc::Status)>) override;
-      void CreateProfile(::grpc::ClientContext* context,
-                         const ::profile::ProfileCard* request,
+      void CreateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard* request,
                          ::profile::ProfileResponse* response,
                          ::grpc::ClientUnaryReactor* reactor) override;
-      void GetProfile(::grpc::ClientContext* context,
-                      const ::profile::ProfileRequest* request,
+      void GetProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest* request,
                       ::profile::ProfileCard* response,
                       std::function<void(::grpc::Status)>) override;
-      void GetProfile(::grpc::ClientContext* context,
-                      const ::profile::ProfileRequest* request,
+      void GetProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest* request,
                       ::profile::ProfileCard* response,
                       ::grpc::ClientUnaryReactor* reactor) override;
-      void UpdateProfile(::grpc::ClientContext* context,
-                         const ::profile::ProfileCard* request,
+      void UpdateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard* request,
                          ::profile::ProfileResponse* response,
                          std::function<void(::grpc::Status)>) override;
-      void UpdateProfile(::grpc::ClientContext* context,
-                         const ::profile::ProfileCard* request,
+      void UpdateProfile(::grpc::ClientContext* context, const ::profile::ProfileCard* request,
                          ::profile::ProfileResponse* response,
                          ::grpc::ClientUnaryReactor* reactor) override;
-      void ClearProfile(::grpc::ClientContext* context,
-                        const ::profile::ProfileRequest* request,
+      void ClearProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest* request,
                         ::profile::ProfileResponse* response,
                         std::function<void(::grpc::Status)>) override;
-      void ClearProfile(::grpc::ClientContext* context,
-                        const ::profile::ProfileRequest* request,
+      void ClearProfile(::grpc::ClientContext* context, const ::profile::ProfileRequest* request,
                         ::profile::ProfileResponse* response,
                         ::grpc::ClientUnaryReactor* reactor) override;
 
@@ -339,46 +282,37 @@ class Profile final {
     class async async_stub_ {
       this
     };
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>*
-    AsyncCreateProfileRaw(::grpc::ClientContext* context,
-                          const ::profile::ProfileCard& request,
-                          ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>*
-    PrepareAsyncCreateProfileRaw(::grpc::ClientContext* context,
-                                 const ::profile::ProfileCard& request,
-                                 ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileCard>*
-    AsyncGetProfileRaw(::grpc::ClientContext* context,
-                       const ::profile::ProfileRequest& request,
-                       ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileCard>*
-    PrepareAsyncGetProfileRaw(::grpc::ClientContext* context,
-                              const ::profile::ProfileRequest& request,
-                              ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>*
-    AsyncUpdateProfileRaw(::grpc::ClientContext* context,
-                          const ::profile::ProfileCard& request,
-                          ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>*
-    PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context,
-                                 const ::profile::ProfileCard& request,
-                                 ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>*
-    AsyncClearProfileRaw(::grpc::ClientContext* context,
-                         const ::profile::ProfileRequest& request,
-                         ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>*
-    PrepareAsyncClearProfileRaw(::grpc::ClientContext* context,
-                                const ::profile::ProfileRequest& request,
-                                ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>* AsyncCreateProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>* PrepareAsyncCreateProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileCard>* AsyncGetProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileCard>* PrepareAsyncGetProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>* AsyncUpdateProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>* PrepareAsyncUpdateProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>* AsyncClearProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::profile::ProfileResponse>* PrepareAsyncClearProfileRaw(
+        ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
+        ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateProfile_;
     const ::grpc::internal::RpcMethod rpcmethod_GetProfile_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateProfile_;
     const ::grpc::internal::RpcMethod rpcmethod_ClearProfile_;
   };
-  static std::unique_ptr<Stub> NewStub(
-      const std::shared_ptr<::grpc::ChannelInterface>& channel,
-      const ::grpc::StubOptions& options = ::grpc::StubOptions());
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr<::grpc::ChannelInterface>& channel,
+                                       const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
   class Service : public ::grpc::Service {
    public:
@@ -393,10 +327,9 @@ class Profile final {
     virtual ::grpc::Status UpdateProfile(::grpc::ServerContext* context,
                                          const ::profile::ProfileCard* request,
                                          ::profile::ProfileResponse* response);
-    virtual ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* context,
-        const ::profile::ProfileRequest* request,
-        ::profile::ProfileResponse* response);
+    virtual ::grpc::Status ClearProfile(::grpc::ServerContext* context,
+                                        const ::profile::ProfileRequest* request,
+                                        ::profile::ProfileResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateProfile : public BaseClass {
@@ -405,24 +338,21 @@ class Profile final {
 
    public:
     WithAsyncMethod_CreateProfile() { ::grpc::Service::MarkMethodAsync(0); }
-    ~WithAsyncMethod_CreateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_CreateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status CreateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateProfile(
         ::grpc::ServerContext* context, ::profile::ProfileCard* request,
         ::grpc::ServerAsyncResponseWriter<::profile::ProfileResponse>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+        ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq,
+        void* tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -432,9 +362,7 @@ class Profile final {
 
    public:
     WithAsyncMethod_GetProfile() { ::grpc::Service::MarkMethodAsync(1); }
-    ~WithAsyncMethod_GetProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_GetProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/,
                               const ::profile::ProfileRequest* /*request*/,
@@ -442,13 +370,12 @@ class Profile final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetProfile(
-        ::grpc::ServerContext* context, ::profile::ProfileRequest* request,
-        ::grpc::ServerAsyncResponseWriter<::profile::ProfileCard>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestGetProfile(::grpc::ServerContext* context, ::profile::ProfileRequest* request,
+                           ::grpc::ServerAsyncResponseWriter<::profile::ProfileCard>* response,
+                           ::grpc::CompletionQueue* new_call_cq,
+                           ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -458,24 +385,21 @@ class Profile final {
 
    public:
     WithAsyncMethod_UpdateProfile() { ::grpc::Service::MarkMethodAsync(2); }
-    ~WithAsyncMethod_UpdateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_UpdateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateProfile(
         ::grpc::ServerContext* context, ::profile::ProfileCard* request,
         ::grpc::ServerAsyncResponseWriter<::profile::ProfileResponse>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+        ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq,
+        void* tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -485,24 +409,21 @@ class Profile final {
 
    public:
     WithAsyncMethod_ClearProfile() { ::grpc::Service::MarkMethodAsync(3); }
-    ~WithAsyncMethod_ClearProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_ClearProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status ClearProfile(::grpc::ServerContext* /*context*/,
+                                const ::profile::ProfileRequest* /*request*/,
+                                ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestClearProfile(
         ::grpc::ServerContext* context, ::profile::ProfileRequest* request,
         ::grpc::ServerAsyncResponseWriter<::profile::ProfileResponse>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+        ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq,
+        void* tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   typedef WithAsyncMethod_CreateProfile<WithAsyncMethod_GetProfile<
@@ -516,38 +437,32 @@ class Profile final {
    public:
     WithCallbackMethod_CreateProfile() {
       ::grpc::Service::MarkMethodCallback(
-          0, new ::grpc::internal::CallbackUnaryHandler<
-                 ::profile::ProfileCard, ::profile::ProfileResponse>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::profile::ProfileCard* request,
-                        ::profile::ProfileResponse* response) {
-                   return this->CreateProfile(context, request, response);
-                 }));
+          0,
+          new ::grpc::internal::CallbackUnaryHandler<::profile::ProfileCard,
+                                                     ::profile::ProfileResponse>(
+              [this](::grpc::CallbackServerContext* context, const ::profile::ProfileCard* request,
+                     ::profile::ProfileResponse* response) {
+                return this->CreateProfile(context, request, response);
+              }));
     }
     void SetMessageAllocatorFor_CreateProfile(
-        ::grpc::MessageAllocator<::profile::ProfileCard,
-                                 ::profile::ProfileResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::profile::ProfileCard, ::profile::ProfileResponse>*>(handler)
+        ::grpc::MessageAllocator<::profile::ProfileCard, ::profile::ProfileResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<::grpc::internal::CallbackUnaryHandler<::profile::ProfileCard,
+                                                         ::profile::ProfileResponse>*>(handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_CreateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_CreateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status CreateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* CreateProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* CreateProfile(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::profile::ProfileCard* /*request*/,
+                                                      ::profile::ProfileResponse* /*response*/) {
       return nullptr;
     }
   };
@@ -563,23 +478,18 @@ class Profile final {
           new ::grpc::internal::CallbackUnaryHandler<::profile::ProfileRequest,
                                                      ::profile::ProfileCard>(
               [this](::grpc::CallbackServerContext* context,
-                     const ::profile::ProfileRequest* request,
-                     ::profile::ProfileCard* response) {
+                     const ::profile::ProfileRequest* request, ::profile::ProfileCard* response) {
                 return this->GetProfile(context, request, response);
               }));
     }
     void SetMessageAllocatorFor_GetProfile(
-        ::grpc::MessageAllocator<::profile::ProfileRequest,
-                                 ::profile::ProfileCard>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::profile::ProfileRequest, ::profile::ProfileCard>*>(handler)
+        ::grpc::MessageAllocator<::profile::ProfileRequest, ::profile::ProfileCard>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler<::profile::ProfileRequest,
+                                                         ::profile::ProfileCard>*>(handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_GetProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_GetProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/,
                               const ::profile::ProfileRequest* /*request*/,
@@ -587,10 +497,9 @@ class Profile final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileCard* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* GetProfile(::grpc::CallbackServerContext* /*context*/,
+                                                   const ::profile::ProfileRequest* /*request*/,
+                                                   ::profile::ProfileCard* /*response*/) {
       return nullptr;
     }
   };
@@ -602,38 +511,32 @@ class Profile final {
    public:
     WithCallbackMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodCallback(
-          2, new ::grpc::internal::CallbackUnaryHandler<
-                 ::profile::ProfileCard, ::profile::ProfileResponse>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::profile::ProfileCard* request,
-                        ::profile::ProfileResponse* response) {
-                   return this->UpdateProfile(context, request, response);
-                 }));
+          2,
+          new ::grpc::internal::CallbackUnaryHandler<::profile::ProfileCard,
+                                                     ::profile::ProfileResponse>(
+              [this](::grpc::CallbackServerContext* context, const ::profile::ProfileCard* request,
+                     ::profile::ProfileResponse* response) {
+                return this->UpdateProfile(context, request, response);
+              }));
     }
     void SetMessageAllocatorFor_UpdateProfile(
-        ::grpc::MessageAllocator<::profile::ProfileCard,
-                                 ::profile::ProfileResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::profile::ProfileCard, ::profile::ProfileResponse>*>(handler)
+        ::grpc::MessageAllocator<::profile::ProfileCard, ::profile::ProfileResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler<::profile::ProfileCard,
+                                                         ::profile::ProfileResponse>*>(handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_UpdateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_UpdateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* UpdateProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* UpdateProfile(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::profile::ProfileCard* /*request*/,
+                                                      ::profile::ProfileResponse* /*response*/) {
       return nullptr;
     }
   };
@@ -645,8 +548,8 @@ class Profile final {
    public:
     WithCallbackMethod_ClearProfile() {
       ::grpc::Service::MarkMethodCallback(
-          3, new ::grpc::internal::CallbackUnaryHandler<
-                 ::profile::ProfileRequest, ::profile::ProfileResponse>(
+          3, new ::grpc::internal::CallbackUnaryHandler<::profile::ProfileRequest,
+                                                        ::profile::ProfileResponse>(
                  [this](::grpc::CallbackServerContext* context,
                         const ::profile::ProfileRequest* request,
                         ::profile::ProfileResponse* response) {
@@ -654,35 +557,29 @@ class Profile final {
                  }));
     }
     void SetMessageAllocatorFor_ClearProfile(
-        ::grpc::MessageAllocator<::profile::ProfileRequest,
-                                 ::profile::ProfileResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::profile::ProfileRequest, ::profile::ProfileResponse>*>(handler)
+        ::grpc::MessageAllocator<::profile::ProfileRequest, ::profile::ProfileResponse>*
+            allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler<::profile::ProfileRequest,
+                                                         ::profile::ProfileResponse>*>(handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_ClearProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_ClearProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status ClearProfile(::grpc::ServerContext* /*context*/,
+                                const ::profile::ProfileRequest* /*request*/,
+                                ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* ClearProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* ClearProfile(::grpc::CallbackServerContext* /*context*/,
+                                                     const ::profile::ProfileRequest* /*request*/,
+                                                     ::profile::ProfileResponse* /*response*/) {
       return nullptr;
     }
   };
-  typedef WithCallbackMethod_CreateProfile<
-      WithCallbackMethod_GetProfile<WithCallbackMethod_UpdateProfile<
-          WithCallbackMethod_ClearProfile<Service>>>>
+  typedef WithCallbackMethod_CreateProfile<WithCallbackMethod_GetProfile<
+      WithCallbackMethod_UpdateProfile<WithCallbackMethod_ClearProfile<Service>>>>
       CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
@@ -692,14 +589,11 @@ class Profile final {
 
    public:
     WithGenericMethod_CreateProfile() { ::grpc::Service::MarkMethodGeneric(0); }
-    ~WithGenericMethod_CreateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_CreateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status CreateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -711,9 +605,7 @@ class Profile final {
 
    public:
     WithGenericMethod_GetProfile() { ::grpc::Service::MarkMethodGeneric(1); }
-    ~WithGenericMethod_GetProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_GetProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/,
                               const ::profile::ProfileRequest* /*request*/,
@@ -729,14 +621,11 @@ class Profile final {
 
    public:
     WithGenericMethod_UpdateProfile() { ::grpc::Service::MarkMethodGeneric(2); }
-    ~WithGenericMethod_UpdateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_UpdateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -748,14 +637,11 @@ class Profile final {
 
    public:
     WithGenericMethod_ClearProfile() { ::grpc::Service::MarkMethodGeneric(3); }
-    ~WithGenericMethod_ClearProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_ClearProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status ClearProfile(::grpc::ServerContext* /*context*/,
+                                const ::profile::ProfileRequest* /*request*/,
+                                ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -767,24 +653,20 @@ class Profile final {
 
    public:
     WithRawMethod_CreateProfile() { ::grpc::Service::MarkMethodRaw(0); }
-    ~WithRawMethod_CreateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_CreateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status CreateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateProfile(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestCreateProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                              ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -794,9 +676,7 @@ class Profile final {
 
    public:
     WithRawMethod_GetProfile() { ::grpc::Service::MarkMethodRaw(1); }
-    ~WithRawMethod_GetProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_GetProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/,
                               const ::profile::ProfileRequest* /*request*/,
@@ -804,13 +684,12 @@ class Profile final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetProfile(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestGetProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                           ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                           ::grpc::CompletionQueue* new_call_cq,
+                           ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -820,24 +699,20 @@ class Profile final {
 
    public:
     WithRawMethod_UpdateProfile() { ::grpc::Service::MarkMethodRaw(2); }
-    ~WithRawMethod_UpdateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_UpdateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateProfile(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestUpdateProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                              ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -847,24 +722,20 @@ class Profile final {
 
    public:
     WithRawMethod_ClearProfile() { ::grpc::Service::MarkMethodRaw(3); }
-    ~WithRawMethod_ClearProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_ClearProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status ClearProfile(::grpc::ServerContext* /*context*/,
+                                const ::profile::ProfileRequest* /*request*/,
+                                ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestClearProfile(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestClearProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                             ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                             ::grpc::CompletionQueue* new_call_cq,
+                             ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -875,29 +746,23 @@ class Profile final {
    public:
     WithRawCallbackMethod_CreateProfile() {
       ::grpc::Service::MarkMethodRawCallback(
-          0, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          0, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->CreateProfile(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_CreateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_CreateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status CreateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* CreateProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* CreateProfile(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::grpc::ByteBuffer* /*request*/,
+                                                      ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -909,17 +774,13 @@ class Profile final {
    public:
     WithRawCallbackMethod_GetProfile() {
       ::grpc::Service::MarkMethodRawCallback(
-          1, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          1, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->GetProfile(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_GetProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_GetProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/,
                               const ::profile::ProfileRequest* /*request*/,
@@ -927,10 +788,9 @@ class Profile final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* GetProfile(::grpc::CallbackServerContext* /*context*/,
+                                                   const ::grpc::ByteBuffer* /*request*/,
+                                                   ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -942,29 +802,23 @@ class Profile final {
    public:
     WithRawCallbackMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodRawCallback(
-          2, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          2, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->UpdateProfile(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_UpdateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_UpdateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* UpdateProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* UpdateProfile(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::grpc::ByteBuffer* /*request*/,
+                                                      ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -976,29 +830,23 @@ class Profile final {
    public:
     WithRawCallbackMethod_ClearProfile() {
       ::grpc::Service::MarkMethodRawCallback(
-          3, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          3, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->ClearProfile(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_ClearProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_ClearProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status ClearProfile(::grpc::ServerContext* /*context*/,
+                                const ::profile::ProfileRequest* /*request*/,
+                                ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* ClearProfile(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* ClearProfile(::grpc::CallbackServerContext* /*context*/,
+                                                     const ::grpc::ByteBuffer* /*request*/,
+                                                     ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -1010,31 +858,26 @@ class Profile final {
    public:
     WithStreamedUnaryMethod_CreateProfile() {
       ::grpc::Service::MarkMethodStreamed(
-          0, new ::grpc::internal::StreamedUnaryHandler<
-                 ::profile::ProfileCard, ::profile::ProfileResponse>(
+          0, new ::grpc::internal::StreamedUnaryHandler<::profile::ProfileCard,
+                                                        ::profile::ProfileResponse>(
                  [this](::grpc::ServerContext* context,
                         ::grpc::ServerUnaryStreamer<::profile::ProfileCard,
-                                                    ::profile::ProfileResponse>*
-                            streamer) {
+                                                    ::profile::ProfileResponse>* streamer) {
                    return this->StreamedCreateProfile(context, streamer);
                  }));
     }
-    ~WithStreamedUnaryMethod_CreateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_CreateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status CreateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status CreateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCreateProfile(
         ::grpc::ServerContext* context,
-        ::grpc::ServerUnaryStreamer<::profile::ProfileCard,
-                                    ::profile::ProfileResponse>*
+        ::grpc::ServerUnaryStreamer<::profile::ProfileCard, ::profile::ProfileResponse>*
             server_unary_streamer) = 0;
   };
   template <class BaseClass>
@@ -1049,15 +892,10 @@ class Profile final {
           new ::grpc::internal::StreamedUnaryHandler<::profile::ProfileRequest,
                                                      ::profile::ProfileCard>(
               [this](::grpc::ServerContext* context,
-                     ::grpc::ServerUnaryStreamer<::profile::ProfileRequest,
-                                                 ::profile::ProfileCard>*
-                         streamer) {
-                return this->StreamedGetProfile(context, streamer);
-              }));
+                     ::grpc::ServerUnaryStreamer<::profile::ProfileRequest, ::profile::ProfileCard>*
+                         streamer) { return this->StreamedGetProfile(context, streamer); }));
     }
-    ~WithStreamedUnaryMethod_GetProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_GetProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
     ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/,
                               const ::profile::ProfileRequest* /*request*/,
@@ -1068,8 +906,7 @@ class Profile final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetProfile(
         ::grpc::ServerContext* context,
-        ::grpc::ServerUnaryStreamer<::profile::ProfileRequest,
-                                    ::profile::ProfileCard>*
+        ::grpc::ServerUnaryStreamer<::profile::ProfileRequest, ::profile::ProfileCard>*
             server_unary_streamer) = 0;
   };
   template <class BaseClass>
@@ -1080,31 +917,26 @@ class Profile final {
    public:
     WithStreamedUnaryMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodStreamed(
-          2, new ::grpc::internal::StreamedUnaryHandler<
-                 ::profile::ProfileCard, ::profile::ProfileResponse>(
+          2, new ::grpc::internal::StreamedUnaryHandler<::profile::ProfileCard,
+                                                        ::profile::ProfileResponse>(
                  [this](::grpc::ServerContext* context,
                         ::grpc::ServerUnaryStreamer<::profile::ProfileCard,
-                                                    ::profile::ProfileResponse>*
-                            streamer) {
+                                                    ::profile::ProfileResponse>* streamer) {
                    return this->StreamedUpdateProfile(context, streamer);
                  }));
     }
-    ~WithStreamedUnaryMethod_UpdateProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_UpdateProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status UpdateProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileCard* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/,
+                                 const ::profile::ProfileCard* /*request*/,
+                                 ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUpdateProfile(
         ::grpc::ServerContext* context,
-        ::grpc::ServerUnaryStreamer<::profile::ProfileCard,
-                                    ::profile::ProfileResponse>*
+        ::grpc::ServerUnaryStreamer<::profile::ProfileCard, ::profile::ProfileResponse>*
             server_unary_streamer) = 0;
   };
   template <class BaseClass>
@@ -1115,41 +947,34 @@ class Profile final {
    public:
     WithStreamedUnaryMethod_ClearProfile() {
       ::grpc::Service::MarkMethodStreamed(
-          3, new ::grpc::internal::StreamedUnaryHandler<
-                 ::profile::ProfileRequest, ::profile::ProfileResponse>(
+          3, new ::grpc::internal::StreamedUnaryHandler<::profile::ProfileRequest,
+                                                        ::profile::ProfileResponse>(
                  [this](::grpc::ServerContext* context,
                         ::grpc::ServerUnaryStreamer<::profile::ProfileRequest,
-                                                    ::profile::ProfileResponse>*
-                            streamer) {
+                                                    ::profile::ProfileResponse>* streamer) {
                    return this->StreamedClearProfile(context, streamer);
                  }));
     }
-    ~WithStreamedUnaryMethod_ClearProfile() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_ClearProfile() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status ClearProfile(
-        ::grpc::ServerContext* /*context*/,
-        const ::profile::ProfileRequest* /*request*/,
-        ::profile::ProfileResponse* /*response*/) override {
+    ::grpc::Status ClearProfile(::grpc::ServerContext* /*context*/,
+                                const ::profile::ProfileRequest* /*request*/,
+                                ::profile::ProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedClearProfile(
         ::grpc::ServerContext* context,
-        ::grpc::ServerUnaryStreamer<::profile::ProfileRequest,
-                                    ::profile::ProfileResponse>*
+        ::grpc::ServerUnaryStreamer<::profile::ProfileRequest, ::profile::ProfileResponse>*
             server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateProfile<
-      WithStreamedUnaryMethod_GetProfile<WithStreamedUnaryMethod_UpdateProfile<
-          WithStreamedUnaryMethod_ClearProfile<Service>>>>
+  typedef WithStreamedUnaryMethod_CreateProfile<WithStreamedUnaryMethod_GetProfile<
+      WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_ClearProfile<Service>>>>
       StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateProfile<
-      WithStreamedUnaryMethod_GetProfile<WithStreamedUnaryMethod_UpdateProfile<
-          WithStreamedUnaryMethod_ClearProfile<Service>>>>
+  typedef WithStreamedUnaryMethod_CreateProfile<WithStreamedUnaryMethod_GetProfile<
+      WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_ClearProfile<Service>>>>
       StreamedService;
 };
 

@@ -25,8 +25,7 @@
 namespace messaging {
 
 std::unique_ptr<Messaging::Stub> Messaging::NewStub(
-    const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-    const ::grpc::StubOptions& options) {
+    const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
   std::unique_ptr<Messaging::Stub> stub(new Messaging::Stub(channel, options));
   return stub;

@@ -14,7 +14,7 @@ struct Error final {
   explicit Error(const char* message) : message_(message) {}
   explicit Error(std::string_view message) : message_(message) {}
 
-  std::string_view message() { return std::string_view(message_); }
+  [[nodiscard]] std::string_view message() const noexcept { return std::string_view(message_); }
 
   MOVEABLE(Error)
   NOT_COPYABLE(Error)

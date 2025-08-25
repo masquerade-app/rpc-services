@@ -29,8 +29,7 @@ static const char* Greeter_method_names[] = {
 };
 
 std::unique_ptr<Greeter::Stub> Greeter::NewStub(
-    const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-    const ::grpc::StubOptions& options) {
+    const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
   std::unique_ptr<Greeter::Stub> stub(new Greeter::Stub(channel, options));
   return stub;
@@ -42,44 +41,39 @@ Greeter::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel,
       rpcmethod_HelloWorld_(Greeter_method_names[0], options.suffix_for_stats(),
                             ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {}
 
-::grpc::Status Greeter::Stub::HelloWorld(
-    ::grpc::ClientContext* context,
-    const ::helloworld::HelloWorldRequest& request,
-    ::helloworld::HelloWorldResponse* response) {
+::grpc::Status Greeter::Stub::HelloWorld(::grpc::ClientContext* context,
+                                         const ::helloworld::HelloWorldRequest& request,
+                                         ::helloworld::HelloWorldResponse* response) {
   return ::grpc::internal::BlockingUnaryCall<
       ::helloworld::HelloWorldRequest, ::helloworld::HelloWorldResponse,
       ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_HelloWorld_, context, request, response);
 }
 
-void Greeter::Stub::async::HelloWorld(
-    ::grpc::ClientContext* context,
-    const ::helloworld::HelloWorldRequest* request,
-    ::helloworld::HelloWorldResponse* response,
-    std::function<void(::grpc::Status)> f) {
+void Greeter::Stub::async::HelloWorld(::grpc::ClientContext* context,
+                                      const ::helloworld::HelloWorldRequest* request,
+                                      ::helloworld::HelloWorldResponse* response,
+                                      std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall<
       ::helloworld::HelloWorldRequest, ::helloworld::HelloWorldResponse,
       ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_HelloWorld_, context, request,
-      response, std::move(f));
+      stub_->channel_.get(), stub_->rpcmethod_HelloWorld_, context, request, response,
+      std::move(f));
 }
 
-void Greeter::Stub::async::HelloWorld(
-    ::grpc::ClientContext* context,
-    const ::helloworld::HelloWorldRequest* request,
-    ::helloworld::HelloWorldResponse* response,
-    ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_HelloWorld_, context, request,
-      response, reactor);
+void Greeter::Stub::async::HelloWorld(::grpc::ClientContext* context,
+                                      const ::helloworld::HelloWorldRequest* request,
+                                      ::helloworld::HelloWorldResponse* response,
+                                      ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_HelloWorld_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::helloworld::HelloWorldResponse>*
-Greeter::Stub::PrepareAsyncHelloWorldRaw(
-    ::grpc::ClientContext* context,
-    const ::helloworld::HelloWorldRequest& request,
-    ::grpc::CompletionQueue* cq) {
+Greeter::Stub::PrepareAsyncHelloWorldRaw(::grpc::ClientContext* context,
+                                         const ::helloworld::HelloWorldRequest& request,
+                                         ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
       ::helloworld::HelloWorldResponse, ::helloworld::HelloWorldRequest,
       ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
@@ -87,10 +81,9 @@ Greeter::Stub::PrepareAsyncHelloWorldRaw(
 }
 
 ::grpc::ClientAsyncResponseReader< ::helloworld::HelloWorldResponse>*
-Greeter::Stub::AsyncHelloWorldRaw(
-    ::grpc::ClientContext* context,
-    const ::helloworld::HelloWorldRequest& request,
-    ::grpc::CompletionQueue* cq) {
+Greeter::Stub::AsyncHelloWorldRaw(::grpc::ClientContext* context,
+                                  const ::helloworld::HelloWorldRequest& request,
+                                  ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncHelloWorldRaw(context, request, cq);
   result->StartCall();
   return result;
@@ -100,12 +93,10 @@ Greeter::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Greeter_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler<
-          Greeter::Service, ::helloworld::HelloWorldRequest,
-          ::helloworld::HelloWorldResponse, ::grpc::protobuf::MessageLite,
-          ::grpc::protobuf::MessageLite>(
+          Greeter::Service, ::helloworld::HelloWorldRequest, ::helloworld::HelloWorldResponse,
+          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Greeter::Service* service, ::grpc::ServerContext* ctx,
-             const ::helloworld::HelloWorldRequest* req,
-             ::helloworld::HelloWorldResponse* resp) {
+             const ::helloworld::HelloWorldRequest* req, ::helloworld::HelloWorldResponse* resp) {
             return service->HelloWorld(ctx, req, resp);
           },
           this)));
@@ -113,10 +104,9 @@ Greeter::Service::Service() {
 
 Greeter::Service::~Service() {}
 
-::grpc::Status Greeter::Service::HelloWorld(
-    ::grpc::ServerContext* context,
-    const ::helloworld::HelloWorldRequest* request,
-    ::helloworld::HelloWorldResponse* response) {
+::grpc::Status Greeter::Service::HelloWorld(::grpc::ServerContext* context,
+                                            const ::helloworld::HelloWorldRequest* request,
+                                            ::helloworld::HelloWorldResponse* response) {
   (void)context;
   (void)request;
   (void)response;

@@ -51,34 +51,25 @@ struct TableStruct_matching_2eproto {
   static const ::uint32_t offsets[];
 };
 extern "C" {
-extern const ::google::protobuf::internal::DescriptorTable
-    descriptor_table_matching_2eproto;
+extern const ::google::protobuf::internal::DescriptorTable descriptor_table_matching_2eproto;
 }  // extern "C"
 namespace matching {
 class CheckMatchRequest;
 struct CheckMatchRequestDefaultTypeInternal;
-extern CheckMatchRequestDefaultTypeInternal
-    _CheckMatchRequest_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull
-    CheckMatchRequest_class_data_;
+extern CheckMatchRequestDefaultTypeInternal _CheckMatchRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull CheckMatchRequest_class_data_;
 class CheckMatchResponse;
 struct CheckMatchResponseDefaultTypeInternal;
-extern CheckMatchResponseDefaultTypeInternal
-    _CheckMatchResponse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull
-    CheckMatchResponse_class_data_;
+extern CheckMatchResponseDefaultTypeInternal _CheckMatchResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull CheckMatchResponse_class_data_;
 class ListMatchesRequest;
 struct ListMatchesRequestDefaultTypeInternal;
-extern ListMatchesRequestDefaultTypeInternal
-    _ListMatchesRequest_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull
-    ListMatchesRequest_class_data_;
+extern ListMatchesRequestDefaultTypeInternal _ListMatchesRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ListMatchesRequest_class_data_;
 class ListMatchesResponse;
 struct ListMatchesResponseDefaultTypeInternal;
-extern ListMatchesResponseDefaultTypeInternal
-    _ListMatchesResponse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull
-    ListMatchesResponse_class_data_;
+extern ListMatchesResponseDefaultTypeInternal _ListMatchesResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ListMatchesResponse_class_data_;
 }  // namespace matching
 namespace google {
 namespace protobuf {}  // namespace protobuf
@@ -97,19 +88,16 @@ class ListMatchesRequest final : public ::google::protobuf::Message
   ~ListMatchesRequest() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ListMatchesRequest* PROTOBUF_NONNULL msg,
-                       std::destroying_delete_t) {
+  void operator delete(ListMatchesRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
     ::google::protobuf::internal::SizedDelete(msg, sizeof(ListMatchesRequest));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ListMatchesRequest(
-      ::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR ListMatchesRequest(::google::protobuf::internal::ConstantInitialized);
 
-  inline ListMatchesRequest(const ListMatchesRequest& from)
-      : ListMatchesRequest(nullptr, from) {}
+  inline ListMatchesRequest(const ListMatchesRequest& from) : ListMatchesRequest(nullptr, from) {}
   inline ListMatchesRequest(ListMatchesRequest&& from) noexcept
       : ListMatchesRequest(nullptr, ::std::move(from)) {}
   inline ListMatchesRequest& operator=(const ListMatchesRequest& from) {
@@ -118,8 +106,7 @@ class ListMatchesRequest final : public ::google::protobuf::Message
   }
   inline ListMatchesRequest& operator=(ListMatchesRequest&& from) noexcept {
     if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(
-            GetArena(), from.GetArena())) {
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
     } else {
       CopyFrom(from);
@@ -129,37 +116,31 @@ class ListMatchesRequest final : public ::google::protobuf::Message
 
   inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .unknown_fields<::google::protobuf::UnknownFieldSet>(
-            ::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+        ::google::protobuf::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
   }
 
   static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL
-  GetReflection() {
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const ListMatchesRequest& default_instance() {
-    return *reinterpret_cast<const ListMatchesRequest*>(
-        &_ListMatchesRequest_default_instance_);
+    return *reinterpret_cast<const ListMatchesRequest*>(&_ListMatchesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 2;
   friend void swap(ListMatchesRequest& a, ListMatchesRequest& b) { a.Swap(&b); }
   inline void Swap(ListMatchesRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(),
-                                                         other->GetArena())) {
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
     } else {
       ::google::protobuf::internal::GenericSwap(this, other);
@@ -175,15 +156,12 @@ class ListMatchesRequest final : public ::google::protobuf::Message
 
   ListMatchesRequest* PROTOBUF_NONNULL
   New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ListMatchesRequest>(
-        arena);
+    return ::google::protobuf::Message::DefaultConstruct<ListMatchesRequest>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
   void CopyFrom(const ListMatchesRequest& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ListMatchesRequest& from) {
-    ListMatchesRequest::MergeImpl(*this, from);
-  }
+  void MergeFrom(const ListMatchesRequest& from) { ListMatchesRequest::MergeImpl(*this, from); }
 
  private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -195,25 +173,22 @@ class ListMatchesRequest final : public ::google::protobuf::Message
 #if defined(PROTOBUF_CUSTOM_VTABLE)
  private:
   static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg,
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+  static ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
 
  public:
   ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const {
+  ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
     return _InternalSerialize(*this, target, stream);
   }
 #else   // PROTOBUF_CUSTOM_VTABLE
   ::size_t ByteSizeLong() const final;
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const final;
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
@@ -225,13 +200,10 @@ class ListMatchesRequest final : public ::google::protobuf::Message
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() {
-    return "matching.ListMatchesRequest";
-  }
+  static ::absl::string_view FullMessageName() { return "matching.ListMatchesRequest"; }
 
  protected:
-  explicit ListMatchesRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  explicit ListMatchesRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   ListMatchesRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
                      const ListMatchesRequest& from);
   ListMatchesRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -241,9 +213,9 @@ class ListMatchesRequest final : public ::google::protobuf::Message
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
   GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL
-  PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-                ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void* PROTOBUF_NONNULL PlacementNew_(const void* PROTOBUF_NONNULL,
+                                              void* PROTOBUF_NONNULL mem,
+                                              ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 
  public:
@@ -271,8 +243,7 @@ class ListMatchesRequest final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1, 0, 0, 2>
-      _table_;
+  static const ::google::protobuf::internal::TcParseTable<0, 1, 0, 0, 2> _table_;
 
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -281,15 +252,12 @@ class ListMatchesRequest final : public ::google::protobuf::Message
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
   struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ListMatchesRequest& from_msg);
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+                          const ListMatchesRequest& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::int64_t account_id_;
@@ -301,8 +269,7 @@ class ListMatchesRequest final : public ::google::protobuf::Message
   friend struct ::TableStruct_matching_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull
-    ListMatchesRequest_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull ListMatchesRequest_class_data_;
 // -------------------------------------------------------------------
 
 class CheckMatchResponse final : public ::google::protobuf::Message
@@ -312,19 +279,16 @@ class CheckMatchResponse final : public ::google::protobuf::Message
   ~CheckMatchResponse() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(CheckMatchResponse* PROTOBUF_NONNULL msg,
-                       std::destroying_delete_t) {
+  void operator delete(CheckMatchResponse* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
     ::google::protobuf::internal::SizedDelete(msg, sizeof(CheckMatchResponse));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CheckMatchResponse(
-      ::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR CheckMatchResponse(::google::protobuf::internal::ConstantInitialized);
 
-  inline CheckMatchResponse(const CheckMatchResponse& from)
-      : CheckMatchResponse(nullptr, from) {}
+  inline CheckMatchResponse(const CheckMatchResponse& from) : CheckMatchResponse(nullptr, from) {}
   inline CheckMatchResponse(CheckMatchResponse&& from) noexcept
       : CheckMatchResponse(nullptr, ::std::move(from)) {}
   inline CheckMatchResponse& operator=(const CheckMatchResponse& from) {
@@ -333,8 +297,7 @@ class CheckMatchResponse final : public ::google::protobuf::Message
   }
   inline CheckMatchResponse& operator=(CheckMatchResponse&& from) noexcept {
     if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(
-            GetArena(), from.GetArena())) {
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
     } else {
       CopyFrom(from);
@@ -344,37 +307,31 @@ class CheckMatchResponse final : public ::google::protobuf::Message
 
   inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .unknown_fields<::google::protobuf::UnknownFieldSet>(
-            ::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+        ::google::protobuf::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
   }
 
   static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL
-  GetReflection() {
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const CheckMatchResponse& default_instance() {
-    return *reinterpret_cast<const CheckMatchResponse*>(
-        &_CheckMatchResponse_default_instance_);
+    return *reinterpret_cast<const CheckMatchResponse*>(&_CheckMatchResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 1;
   friend void swap(CheckMatchResponse& a, CheckMatchResponse& b) { a.Swap(&b); }
   inline void Swap(CheckMatchResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(),
-                                                         other->GetArena())) {
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
     } else {
       ::google::protobuf::internal::GenericSwap(this, other);
@@ -390,15 +347,12 @@ class CheckMatchResponse final : public ::google::protobuf::Message
 
   CheckMatchResponse* PROTOBUF_NONNULL
   New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<CheckMatchResponse>(
-        arena);
+    return ::google::protobuf::Message::DefaultConstruct<CheckMatchResponse>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
   void CopyFrom(const CheckMatchResponse& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CheckMatchResponse& from) {
-    CheckMatchResponse::MergeImpl(*this, from);
-  }
+  void MergeFrom(const CheckMatchResponse& from) { CheckMatchResponse::MergeImpl(*this, from); }
 
  private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -410,25 +364,22 @@ class CheckMatchResponse final : public ::google::protobuf::Message
 #if defined(PROTOBUF_CUSTOM_VTABLE)
  private:
   static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg,
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+  static ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
 
  public:
   ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const {
+  ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
     return _InternalSerialize(*this, target, stream);
   }
 #else   // PROTOBUF_CUSTOM_VTABLE
   ::size_t ByteSizeLong() const final;
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const final;
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
@@ -440,13 +391,10 @@ class CheckMatchResponse final : public ::google::protobuf::Message
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() {
-    return "matching.CheckMatchResponse";
-  }
+  static ::absl::string_view FullMessageName() { return "matching.CheckMatchResponse"; }
 
  protected:
-  explicit CheckMatchResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  explicit CheckMatchResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   CheckMatchResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
                      const CheckMatchResponse& from);
   CheckMatchResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -456,9 +404,9 @@ class CheckMatchResponse final : public ::google::protobuf::Message
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
   GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL
-  PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-                ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void* PROTOBUF_NONNULL PlacementNew_(const void* PROTOBUF_NONNULL,
+                                              void* PROTOBUF_NONNULL mem,
+                                              ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 
  public:
@@ -486,8 +434,7 @@ class CheckMatchResponse final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1, 0, 0, 2>
-      _table_;
+  static const ::google::protobuf::internal::TcParseTable<0, 1, 0, 0, 2> _table_;
 
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -496,15 +443,12 @@ class CheckMatchResponse final : public ::google::protobuf::Message
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
   struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const CheckMatchResponse& from_msg);
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+                          const CheckMatchResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     bool matched_;
@@ -516,8 +460,7 @@ class CheckMatchResponse final : public ::google::protobuf::Message
   friend struct ::TableStruct_matching_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull
-    CheckMatchResponse_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull CheckMatchResponse_class_data_;
 // -------------------------------------------------------------------
 
 class CheckMatchRequest final : public ::google::protobuf::Message
@@ -527,19 +470,16 @@ class CheckMatchRequest final : public ::google::protobuf::Message
   ~CheckMatchRequest() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(CheckMatchRequest* PROTOBUF_NONNULL msg,
-                       std::destroying_delete_t) {
+  void operator delete(CheckMatchRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
     ::google::protobuf::internal::SizedDelete(msg, sizeof(CheckMatchRequest));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CheckMatchRequest(
-      ::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR CheckMatchRequest(::google::protobuf::internal::ConstantInitialized);
 
-  inline CheckMatchRequest(const CheckMatchRequest& from)
-      : CheckMatchRequest(nullptr, from) {}
+  inline CheckMatchRequest(const CheckMatchRequest& from) : CheckMatchRequest(nullptr, from) {}
   inline CheckMatchRequest(CheckMatchRequest&& from) noexcept
       : CheckMatchRequest(nullptr, ::std::move(from)) {}
   inline CheckMatchRequest& operator=(const CheckMatchRequest& from) {
@@ -548,8 +488,7 @@ class CheckMatchRequest final : public ::google::protobuf::Message
   }
   inline CheckMatchRequest& operator=(CheckMatchRequest&& from) noexcept {
     if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(
-            GetArena(), from.GetArena())) {
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
     } else {
       CopyFrom(from);
@@ -559,37 +498,31 @@ class CheckMatchRequest final : public ::google::protobuf::Message
 
   inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .unknown_fields<::google::protobuf::UnknownFieldSet>(
-            ::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+        ::google::protobuf::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
   }
 
   static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL
-  GetReflection() {
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const CheckMatchRequest& default_instance() {
-    return *reinterpret_cast<const CheckMatchRequest*>(
-        &_CheckMatchRequest_default_instance_);
+    return *reinterpret_cast<const CheckMatchRequest*>(&_CheckMatchRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 0;
   friend void swap(CheckMatchRequest& a, CheckMatchRequest& b) { a.Swap(&b); }
   inline void Swap(CheckMatchRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(),
-                                                         other->GetArena())) {
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
     } else {
       ::google::protobuf::internal::GenericSwap(this, other);
@@ -605,15 +538,12 @@ class CheckMatchRequest final : public ::google::protobuf::Message
 
   CheckMatchRequest* PROTOBUF_NONNULL
   New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<CheckMatchRequest>(
-        arena);
+    return ::google::protobuf::Message::DefaultConstruct<CheckMatchRequest>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
   void CopyFrom(const CheckMatchRequest& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CheckMatchRequest& from) {
-    CheckMatchRequest::MergeImpl(*this, from);
-  }
+  void MergeFrom(const CheckMatchRequest& from) { CheckMatchRequest::MergeImpl(*this, from); }
 
  private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -625,25 +555,22 @@ class CheckMatchRequest final : public ::google::protobuf::Message
 #if defined(PROTOBUF_CUSTOM_VTABLE)
  private:
   static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg,
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+  static ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
 
  public:
   ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const {
+  ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
     return _InternalSerialize(*this, target, stream);
   }
 #else   // PROTOBUF_CUSTOM_VTABLE
   ::size_t ByteSizeLong() const final;
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const final;
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
@@ -655,13 +582,10 @@ class CheckMatchRequest final : public ::google::protobuf::Message
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() {
-    return "matching.CheckMatchRequest";
-  }
+  static ::absl::string_view FullMessageName() { return "matching.CheckMatchRequest"; }
 
  protected:
-  explicit CheckMatchRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  explicit CheckMatchRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   CheckMatchRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
                     const CheckMatchRequest& from);
   CheckMatchRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -671,9 +595,9 @@ class CheckMatchRequest final : public ::google::protobuf::Message
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
   GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL
-  PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-                ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void* PROTOBUF_NONNULL PlacementNew_(const void* PROTOBUF_NONNULL,
+                                              void* PROTOBUF_NONNULL mem,
+                                              ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 
  public:
@@ -713,8 +637,7 @@ class CheckMatchRequest final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2, 0, 0, 2>
-      _table_;
+  static const ::google::protobuf::internal::TcParseTable<1, 2, 0, 0, 2> _table_;
 
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -723,15 +646,12 @@ class CheckMatchRequest final : public ::google::protobuf::Message
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
   struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const CheckMatchRequest& from_msg);
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+                          const CheckMatchRequest& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::int64_t checker_account_id_;
@@ -744,8 +664,7 @@ class CheckMatchRequest final : public ::google::protobuf::Message
   friend struct ::TableStruct_matching_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull
-    CheckMatchRequest_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull CheckMatchRequest_class_data_;
 // -------------------------------------------------------------------
 
 class ListMatchesResponse final : public ::google::protobuf::Message
@@ -755,8 +674,7 @@ class ListMatchesResponse final : public ::google::protobuf::Message
   ~ListMatchesResponse() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ListMatchesResponse* PROTOBUF_NONNULL msg,
-                       std::destroying_delete_t) {
+  void operator delete(ListMatchesResponse* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
     ::google::protobuf::internal::SizedDelete(msg, sizeof(ListMatchesResponse));
   }
@@ -776,8 +694,7 @@ class ListMatchesResponse final : public ::google::protobuf::Message
   }
   inline ListMatchesResponse& operator=(ListMatchesResponse&& from) noexcept {
     if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(
-            GetArena(), from.GetArena())) {
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
     } else {
       CopyFrom(from);
@@ -787,39 +704,31 @@ class ListMatchesResponse final : public ::google::protobuf::Message
 
   inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
       ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .unknown_fields<::google::protobuf::UnknownFieldSet>(
-            ::google::protobuf::UnknownFieldSet::default_instance);
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+        ::google::protobuf::UnknownFieldSet::default_instance);
   }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL
-  mutable_unknown_fields() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_
-        .mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
   }
 
   static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
     return GetDescriptor();
   }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL
-  GetDescriptor() {
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
     return default_instance().GetMetadata().descriptor;
   }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL
-  GetReflection() {
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
   static const ListMatchesResponse& default_instance() {
-    return *reinterpret_cast<const ListMatchesResponse*>(
-        &_ListMatchesResponse_default_instance_);
+    return *reinterpret_cast<const ListMatchesResponse*>(&_ListMatchesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 3;
-  friend void swap(ListMatchesResponse& a, ListMatchesResponse& b) {
-    a.Swap(&b);
-  }
+  friend void swap(ListMatchesResponse& a, ListMatchesResponse& b) { a.Swap(&b); }
   inline void Swap(ListMatchesResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(),
-                                                         other->GetArena())) {
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
     } else {
       ::google::protobuf::internal::GenericSwap(this, other);
@@ -835,15 +744,12 @@ class ListMatchesResponse final : public ::google::protobuf::Message
 
   ListMatchesResponse* PROTOBUF_NONNULL
   New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ListMatchesResponse>(
-        arena);
+    return ::google::protobuf::Message::DefaultConstruct<ListMatchesResponse>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
   void CopyFrom(const ListMatchesResponse& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ListMatchesResponse& from) {
-    ListMatchesResponse::MergeImpl(*this, from);
-  }
+  void MergeFrom(const ListMatchesResponse& from) { ListMatchesResponse::MergeImpl(*this, from); }
 
  private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -855,25 +761,22 @@ class ListMatchesResponse final : public ::google::protobuf::Message
 #if defined(PROTOBUF_CUSTOM_VTABLE)
  private:
   static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg,
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+  static ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
 
  public:
   ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const {
+  ::uint8_t* PROTOBUF_NONNULL
+  _InternalSerialize(::uint8_t* PROTOBUF_NONNULL target,
+                     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
     return _InternalSerialize(*this, target, stream);
   }
 #else   // PROTOBUF_CUSTOM_VTABLE
   ::size_t ByteSizeLong() const final;
   ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
       ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-          stream) const final;
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   int GetCachedSize() const { return _impl_._cached_size_.Get(); }
 
@@ -885,13 +788,10 @@ class ListMatchesResponse final : public ::google::protobuf::Message
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() {
-    return "matching.ListMatchesResponse";
-  }
+  static ::absl::string_view FullMessageName() { return "matching.ListMatchesResponse"; }
 
  protected:
-  explicit ListMatchesResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  explicit ListMatchesResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   ListMatchesResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
                       const ListMatchesResponse& from);
   ListMatchesResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -901,9 +801,9 @@ class ListMatchesResponse final : public ::google::protobuf::Message
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
   GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL
-  PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-                ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void* PROTOBUF_NONNULL PlacementNew_(const void* PROTOBUF_NONNULL,
+                                              void* PROTOBUF_NONNULL mem,
+                                              ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 
  public:
@@ -926,20 +826,17 @@ class ListMatchesResponse final : public ::google::protobuf::Message
  public:
   void clear_profile();
   ::profile::ProfileCard* PROTOBUF_NONNULL mutable_profile(int index);
-  ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>* PROTOBUF_NONNULL
-  mutable_profile();
+  ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>* PROTOBUF_NONNULL mutable_profile();
 
  private:
-  const ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>&
-  _internal_profile() const;
+  const ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>& _internal_profile() const;
   ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>* PROTOBUF_NONNULL
   _internal_mutable_profile();
 
  public:
   const ::profile::ProfileCard& profile(int index) const;
   ::profile::ProfileCard* PROTOBUF_NONNULL add_profile();
-  const ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>& profile()
-      const;
+  const ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>& profile() const;
   // optional string page_token = 2;
   bool has_page_token() const;
   void clear_page_token();
@@ -952,8 +849,7 @@ class ListMatchesResponse final : public ::google::protobuf::Message
 
  private:
   const ::std::string& _internal_page_token() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_page_token(
-      const ::std::string& value);
+  PROTOBUF_ALWAYS_INLINE void _internal_set_page_token(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_page_token();
 
  public:
@@ -961,8 +857,7 @@ class ListMatchesResponse final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2, 1, 47, 2>
-      _table_;
+  static const ::google::protobuf::internal::TcParseTable<1, 2, 1, 47, 2> _table_;
 
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -971,15 +866,12 @@ class ListMatchesResponse final : public ::google::protobuf::Message
   using InternalArenaConstructable_ = void;
   using DestructorSkippable_ = void;
   struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ListMatchesResponse& from_msg);
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+                          const ListMatchesResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedPtrField<::profile::ProfileCard> profile_;
@@ -992,8 +884,7 @@ class ListMatchesResponse final : public ::google::protobuf::Message
   friend struct ::TableStruct_matching_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull
-    ListMatchesResponse_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull ListMatchesResponse_class_data_;
 
 // ===================================================================
 
@@ -1030,8 +921,7 @@ inline ::int64_t CheckMatchRequest::_internal_checker_account_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.checker_account_id_;
 }
-inline void CheckMatchRequest::_internal_set_checker_account_id(
-    ::int64_t value) {
+inline void CheckMatchRequest::_internal_set_checker_account_id(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.checker_account_id_ = value;
 }
@@ -1059,8 +949,7 @@ inline ::int64_t CheckMatchRequest::_internal_checked_account_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.checked_account_id_;
 }
-inline void CheckMatchRequest::_internal_set_checked_account_id(
-    ::int64_t value) {
+inline void CheckMatchRequest::_internal_set_checked_account_id(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.checked_account_id_ = value;
 }
@@ -1137,28 +1026,25 @@ inline void ListMatchesRequest::_internal_set_account_id(::int64_t value) {
 inline int ListMatchesResponse::_internal_profile_size() const {
   return _internal_profile().size();
 }
-inline int ListMatchesResponse::profile_size() const {
-  return _internal_profile_size();
-}
-inline ::profile::ProfileCard* PROTOBUF_NONNULL
-ListMatchesResponse::mutable_profile(int index) ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline int ListMatchesResponse::profile_size() const { return _internal_profile_size(); }
+inline ::profile::ProfileCard* PROTOBUF_NONNULL ListMatchesResponse::mutable_profile(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:matching.ListMatchesResponse.profile)
   return _internal_mutable_profile()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>*
-    PROTOBUF_NONNULL
-    ListMatchesResponse::mutable_profile() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>* PROTOBUF_NONNULL
+ListMatchesResponse::mutable_profile() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:matching.ListMatchesResponse.profile)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_profile();
 }
-inline const ::profile::ProfileCard& ListMatchesResponse::profile(
-    int index) const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::profile::ProfileCard& ListMatchesResponse::profile(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:matching.ListMatchesResponse.profile)
   return _internal_profile().Get(index);
 }
-inline ::profile::ProfileCard* PROTOBUF_NONNULL
-ListMatchesResponse::add_profile() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::profile::ProfileCard* PROTOBUF_NONNULL ListMatchesResponse::add_profile()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::profile::ProfileCard* _add = _internal_mutable_profile()->Add();
   // @@protoc_insertion_point(field_add:matching.ListMatchesResponse.profile)
@@ -1174,9 +1060,8 @@ ListMatchesResponse::_internal_profile() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.profile_;
 }
-inline ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>*
-    PROTOBUF_NONNULL
-    ListMatchesResponse::_internal_mutable_profile() {
+inline ::google::protobuf::RepeatedPtrField<::profile::ProfileCard>* PROTOBUF_NONNULL
+ListMatchesResponse::_internal_mutable_profile() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.profile_;
 }
@@ -1191,14 +1076,12 @@ inline void ListMatchesResponse::clear_page_token() {
   _impl_.page_token_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::std::string& ListMatchesResponse::page_token() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::std::string& ListMatchesResponse::page_token() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:matching.ListMatchesResponse.page_token)
   return _internal_page_token();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ListMatchesResponse::set_page_token(Arg_&& arg,
-                                                                Args_... args) {
+PROTOBUF_ALWAYS_INLINE void ListMatchesResponse::set_page_token(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.page_token_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
@@ -1214,20 +1097,17 @@ inline const ::std::string& ListMatchesResponse::_internal_page_token() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.page_token_.Get();
 }
-inline void ListMatchesResponse::_internal_set_page_token(
-    const ::std::string& value) {
+inline void ListMatchesResponse::_internal_set_page_token(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.page_token_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL
-ListMatchesResponse::_internal_mutable_page_token() {
+inline ::std::string* PROTOBUF_NONNULL ListMatchesResponse::_internal_mutable_page_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.page_token_.Mutable(GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE
-ListMatchesResponse::release_page_token() {
+inline ::std::string* PROTOBUF_NULLABLE ListMatchesResponse::release_page_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:matching.ListMatchesResponse.page_token)
   if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
@@ -1240,8 +1120,7 @@ ListMatchesResponse::release_page_token() {
   }
   return released;
 }
-inline void ListMatchesResponse::set_allocated_page_token(
-    ::std::string* PROTOBUF_NULLABLE value) {
+inline void ListMatchesResponse::set_allocated_page_token(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;

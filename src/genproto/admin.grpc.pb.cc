@@ -32,8 +32,7 @@ static const char* Admin_method_names[] = {
 };
 
 std::unique_ptr<Admin::Stub> Admin::NewStub(
-    const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-    const ::grpc::StubOptions& options) {
+    const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
   std::unique_ptr<Admin::Stub> stub(new Admin::Stub(channel, options));
   return stub;
@@ -42,25 +41,22 @@ std::unique_ptr<Admin::Stub> Admin::NewStub(
 Admin::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel,
                   const ::grpc::StubOptions& options)
     : channel_(channel),
-      rpcmethod_CreateAccount_(
-          Admin_method_names[0], options.suffix_for_stats(),
-          ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
+      rpcmethod_CreateAccount_(Admin_method_names[0], options.suffix_for_stats(),
+                               ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
       rpcmethod_GetAccount_(Admin_method_names[1], options.suffix_for_stats(),
                             ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
-      rpcmethod_UpdateAccount_(
-          Admin_method_names[2], options.suffix_for_stats(),
-          ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
-      rpcmethod_DeleteAccount_(
-          Admin_method_names[3], options.suffix_for_stats(),
-          ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {}
+      rpcmethod_UpdateAccount_(Admin_method_names[2], options.suffix_for_stats(),
+                               ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
+      rpcmethod_DeleteAccount_(Admin_method_names[3], options.suffix_for_stats(),
+                               ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {}
 
 ::grpc::Status Admin::Stub::CreateAccount(::grpc::ClientContext* context,
                                           const ::admin::Account& request,
                                           ::admin::AdminResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::admin::Account, ::admin::AdminResponse, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateAccount_,
-                                     context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::admin::Account, ::admin::AdminResponse,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
+      channel_.get(), rpcmethod_CreateAccount_, context, request, response);
 }
 
 void Admin::Stub::async::CreateAccount(::grpc::ClientContext* context,
@@ -70,18 +66,17 @@ void Admin::Stub::async::CreateAccount(::grpc::ClientContext* context,
   ::grpc::internal::CallbackUnaryCall< ::admin::Account, ::admin::AdminResponse,
                                        ::grpc::protobuf::MessageLite,
                                        ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_CreateAccount_, context, request,
-      response, std::move(f));
+      stub_->channel_.get(), stub_->rpcmethod_CreateAccount_, context, request, response,
+      std::move(f));
 }
 
 void Admin::Stub::async::CreateAccount(::grpc::ClientContext* context,
                                        const ::admin::Account* request,
                                        ::admin::AdminResponse* response,
                                        ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_CreateAccount_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_CreateAccount_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>*
@@ -90,14 +85,12 @@ Admin::Stub::PrepareAsyncCreateAccountRaw(::grpc::ClientContext* context,
                                           ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
       ::admin::AdminResponse, ::admin::Account, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_CreateAccount_, context, request);
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateAccount_, context,
+                                     request);
 }
 
-::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>*
-Admin::Stub::AsyncCreateAccountRaw(::grpc::ClientContext* context,
-                                   const ::admin::Account& request,
-                                   ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>* Admin::Stub::AsyncCreateAccountRaw(
+    ::grpc::ClientContext* context, const ::admin::Account& request, ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncCreateAccountRaw(context, request, cq);
   result->StartCall();
   return result;
@@ -106,47 +99,43 @@ Admin::Stub::AsyncCreateAccountRaw(::grpc::ClientContext* context,
 ::grpc::Status Admin::Stub::GetAccount(::grpc::ClientContext* context,
                                        const ::admin::AccountRequest& request,
                                        ::admin::Account* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::admin::AccountRequest, ::admin::Account, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAccount_,
-                                     context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::admin::AccountRequest, ::admin::Account,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
+      channel_.get(), rpcmethod_GetAccount_, context, request, response);
 }
 
 void Admin::Stub::async::GetAccount(::grpc::ClientContext* context,
                                     const ::admin::AccountRequest* request,
                                     ::admin::Account* response,
                                     std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall<
-      ::admin::AccountRequest, ::admin::Account, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(stub_->channel_.get(),
-                                     stub_->rpcmethod_GetAccount_, context,
-                                     request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall< ::admin::AccountRequest, ::admin::Account,
+                                       ::grpc::protobuf::MessageLite,
+                                       ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request, response,
+      std::move(f));
 }
 
 void Admin::Stub::async::GetAccount(::grpc::ClientContext* context,
                                     const ::admin::AccountRequest* request,
                                     ::admin::Account* response,
                                     ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::admin::Account>*
-Admin::Stub::PrepareAsyncGetAccountRaw(::grpc::ClientContext* context,
-                                       const ::admin::AccountRequest& request,
-                                       ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::admin::Account>* Admin::Stub::PrepareAsyncGetAccountRaw(
+    ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+    ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
       ::admin::Account, ::admin::AccountRequest, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAccount_,
-                                     context, request);
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAccount_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::admin::Account>*
-Admin::Stub::AsyncGetAccountRaw(::grpc::ClientContext* context,
-                                const ::admin::AccountRequest& request,
-                                ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::admin::Account>* Admin::Stub::AsyncGetAccountRaw(
+    ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+    ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncGetAccountRaw(context, request, cq);
   result->StartCall();
   return result;
@@ -155,10 +144,10 @@ Admin::Stub::AsyncGetAccountRaw(::grpc::ClientContext* context,
 ::grpc::Status Admin::Stub::UpdateAccount(::grpc::ClientContext* context,
                                           const ::admin::Account& request,
                                           ::admin::AdminResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::admin::Account, ::admin::AdminResponse, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateAccount_,
-                                     context, request, response);
+  return ::grpc::internal::BlockingUnaryCall< ::admin::Account, ::admin::AdminResponse,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
+      channel_.get(), rpcmethod_UpdateAccount_, context, request, response);
 }
 
 void Admin::Stub::async::UpdateAccount(::grpc::ClientContext* context,
@@ -168,18 +157,17 @@ void Admin::Stub::async::UpdateAccount(::grpc::ClientContext* context,
   ::grpc::internal::CallbackUnaryCall< ::admin::Account, ::admin::AdminResponse,
                                        ::grpc::protobuf::MessageLite,
                                        ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_UpdateAccount_, context, request,
-      response, std::move(f));
+      stub_->channel_.get(), stub_->rpcmethod_UpdateAccount_, context, request, response,
+      std::move(f));
 }
 
 void Admin::Stub::async::UpdateAccount(::grpc::ClientContext* context,
                                        const ::admin::Account* request,
                                        ::admin::AdminResponse* response,
                                        ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_UpdateAccount_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_UpdateAccount_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>*
@@ -188,25 +176,23 @@ Admin::Stub::PrepareAsyncUpdateAccountRaw(::grpc::ClientContext* context,
                                           ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
       ::admin::AdminResponse, ::admin::Account, ::grpc::protobuf::MessageLite,
-      ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_UpdateAccount_, context, request);
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateAccount_, context,
+                                     request);
 }
 
-::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>*
-Admin::Stub::AsyncUpdateAccountRaw(::grpc::ClientContext* context,
-                                   const ::admin::Account& request,
-                                   ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>* Admin::Stub::AsyncUpdateAccountRaw(
+    ::grpc::ClientContext* context, const ::admin::Account& request, ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncUpdateAccountRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status Admin::Stub::DeleteAccount(
-    ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
-    ::admin::AdminResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::admin::AccountRequest, ::admin::AdminResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+::grpc::Status Admin::Stub::DeleteAccount(::grpc::ClientContext* context,
+                                          const ::admin::AccountRequest& request,
+                                          ::admin::AdminResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::admin::AccountRequest, ::admin::AdminResponse,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_DeleteAccount_, context, request, response);
 }
 
@@ -214,37 +200,35 @@ void Admin::Stub::async::DeleteAccount(::grpc::ClientContext* context,
                                        const ::admin::AccountRequest* request,
                                        ::admin::AdminResponse* response,
                                        std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall<
-      ::admin::AccountRequest, ::admin::AdminResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_DeleteAccount_, context, request,
-      response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall< ::admin::AccountRequest, ::admin::AdminResponse,
+                                       ::grpc::protobuf::MessageLite,
+                                       ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_DeleteAccount_, context, request, response,
+      std::move(f));
 }
 
 void Admin::Stub::async::DeleteAccount(::grpc::ClientContext* context,
                                        const ::admin::AccountRequest* request,
                                        ::admin::AdminResponse* response,
                                        ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_DeleteAccount_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_DeleteAccount_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>*
-Admin::Stub::PrepareAsyncDeleteAccountRaw(
+Admin::Stub::PrepareAsyncDeleteAccountRaw(::grpc::ClientContext* context,
+                                          const ::admin::AccountRequest& request,
+                                          ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
+      ::admin::AdminResponse, ::admin::AccountRequest, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeleteAccount_, context,
+                                     request);
+}
+
+::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>* Admin::Stub::AsyncDeleteAccountRaw(
     ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
     ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
-      ::admin::AdminResponse, ::admin::AccountRequest,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_DeleteAccount_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::admin::AdminResponse>*
-Admin::Stub::AsyncDeleteAccountRaw(::grpc::ClientContext* context,
-                                   const ::admin::AccountRequest& request,
-                                   ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncDeleteAccountRaw(context, request, cq);
   result->StartCall();
   return result;
@@ -253,43 +237,37 @@ Admin::Stub::AsyncDeleteAccountRaw(::grpc::ClientContext* context,
 Admin::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler<
-          Admin::Service, ::admin::Account, ::admin::AdminResponse,
-          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](Admin::Service* service, ::grpc::ServerContext* ctx,
-             const ::admin::Account* req, ::admin::AdminResponse* resp) {
-            return service->CreateAccount(ctx, req, resp);
-          },
+      new ::grpc::internal::RpcMethodHandler<Admin::Service, ::admin::Account,
+                                             ::admin::AdminResponse, ::grpc::protobuf::MessageLite,
+                                             ::grpc::protobuf::MessageLite>(
+          [](Admin::Service* service, ::grpc::ServerContext* ctx, const ::admin::Account* req,
+             ::admin::AdminResponse* resp) { return service->CreateAccount(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler<
-          Admin::Service, ::admin::AccountRequest, ::admin::Account,
-          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler<Admin::Service, ::admin::AccountRequest,
+                                             ::admin::Account, ::grpc::protobuf::MessageLite,
+                                             ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service, ::grpc::ServerContext* ctx,
-             const ::admin::AccountRequest* req, ::admin::Account* resp) {
-            return service->GetAccount(ctx, req, resp);
-          },
+             const ::admin::AccountRequest* req,
+             ::admin::Account* resp) { return service->GetAccount(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler<
-          Admin::Service, ::admin::Account, ::admin::AdminResponse,
-          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](Admin::Service* service, ::grpc::ServerContext* ctx,
-             const ::admin::Account* req, ::admin::AdminResponse* resp) {
-            return service->UpdateAccount(ctx, req, resp);
-          },
+      new ::grpc::internal::RpcMethodHandler<Admin::Service, ::admin::Account,
+                                             ::admin::AdminResponse, ::grpc::protobuf::MessageLite,
+                                             ::grpc::protobuf::MessageLite>(
+          [](Admin::Service* service, ::grpc::ServerContext* ctx, const ::admin::Account* req,
+             ::admin::AdminResponse* resp) { return service->UpdateAccount(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler<
-          Admin::Service, ::admin::AccountRequest, ::admin::AdminResponse,
-          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler<Admin::Service, ::admin::AccountRequest,
+                                             ::admin::AdminResponse, ::grpc::protobuf::MessageLite,
+                                             ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service, ::grpc::ServerContext* ctx,
-             const ::admin::AccountRequest* req, ::admin::AdminResponse* resp) {
-            return service->DeleteAccount(ctx, req, resp);
-          },
+             const ::admin::AccountRequest* req,
+             ::admin::AdminResponse* resp) { return service->DeleteAccount(ctx, req, resp); },
           this)));
 }
 
@@ -304,9 +282,9 @@ Admin::Service::~Service() {}
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Admin::Service::GetAccount(
-    ::grpc::ServerContext* context, const ::admin::AccountRequest* request,
-    ::admin::Account* response) {
+::grpc::Status Admin::Service::GetAccount(::grpc::ServerContext* context,
+                                          const ::admin::AccountRequest* request,
+                                          ::admin::Account* response) {
   (void)context;
   (void)request;
   (void)response;
@@ -322,9 +300,9 @@ Admin::Service::~Service() {}
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Admin::Service::DeleteAccount(
-    ::grpc::ServerContext* context, const ::admin::AccountRequest* request,
-    ::admin::AdminResponse* response) {
+::grpc::Status Admin::Service::DeleteAccount(::grpc::ServerContext* context,
+                                             const ::admin::AccountRequest* request,
+                                             ::admin::AdminResponse* response) {
   (void)context;
   (void)request;
   (void)response;
