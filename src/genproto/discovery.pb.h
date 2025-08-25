@@ -47,8 +47,7 @@ struct TableStruct_discovery_2eproto {
   static const ::uint32_t offsets[];
 };
 extern "C" {
-extern const ::google::protobuf::internal::DescriptorTable
-    descriptor_table_discovery_2eproto;
+extern const ::google::protobuf::internal::DescriptorTable descriptor_table_discovery_2eproto;
 }  // extern "C"
 namespace google {
 namespace protobuf {}  // namespace protobuf

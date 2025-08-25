@@ -30,8 +30,7 @@ static const char* Matching_method_names[] = {
 };
 
 std::unique_ptr<Matching::Stub> Matching::NewStub(
-    const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-    const ::grpc::StubOptions& options) {
+    const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
   std::unique_ptr<Matching::Stub> stub(new Matching::Stub(channel, options));
   return stub;
@@ -40,55 +39,46 @@ std::unique_ptr<Matching::Stub> Matching::NewStub(
 Matching::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel,
                      const ::grpc::StubOptions& options)
     : channel_(channel),
-      rpcmethod_CheckMatch_(Matching_method_names[0],
-                            options.suffix_for_stats(),
+      rpcmethod_CheckMatch_(Matching_method_names[0], options.suffix_for_stats(),
                             ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
-      rpcmethod_ListMatches_(Matching_method_names[1],
-                             options.suffix_for_stats(),
-                             ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {
-}
+      rpcmethod_ListMatches_(Matching_method_names[1], options.suffix_for_stats(),
+                             ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {}
 
-::grpc::Status Matching::Stub::CheckMatch(
-    ::grpc::ClientContext* context,
-    const ::matching::CheckMatchRequest& request,
-    ::matching::CheckMatchResponse* response) {
+::grpc::Status Matching::Stub::CheckMatch(::grpc::ClientContext* context,
+                                          const ::matching::CheckMatchRequest& request,
+                                          ::matching::CheckMatchResponse* response) {
   return ::grpc::internal::BlockingUnaryCall<
-      ::matching::CheckMatchRequest, ::matching::CheckMatchResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), rpcmethod_CheckMatch_, context, request, response);
+      ::matching::CheckMatchRequest, ::matching::CheckMatchResponse, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CheckMatch_, context, request,
+                                     response);
 }
 
-void Matching::Stub::async::CheckMatch(
-    ::grpc::ClientContext* context,
-    const ::matching::CheckMatchRequest* request,
-    ::matching::CheckMatchResponse* response,
-    std::function<void(::grpc::Status)> f) {
+void Matching::Stub::async::CheckMatch(::grpc::ClientContext* context,
+                                       const ::matching::CheckMatchRequest* request,
+                                       ::matching::CheckMatchResponse* response,
+                                       std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall<
-      ::matching::CheckMatchRequest, ::matching::CheckMatchResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_CheckMatch_, context, request,
-      response, std::move(f));
+      ::matching::CheckMatchRequest, ::matching::CheckMatchResponse, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CheckMatch_, context,
+                                     request, response, std::move(f));
 }
 
-void Matching::Stub::async::CheckMatch(
-    ::grpc::ClientContext* context,
-    const ::matching::CheckMatchRequest* request,
-    ::matching::CheckMatchResponse* response,
-    ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_CheckMatch_, context, request,
-      response, reactor);
+void Matching::Stub::async::CheckMatch(::grpc::ClientContext* context,
+                                       const ::matching::CheckMatchRequest* request,
+                                       ::matching::CheckMatchResponse* response,
+                                       ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_CheckMatch_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::matching::CheckMatchResponse>*
-Matching::Stub::PrepareAsyncCheckMatchRaw(
-    ::grpc::ClientContext* context,
-    const ::matching::CheckMatchRequest& request, ::grpc::CompletionQueue* cq) {
+Matching::Stub::PrepareAsyncCheckMatchRaw(::grpc::ClientContext* context,
+                                          const ::matching::CheckMatchRequest& request,
+                                          ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
-      ::matching::CheckMatchResponse, ::matching::CheckMatchRequest,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_CheckMatch_, context, request);
+      ::matching::CheckMatchResponse, ::matching::CheckMatchRequest, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CheckMatch_, context, request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::matching::CheckMatchResponse>*
@@ -100,44 +90,39 @@ Matching::Stub::AsyncCheckMatchRaw(::grpc::ClientContext* context,
   return result;
 }
 
-::grpc::Status Matching::Stub::ListMatches(
-    ::grpc::ClientContext* context,
-    const ::matching::ListMatchesRequest& request,
-    ::matching::ListMatchesResponse* response) {
+::grpc::Status Matching::Stub::ListMatches(::grpc::ClientContext* context,
+                                           const ::matching::ListMatchesRequest& request,
+                                           ::matching::ListMatchesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall<
       ::matching::ListMatchesRequest, ::matching::ListMatchesResponse,
       ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_ListMatches_, context, request, response);
 }
 
-void Matching::Stub::async::ListMatches(
-    ::grpc::ClientContext* context,
-    const ::matching::ListMatchesRequest* request,
-    ::matching::ListMatchesResponse* response,
-    std::function<void(::grpc::Status)> f) {
+void Matching::Stub::async::ListMatches(::grpc::ClientContext* context,
+                                        const ::matching::ListMatchesRequest* request,
+                                        ::matching::ListMatchesResponse* response,
+                                        std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall<
       ::matching::ListMatchesRequest, ::matching::ListMatchesResponse,
       ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_ListMatches_, context, request,
-      response, std::move(f));
+      stub_->channel_.get(), stub_->rpcmethod_ListMatches_, context, request, response,
+      std::move(f));
 }
 
-void Matching::Stub::async::ListMatches(
-    ::grpc::ClientContext* context,
-    const ::matching::ListMatchesRequest* request,
-    ::matching::ListMatchesResponse* response,
-    ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_ListMatches_, context, request,
-      response, reactor);
+void Matching::Stub::async::ListMatches(::grpc::ClientContext* context,
+                                        const ::matching::ListMatchesRequest* request,
+                                        ::matching::ListMatchesResponse* response,
+                                        ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_ListMatches_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::matching::ListMatchesResponse>*
-Matching::Stub::PrepareAsyncListMatchesRaw(
-    ::grpc::ClientContext* context,
-    const ::matching::ListMatchesRequest& request,
-    ::grpc::CompletionQueue* cq) {
+Matching::Stub::PrepareAsyncListMatchesRaw(::grpc::ClientContext* context,
+                                           const ::matching::ListMatchesRequest& request,
+                                           ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
       ::matching::ListMatchesResponse, ::matching::ListMatchesRequest,
       ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
@@ -145,10 +130,9 @@ Matching::Stub::PrepareAsyncListMatchesRaw(
 }
 
 ::grpc::ClientAsyncResponseReader< ::matching::ListMatchesResponse>*
-Matching::Stub::AsyncListMatchesRaw(
-    ::grpc::ClientContext* context,
-    const ::matching::ListMatchesRequest& request,
-    ::grpc::CompletionQueue* cq) {
+Matching::Stub::AsyncListMatchesRaw(::grpc::ClientContext* context,
+                                    const ::matching::ListMatchesRequest& request,
+                                    ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncListMatchesRaw(context, request, cq);
   result->StartCall();
   return result;
@@ -158,24 +142,19 @@ Matching::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Matching_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler<
-          Matching::Service, ::matching::CheckMatchRequest,
-          ::matching::CheckMatchResponse, ::grpc::protobuf::MessageLite,
-          ::grpc::protobuf::MessageLite>(
+          Matching::Service, ::matching::CheckMatchRequest, ::matching::CheckMatchResponse,
+          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Matching::Service* service, ::grpc::ServerContext* ctx,
              const ::matching::CheckMatchRequest* req,
-             ::matching::CheckMatchResponse* resp) {
-            return service->CheckMatch(ctx, req, resp);
-          },
+             ::matching::CheckMatchResponse* resp) { return service->CheckMatch(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Matching_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler<
-          Matching::Service, ::matching::ListMatchesRequest,
-          ::matching::ListMatchesResponse, ::grpc::protobuf::MessageLite,
-          ::grpc::protobuf::MessageLite>(
+          Matching::Service, ::matching::ListMatchesRequest, ::matching::ListMatchesResponse,
+          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Matching::Service* service, ::grpc::ServerContext* ctx,
-             const ::matching::ListMatchesRequest* req,
-             ::matching::ListMatchesResponse* resp) {
+             const ::matching::ListMatchesRequest* req, ::matching::ListMatchesResponse* resp) {
             return service->ListMatches(ctx, req, resp);
           },
           this)));
@@ -183,20 +162,18 @@ Matching::Service::Service() {
 
 Matching::Service::~Service() {}
 
-::grpc::Status Matching::Service::CheckMatch(
-    ::grpc::ServerContext* context,
-    const ::matching::CheckMatchRequest* request,
-    ::matching::CheckMatchResponse* response) {
+::grpc::Status Matching::Service::CheckMatch(::grpc::ServerContext* context,
+                                             const ::matching::CheckMatchRequest* request,
+                                             ::matching::CheckMatchResponse* response) {
   (void)context;
   (void)request;
   (void)response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Matching::Service::ListMatches(
-    ::grpc::ServerContext* context,
-    const ::matching::ListMatchesRequest* request,
-    ::matching::ListMatchesResponse* response) {
+::grpc::Status Matching::Service::ListMatches(::grpc::ServerContext* context,
+                                              const ::matching::ListMatchesRequest* request,
+                                              ::matching::ListMatchesResponse* response) {
   (void)context;
   (void)request;
   (void)response;

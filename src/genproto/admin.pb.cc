@@ -27,8 +27,7 @@ namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace admin {
 
-inline constexpr AdminResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
+inline constexpr AdminResponse::Impl_::Impl_(::_pbi::ConstantInitialized) noexcept
     : _cached_size_{0},
       message_(&::google::protobuf::internal::fixed_address_empty_string,
                ::_pbi::ConstantInitialized()),
@@ -52,12 +51,10 @@ struct AdminResponseDefaultTypeInternal {
   };
 };
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AdminResponseDefaultTypeInternal
-        _AdminResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+    AdminResponseDefaultTypeInternal _AdminResponse_default_instance_;
 
-inline constexpr AccountRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
+inline constexpr AccountRequest::Impl_::Impl_(::_pbi::ConstantInitialized) noexcept
     : _cached_size_{0}, account_id_{::int64_t{0}} {}
 
 template <typename>
@@ -78,9 +75,8 @@ struct AccountRequestDefaultTypeInternal {
   };
 };
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AccountRequestDefaultTypeInternal
-        _AccountRequest_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+    AccountRequestDefaultTypeInternal _AccountRequest_default_instance_;
 
 inline constexpr Account::Impl_::Impl_(::_pbi::ConstantInitialized) noexcept
     : _cached_size_{0},
@@ -104,54 +100,49 @@ PROTOBUF_CONSTEXPR Account::Account(::_pbi::ConstantInitialized)
       _impl_(::_pbi::ConstantInitialized()) {
 }
 struct AccountDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AccountDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AccountDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~AccountDefaultTypeInternal() {}
   union {
     Account _instance;
   };
 };
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AccountDefaultTypeInternal
-        _Account_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+    AccountDefaultTypeInternal _Account_default_instance_;
 }  // namespace admin
-static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
-    file_level_enum_descriptors_admin_2eproto[1];
-static constexpr const ::_pb::ServiceDescriptor* PROTOBUF_NONNULL*
-    PROTOBUF_NULLABLE file_level_service_descriptors_admin_2eproto = nullptr;
-const ::uint32_t
-    TableStruct_admin_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
-        protodesc_cold) = {
-        0x081,  // bitmap
-        PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_._has_bits_),
-        8,  // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.account_id_),
-        PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.first_name_),
-        PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.last_name_),
-        PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.phone_number_),
-        PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.password_),
-        4,
-        0,
-        1,
-        2,
-        3,
-        0x081,  // bitmap
-        PROTOBUF_FIELD_OFFSET(::admin::AccountRequest, _impl_._has_bits_),
-        4,  // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::admin::AccountRequest, _impl_.account_id_),
-        0,
-        0x081,  // bitmap
-        PROTOBUF_FIELD_OFFSET(::admin::AdminResponse, _impl_._has_bits_),
-        5,  // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::admin::AdminResponse, _impl_.status_),
-        PROTOBUF_FIELD_OFFSET(::admin::AdminResponse, _impl_.message_),
-        1,
-        0,
+static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL file_level_enum_descriptors_admin_2eproto[1];
+static constexpr const ::_pb::ServiceDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE
+    file_level_service_descriptors_admin_2eproto = nullptr;
+const ::uint32_t TableStruct_admin_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
+    protodesc_cold) = {
+    0x081,  // bitmap
+    PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_._has_bits_),
+    8,  // hasbit index offset
+    PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.account_id_),
+    PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.first_name_),
+    PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.last_name_),
+    PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.phone_number_),
+    PROTOBUF_FIELD_OFFSET(::admin::Account, _impl_.password_),
+    4,
+    0,
+    1,
+    2,
+    3,
+    0x081,  // bitmap
+    PROTOBUF_FIELD_OFFSET(::admin::AccountRequest, _impl_._has_bits_),
+    4,  // hasbit index offset
+    PROTOBUF_FIELD_OFFSET(::admin::AccountRequest, _impl_.account_id_),
+    0,
+    0x081,  // bitmap
+    PROTOBUF_FIELD_OFFSET(::admin::AdminResponse, _impl_._has_bits_),
+    5,  // hasbit index offset
+    PROTOBUF_FIELD_OFFSET(::admin::AdminResponse, _impl_.status_),
+    PROTOBUF_FIELD_OFFSET(::admin::AdminResponse, _impl_.message_),
+    1,
+    0,
 };
 
-static const ::_pbi::MigrationSchema schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
-    protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
     {0, sizeof(::admin::Account)},
     {13, sizeof(::admin::AccountRequest)},
     {18, sizeof(::admin::AdminResponse)},
@@ -161,57 +152,53 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::admin::_AccountRequest_default_instance_._instance,
     &::admin::_AdminResponse_default_instance_._instance,
 };
-const char
-    descriptor_table_protodef_admin_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
-        protodesc_cold) = {
-        "\n\013admin.proto\022\005admin\"\317\001\n\007Account\022\027\n\nacco"
-        "unt_id\030\001 "
-        "\001(\003H\000\210\001\001\022\027\n\nfirst_name\030\002 "
-        "\001(\tH\001\210"
-        "\001\001\022\026\n\tlast_name\030\003 "
-        "\001(\tH\002\210\001\001\022\031\n\014phone_numb"
-        "er\030\004 \001(\tH\003\210\001\001\022\025\n\010password\030\005 "
-        "\001(\tH\004\210\001\001B\r\n\013"
-        "_account_idB\r\n\013_first_nameB\014\n\n_last_name"
-        "B\017\n\r_phone_numberB\013\n\t_password\"8\n\016Accoun"
-        "tRequest\022\027\n\naccount_id\030\001 "
-        "\001(\003H\000\210\001\001B\r\n\013_ac"
-        "count_id\"e\n\rAdminResponse\022\'\n\006status\030\001 \001("
-        "\0162\022.admin."
-        "AdminStatusH\000\210\001\001\022\024\n\007message\030\002 "
-        "\001(\tH\001\210\001\001B\t\n\007_statusB\n\n\010_message*V\n\013Admin"
-        "Status\022\034\n\030ADMIN_STATUS_UNSPECIFIED\020\000\022\023\n\017"
-        "ADMIN_STATUS_OK\020\001\022\024\n\020ADMIN_STATUS_ERR\020\0022"
-        "\360\001\n\005Admin\0227\n\rCreateAccount\022\016.admin.Accou"
-        "nt\032\024.admin.AdminResponse\"\000\0225\n\nGetAccount"
-        "\022\025.admin.AccountRequest\032\016.admin.Account\""
-        "\000\0227\n\rUpdateAccount\022\016.admin.Account\032\024.adm"
-        "in.AdminResponse\"\000\022>\n\rDeleteAccount\022\025.ad"
-        "min.AccountRequest\032\024.admin.AdminResponse"
-        "\"\000b\006proto3"};
+const char descriptor_table_protodef_admin_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
+    protodesc_cold) = {
+    "\n\013admin.proto\022\005admin\"\317\001\n\007Account\022\027\n\nacco"
+    "unt_id\030\001 "
+    "\001(\003H\000\210\001\001\022\027\n\nfirst_name\030\002 "
+    "\001(\tH\001\210"
+    "\001\001\022\026\n\tlast_name\030\003 "
+    "\001(\tH\002\210\001\001\022\031\n\014phone_numb"
+    "er\030\004 \001(\tH\003\210\001\001\022\025\n\010password\030\005 "
+    "\001(\tH\004\210\001\001B\r\n\013"
+    "_account_idB\r\n\013_first_nameB\014\n\n_last_name"
+    "B\017\n\r_phone_numberB\013\n\t_password\"8\n\016Accoun"
+    "tRequest\022\027\n\naccount_id\030\001 "
+    "\001(\003H\000\210\001\001B\r\n\013_ac"
+    "count_id\"e\n\rAdminResponse\022\'\n\006status\030\001 \001("
+    "\0162\022.admin."
+    "AdminStatusH\000\210\001\001\022\024\n\007message\030\002 "
+    "\001(\tH\001\210\001\001B\t\n\007_statusB\n\n\010_message*V\n\013Admin"
+    "Status\022\034\n\030ADMIN_STATUS_UNSPECIFIED\020\000\022\023\n\017"
+    "ADMIN_STATUS_OK\020\001\022\024\n\020ADMIN_STATUS_ERR\020\0022"
+    "\360\001\n\005Admin\0227\n\rCreateAccount\022\016.admin.Accou"
+    "nt\032\024.admin.AdminResponse\"\000\0225\n\nGetAccount"
+    "\022\025.admin.AccountRequest\032\016.admin.Account\""
+    "\000\0227\n\rUpdateAccount\022\016.admin.Account\032\024.adm"
+    "in.AdminResponse\"\000\022>\n\rDeleteAccount\022\025.ad"
+    "min.AccountRequest\032\024.admin.AdminResponse"
+    "\"\000b\006proto3"};
 static ::absl::once_flag descriptor_table_admin_2eproto_once;
-PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable
-    descriptor_table_admin_2eproto = {
-        false,
-        false,
-        730,
-        descriptor_table_protodef_admin_2eproto,
-        "admin.proto",
-        &descriptor_table_admin_2eproto_once,
-        nullptr,
-        0,
-        3,
-        schemas,
-        file_default_instances,
-        TableStruct_admin_2eproto::offsets,
-        file_level_enum_descriptors_admin_2eproto,
-        file_level_service_descriptors_admin_2eproto,
+PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_admin_2eproto = {
+    false,
+    false,
+    730,
+    descriptor_table_protodef_admin_2eproto,
+    "admin.proto",
+    &descriptor_table_admin_2eproto_once,
+    nullptr,
+    0,
+    3,
+    schemas,
+    file_default_instances,
+    TableStruct_admin_2eproto::offsets,
+    file_level_enum_descriptors_admin_2eproto,
+    file_level_service_descriptors_admin_2eproto,
 };
 namespace admin {
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
-AdminStatus_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(
-      &descriptor_table_admin_2eproto);
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL AdminStatus_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_admin_2eproto);
   return file_level_enum_descriptors_admin_2eproto[0];
 }
 PROTOBUF_CONSTINIT const uint32_t AdminStatus_internal_data_[] = {
@@ -223,8 +210,7 @@ PROTOBUF_CONSTINIT const uint32_t AdminStatus_internal_data_[] = {
 class Account::_Internal {
  public:
   using HasBits = decltype(::std::declval<Account>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(Account, _impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset = 8 * PROTOBUF_FIELD_OFFSET(Account, _impl_._has_bits_);
 };
 
 Account::Account(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
@@ -247,8 +233,7 @@ PROTOBUF_NDEBUG_INLINE Account::Impl_::Impl_(
       phone_number_(arena, from.phone_number_),
       password_(arena, from.password_) {}
 
-Account::Account(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-                 const Account& from)
+Account::Account(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Account& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, Account_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -256,8 +241,7 @@ Account::Account(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
 #endif  // PROTOBUF_CUSTOM_VTABLE
   Account* const _this = this;
   (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   _impl_.account_id_ = from._impl_.account_id_;
 
@@ -297,8 +281,7 @@ Account::PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
   return ::new (mem) Account(arena);
 }
 constexpr auto Account::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(
-      sizeof(Account), alignof(Account));
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(Account), alignof(Account));
 }
 constexpr auto Account::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -323,20 +306,17 @@ constexpr auto Account::InternalGenerateClassData_() {
   };
 }
 
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::
-    internal::ClassDataFull Account_class_data_ =
-        Account::InternalGenerateClassData_();
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::internal::ClassDataFull
+    Account_class_data_ = Account::InternalGenerateClassData_();
 
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
-    PROTOBUF_NONNULL
-    Account::GetClassData() const {
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+Account::GetClassData() const {
   ::google::protobuf::internal::PrefetchToLocalCache(&Account_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      Account_class_data_.tc_table);
+  ::google::protobuf::internal::PrefetchToLocalCache(Account_class_data_.tc_table);
   return Account_class_data_.base();
 }
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
-    3, 5, 0, 61, 2>
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<3, 5, 0, 61, 2>
     Account::_table_ = {
         {
             PROTOBUF_FIELD_OFFSET(Account, _impl_._has_bits_),
@@ -353,13 +333,13 @@ PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
             ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
             ::_pbi::TcParser::GetTable<::admin::Account>(),  // to_prefetch
-#endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+#endif                                                       // PROTOBUF_PREFETCH_PARSE_TABLE
         },
         {{
             {::_pbi::TcParser::MiniParse, {}},
             // optional int64 account_id = 1;
-            {::_pbi::TcParser::SingularVarintNoZag1<
-                 ::uint64_t, offsetof(Account, _impl_.account_id_), 4>(),
+            {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t,
+                                                    offsetof(Account, _impl_.account_id_), 4>(),
              {8, 4, 0, PROTOBUF_FIELD_OFFSET(Account, _impl_.account_id_)}},
             // optional string first_name = 2;
             {::_pbi::TcParser::FastUS1,
@@ -379,29 +359,20 @@ PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
         {{65535, 65535}},
         {{
             // optional int64 account_id = 1;
-            {PROTOBUF_FIELD_OFFSET(Account, _impl_.account_id_),
-             _Internal::kHasBitsOffset + 4, 0,
+            {PROTOBUF_FIELD_OFFSET(Account, _impl_.account_id_), _Internal::kHasBitsOffset + 4, 0,
              (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
             // optional string first_name = 2;
-            {PROTOBUF_FIELD_OFFSET(Account, _impl_.first_name_),
-             _Internal::kHasBitsOffset + 0, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+            {PROTOBUF_FIELD_OFFSET(Account, _impl_.first_name_), _Internal::kHasBitsOffset + 0, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
             // optional string last_name = 3;
-            {PROTOBUF_FIELD_OFFSET(Account, _impl_.last_name_),
-             _Internal::kHasBitsOffset + 1, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+            {PROTOBUF_FIELD_OFFSET(Account, _impl_.last_name_), _Internal::kHasBitsOffset + 1, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
             // optional string phone_number = 4;
-            {PROTOBUF_FIELD_OFFSET(Account, _impl_.phone_number_),
-             _Internal::kHasBitsOffset + 2, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+            {PROTOBUF_FIELD_OFFSET(Account, _impl_.phone_number_), _Internal::kHasBitsOffset + 2, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
             // optional string password = 5;
-            {PROTOBUF_FIELD_OFFSET(Account, _impl_.password_),
-             _Internal::kHasBitsOffset + 3, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+            {PROTOBUF_FIELD_OFFSET(Account, _impl_.password_), _Internal::kHasBitsOffset + 3, 0,
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
         }},
         // no aux_entries
         {{"\15\0\12\11\14\10\0\0"
@@ -440,15 +411,13 @@ PROTOBUF_NOINLINE void Account::Clear() {
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 ::uint8_t* PROTOBUF_NONNULL Account::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base,
-    ::uint8_t* PROTOBUF_NONNULL target,
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
   const Account& this_ = static_cast<const Account&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
 ::uint8_t* PROTOBUF_NONNULL Account::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-        stream) const {
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
   const Account& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   // @@protoc_insertion_point(serialize_to_array_start:admin.Account)
@@ -458,9 +427,8 @@ PROTOBUF_NOINLINE void Account::Clear() {
   cached_has_bits = this_._impl_._has_bits_[0];
   // optional int64 account_id = 1;
   if ((cached_has_bits & 0x00000010u) != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt64ToArrayWithField<1>(stream, this_._internal_account_id(),
-                                      target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<1>(
+        stream, this_._internal_account_id(), target);
   }
 
   // optional string first_name = 2;
@@ -468,8 +436,7 @@ PROTOBUF_NOINLINE void Account::Clear() {
     const ::std::string& _s = this_._internal_first_name();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()),
-        ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-        "admin.Account.first_name");
+        ::google::protobuf::internal::WireFormatLite::SERIALIZE, "admin.Account.first_name");
     target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
@@ -478,8 +445,7 @@ PROTOBUF_NOINLINE void Account::Clear() {
     const ::std::string& _s = this_._internal_last_name();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()),
-        ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-        "admin.Account.last_name");
+        ::google::protobuf::internal::WireFormatLite::SERIALIZE, "admin.Account.last_name");
     target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
@@ -488,8 +454,7 @@ PROTOBUF_NOINLINE void Account::Clear() {
     const ::std::string& _s = this_._internal_phone_number();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()),
-        ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-        "admin.Account.phone_number");
+        ::google::protobuf::internal::WireFormatLite::SERIALIZE, "admin.Account.phone_number");
     target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
@@ -498,16 +463,14 @@ PROTOBUF_NOINLINE void Account::Clear() {
     const ::std::string& _s = this_._internal_password();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()),
-        ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-        "admin.Account.password");
+        ::google::protobuf::internal::WireFormatLite::SERIALIZE, "admin.Account.password");
     target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        this_._internal_metadata_
-            .unknown_fields<::google::protobuf::UnknownFieldSet>(
-                ::google::protobuf::UnknownFieldSet::default_instance),
+        this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance),
         target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:admin.Account)
@@ -533,36 +496,30 @@ PROTOBUF_NOINLINE void Account::Clear() {
   if ((cached_has_bits & 0x0000001fu) != 0) {
     // optional string first_name = 2;
     if ((cached_has_bits & 0x00000001u) != 0) {
-      total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                  this_._internal_first_name());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                            this_._internal_first_name());
     }
     // optional string last_name = 3;
     if ((cached_has_bits & 0x00000002u) != 0) {
       total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                  this_._internal_last_name());
+          1 + ::google::protobuf::internal::WireFormatLite::StringSize(this_._internal_last_name());
     }
     // optional string phone_number = 4;
     if ((cached_has_bits & 0x00000004u) != 0) {
-      total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                  this_._internal_phone_number());
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                            this_._internal_phone_number());
     }
     // optional string password = 5;
     if ((cached_has_bits & 0x00000008u) != 0) {
       total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                  this_._internal_password());
+          1 + ::google::protobuf::internal::WireFormatLite::StringSize(this_._internal_password());
     }
     // optional int64 account_id = 1;
     if ((cached_has_bits & 0x00000010u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-          this_._internal_account_id());
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this_._internal_account_id());
     }
   }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
+  return this_.MaybeComputeUnknownFieldsSize(total_size, &this_._impl_._cached_size_);
 }
 
 void Account::MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -610,14 +567,10 @@ void Account::InternalSwap(Account* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.first_name_,
-                                       &other->_impl_.first_name_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.last_name_,
-                                       &other->_impl_.last_name_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.phone_number_,
-                                       &other->_impl_.phone_number_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.password_,
-                                       &other->_impl_.password_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.first_name_, &other->_impl_.first_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.last_name_, &other->_impl_.last_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.phone_number_, &other->_impl_.phone_number_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.password_, &other->_impl_.password_, arena);
   swap(_impl_.account_id_, other->_impl_.account_id_);
 }
 
@@ -633,8 +586,7 @@ class AccountRequest::_Internal {
       8 * PROTOBUF_FIELD_OFFSET(AccountRequest, _impl_._has_bits_);
 };
 
-AccountRequest::AccountRequest(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+AccountRequest::AccountRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, AccountRequest_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -643,8 +595,7 @@ AccountRequest::AccountRequest(
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:admin.AccountRequest)
 }
-AccountRequest::AccountRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE
-                                   arena,
+AccountRequest::AccountRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
                                const AccountRequest& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, AccountRequest_class_data_.base()),
@@ -652,8 +603,7 @@ AccountRequest::AccountRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE
     : ::google::protobuf::Message(arena),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 PROTOBUF_NDEBUG_INLINE AccountRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -675,14 +625,14 @@ inline void AccountRequest::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL AccountRequest::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+inline void* PROTOBUF_NONNULL
+AccountRequest::PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+                              ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
   return ::new (mem) AccountRequest(arena);
 }
 constexpr auto AccountRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(
-      sizeof(AccountRequest), alignof(AccountRequest));
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(AccountRequest),
+                                                                alignof(AccountRequest));
 }
 constexpr auto AccountRequest::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -707,21 +657,17 @@ constexpr auto AccountRequest::InternalGenerateClassData_() {
   };
 }
 
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::
-    internal::ClassDataFull AccountRequest_class_data_ =
-        AccountRequest::InternalGenerateClassData_();
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::internal::ClassDataFull
+    AccountRequest_class_data_ = AccountRequest::InternalGenerateClassData_();
 
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
-    PROTOBUF_NONNULL
-    AccountRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      &AccountRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      AccountRequest_class_data_.tc_table);
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+AccountRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&AccountRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(AccountRequest_class_data_.tc_table);
   return AccountRequest_class_data_.base();
 }
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
-    0, 1, 0, 0, 2>
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<0, 1, 0, 0, 2>
     AccountRequest::_table_ = {
         {
             PROTOBUF_FIELD_OFFSET(AccountRequest, _impl_._has_bits_),
@@ -737,23 +683,20 @@ PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
             nullptr,                            // post_loop_handler
             ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-            ::_pbi::TcParser::GetTable<
-                ::admin::AccountRequest>(),  // to_prefetch
-#endif                                       // PROTOBUF_PREFETCH_PARSE_TABLE
+            ::_pbi::TcParser::GetTable<::admin::AccountRequest>(),  // to_prefetch
+#endif                                                              // PROTOBUF_PREFETCH_PARSE_TABLE
         },
         {{
             // optional int64 account_id = 1;
             {::_pbi::TcParser::SingularVarintNoZag1<
                  ::uint64_t, offsetof(AccountRequest, _impl_.account_id_), 0>(),
-             {8, 0, 0,
-              PROTOBUF_FIELD_OFFSET(AccountRequest, _impl_.account_id_)}},
+             {8, 0, 0, PROTOBUF_FIELD_OFFSET(AccountRequest, _impl_.account_id_)}},
         }},
         {{65535, 65535}},
         {{
             // optional int64 account_id = 1;
             {PROTOBUF_FIELD_OFFSET(AccountRequest, _impl_.account_id_),
-             _Internal::kHasBitsOffset + 0, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+             _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
         }},
         // no aux_entries
         {{}},
@@ -772,15 +715,13 @@ PROTOBUF_NOINLINE void AccountRequest::Clear() {
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 ::uint8_t* PROTOBUF_NONNULL AccountRequest::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base,
-    ::uint8_t* PROTOBUF_NONNULL target,
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
   const AccountRequest& this_ = static_cast<const AccountRequest&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
 ::uint8_t* PROTOBUF_NONNULL AccountRequest::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-        stream) const {
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
   const AccountRequest& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   // @@protoc_insertion_point(serialize_to_array_start:admin.AccountRequest)
@@ -790,16 +731,14 @@ PROTOBUF_NOINLINE void AccountRequest::Clear() {
   cached_has_bits = this_._impl_._has_bits_[0];
   // optional int64 account_id = 1;
   if ((cached_has_bits & 0x00000001u) != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt64ToArrayWithField<1>(stream, this_._internal_account_id(),
-                                      target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<1>(
+        stream, this_._internal_account_id(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        this_._internal_metadata_
-            .unknown_fields<::google::protobuf::UnknownFieldSet>(
-                ::google::protobuf::UnknownFieldSet::default_instance),
+        this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance),
         target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:admin.AccountRequest)
@@ -824,17 +763,14 @@ PROTOBUF_NOINLINE void AccountRequest::Clear() {
     // optional int64 account_id = 1;
     cached_has_bits = this_._impl_._has_bits_[0];
     if ((cached_has_bits & 0x00000001u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-          this_._internal_account_id());
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this_._internal_account_id());
     }
   }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
+  return this_.MaybeComputeUnknownFieldsSize(total_size, &this_._impl_._cached_size_);
 }
 
-void AccountRequest::MergeImpl(
-    ::google::protobuf::MessageLite& to_msg,
-    const ::google::protobuf::MessageLite& from_msg) {
+void AccountRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                               const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<AccountRequest*>(&to_msg);
   auto& from = static_cast<const AccountRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:admin.AccountRequest)
@@ -858,8 +794,7 @@ void AccountRequest::CopyFrom(const AccountRequest& from) {
   MergeFrom(from);
 }
 
-void AccountRequest::InternalSwap(
-    AccountRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void AccountRequest::InternalSwap(AccountRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
@@ -891,9 +826,7 @@ PROTOBUF_NDEBUG_INLINE AdminResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::admin::AdminResponse& from_msg)
-    : _has_bits_{from._has_bits_},
-      _cached_size_{0},
-      message_(arena, from.message_) {}
+    : _has_bits_{from._has_bits_}, _cached_size_{0}, message_(arena, from.message_) {}
 
 AdminResponse::AdminResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
                              const AdminResponse& from)
@@ -904,8 +837,7 @@ AdminResponse::AdminResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
 #endif  // PROTOBUF_CUSTOM_VTABLE
   AdminResponse* const _this = this;
   (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   _impl_.status_ = from._impl_.status_;
 
@@ -932,14 +864,14 @@ inline void AdminResponse::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL AdminResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+inline void* PROTOBUF_NONNULL
+AdminResponse::PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+                             ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
   return ::new (mem) AdminResponse(arena);
 }
 constexpr auto AdminResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(
-      sizeof(AdminResponse), alignof(AdminResponse));
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(AdminResponse),
+                                                                alignof(AdminResponse));
 }
 constexpr auto AdminResponse::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -964,21 +896,17 @@ constexpr auto AdminResponse::InternalGenerateClassData_() {
   };
 }
 
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::
-    internal::ClassDataFull AdminResponse_class_data_ =
-        AdminResponse::InternalGenerateClassData_();
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::internal::ClassDataFull
+    AdminResponse_class_data_ = AdminResponse::InternalGenerateClassData_();
 
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
-    PROTOBUF_NONNULL
-    AdminResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      &AdminResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      AdminResponse_class_data_.tc_table);
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+AdminResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&AdminResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(AdminResponse_class_data_.tc_table);
   return AdminResponse_class_data_.base();
 }
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
-    1, 2, 0, 35, 2>
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 35, 2>
     AdminResponse::_table_ = {
         {
             PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_._has_bits_),
@@ -994,30 +922,26 @@ PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<
             nullptr,                            // post_loop_handler
             ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-            ::_pbi::TcParser::GetTable<
-                ::admin::AdminResponse>(),  // to_prefetch
-#endif                                      // PROTOBUF_PREFETCH_PARSE_TABLE
+            ::_pbi::TcParser::GetTable<::admin::AdminResponse>(),  // to_prefetch
+#endif                                                             // PROTOBUF_PREFETCH_PARSE_TABLE
         },
         {{
             // optional string message = 2;
             {::_pbi::TcParser::FastUS1,
              {18, 0, 0, PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_.message_)}},
             // optional .admin.AdminStatus status = 1;
-            {::_pbi::TcParser::SingularVarintNoZag1<
-                 ::uint32_t, offsetof(AdminResponse, _impl_.status_), 1>(),
+            {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t,
+                                                    offsetof(AdminResponse, _impl_.status_), 1>(),
              {8, 1, 0, PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_.status_)}},
         }},
         {{65535, 65535}},
         {{
             // optional .admin.AdminStatus status = 1;
-            {PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_.status_),
-             _Internal::kHasBitsOffset + 1, 0,
+            {PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_.status_), _Internal::kHasBitsOffset + 1, 0,
              (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
             // optional string message = 2;
-            {PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_.message_),
-             _Internal::kHasBitsOffset + 0, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+            {PROTOBUF_FIELD_OFFSET(AdminResponse, _impl_.message_), _Internal::kHasBitsOffset + 0,
+             0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
         }},
         // no aux_entries
         {{"\23\0\7\0\0\0\0\0"
@@ -1042,15 +966,13 @@ PROTOBUF_NOINLINE void AdminResponse::Clear() {
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 ::uint8_t* PROTOBUF_NONNULL AdminResponse::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base,
-    ::uint8_t* PROTOBUF_NONNULL target,
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
   const AdminResponse& this_ = static_cast<const AdminResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
 ::uint8_t* PROTOBUF_NONNULL AdminResponse::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-        stream) const {
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
   const AdminResponse& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   // @@protoc_insertion_point(serialize_to_array_start:admin.AdminResponse)
@@ -1061,8 +983,7 @@ PROTOBUF_NOINLINE void AdminResponse::Clear() {
   // optional .admin.AdminStatus status = 1;
   if ((cached_has_bits & 0x00000002u) != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this_._internal_status(), target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(1, this_._internal_status(), target);
   }
 
   // optional string message = 2;
@@ -1070,16 +991,14 @@ PROTOBUF_NOINLINE void AdminResponse::Clear() {
     const ::std::string& _s = this_._internal_message();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()),
-        ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-        "admin.AdminResponse.message");
+        ::google::protobuf::internal::WireFormatLite::SERIALIZE, "admin.AdminResponse.message");
     target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        this_._internal_metadata_
-            .unknown_fields<::google::protobuf::UnknownFieldSet>(
-                ::google::protobuf::UnknownFieldSet::default_instance),
+        this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance),
         target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:admin.AdminResponse)
@@ -1106,17 +1025,14 @@ PROTOBUF_NOINLINE void AdminResponse::Clear() {
     // optional string message = 2;
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                  this_._internal_message());
+          1 + ::google::protobuf::internal::WireFormatLite::StringSize(this_._internal_message());
     }
     // optional .admin.AdminStatus status = 1;
     if ((cached_has_bits & 0x00000002u) != 0) {
-      total_size +=
-          1 + ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
+      total_size += 1 + ::_pbi::WireFormatLite::EnumSize(this_._internal_status());
     }
   }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
+  return this_.MaybeComputeUnknownFieldsSize(total_size, &this_._impl_._cached_size_);
 }
 
 void AdminResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -1149,15 +1065,13 @@ void AdminResponse::CopyFrom(const AdminResponse& from) {
   MergeFrom(from);
 }
 
-void AdminResponse::InternalSwap(
-    AdminResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void AdminResponse::InternalSwap(AdminResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_,
-                                       &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
   swap(_impl_.status_, other->_impl_.status_);
 }
 
@@ -1170,7 +1084,6 @@ namespace google {
 namespace protobuf {}  // namespace protobuf
 }  // namespace google
 // @@protoc_insertion_point(global_scope)
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::std::false_type _static_init2_
-    [[maybe_unused]] = (::_pbi::AddDescriptors(&descriptor_table_admin_2eproto),
-                        ::std::false_type{});
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::std::false_type _static_init2_ [[maybe_unused]] =
+    (::_pbi::AddDescriptors(&descriptor_table_admin_2eproto), ::std::false_type{});
 #include "google/protobuf/port_undef.inc"

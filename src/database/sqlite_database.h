@@ -4,7 +4,6 @@
 #define SRC_DATABASE_SQLITE_DATABASE_H_
 
 #include <expected>
-#include <functional>
 #include <optional>
 #include <string>
 
@@ -18,18 +17,19 @@ extern "C" {
 namespace masquerade {
 
 struct SqliteDatabase final {
-  static std::expected<SqliteDatabase, util::Error> Create(
-      const char* filename) noexcept;
+  static std::expected<SqliteDatabase, util::Error> Connect(const char* filename) noexcept;
 
-  std::optional<util::Error> execute(
-      const char* sql_query,
-      const std::function<int(void*, int, char**, char**)>& callback = nullptr,
-      void* callback_arg = nullptr) const noexcept;
+  std::optional<util::Error> execute(const char* sql_query,
+                                     int(callback)(void*, int, char**, char**) = nullptr,
+                                     void* callback_arg = nullptr) const noexcept;
 
   void close() noexcept;
 
-  static int capture_output(void* out, int num_columns, char** columns,
-                            char** column_names);
+  static int CaptureOutput(void* out, int num_columns, char** columns,
+                           char** column_names) noexcept;
+
+  static std::optional<util::Error> InitFromFile(const SqliteDatabase& db,
+                                                 const char* filename) noexcept;
 
   // Movable
   SqliteDatabase(SqliteDatabase&& rhs) noexcept;
@@ -44,7 +44,6 @@ struct SqliteDatabase final {
   sqlite3* connection_;
 
   explicit SqliteDatabase(const char* filename);
-  [[nodiscard]] const sqlite3* connection() const noexcept;
 };
 
 }  // namespace masquerade

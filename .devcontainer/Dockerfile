@@ -39,6 +39,7 @@ RUN apt-get install -y \
     python3-pip \
     pipx \
     cppcheck \
+    ninja-build \
     && apt-get upgrade -y \
     && apt-get clean \
     && pipx install cpplint \

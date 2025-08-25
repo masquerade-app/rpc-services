@@ -25,8 +25,7 @@
 namespace discovery {
 
 std::unique_ptr<Discovery::Stub> Discovery::NewStub(
-    const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-    const ::grpc::StubOptions& options) {
+    const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
   std::unique_ptr<Discovery::Stub> stub(new Discovery::Stub(channel, options));
   return stub;

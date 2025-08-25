@@ -27,16 +27,14 @@ namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace helloworld {
 
-inline constexpr HelloWorldResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
+inline constexpr HelloWorldResponse::Impl_::Impl_(::_pbi::ConstantInitialized) noexcept
     : _cached_size_{0},
       message_(&::google::protobuf::internal::fixed_address_empty_string,
                ::_pbi::ConstantInitialized()),
       current_count_{::int64_t{0}} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR HelloWorldResponse::HelloWorldResponse(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR HelloWorldResponse::HelloWorldResponse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(HelloWorldResponse_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -53,20 +51,17 @@ struct HelloWorldResponseDefaultTypeInternal {
   };
 };
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HelloWorldResponseDefaultTypeInternal
-        _HelloWorldResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+    HelloWorldResponseDefaultTypeInternal _HelloWorldResponse_default_instance_;
 
-inline constexpr HelloWorldRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
+inline constexpr HelloWorldRequest::Impl_::Impl_(::_pbi::ConstantInitialized) noexcept
     : _cached_size_{0},
       message_(&::google::protobuf::internal::fixed_address_empty_string,
                ::_pbi::ConstantInitialized()),
       increment_{::int64_t{0}} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR HelloWorldRequest::HelloWorldRequest(
-    ::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR HelloWorldRequest::HelloWorldRequest(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(HelloWorldRequest_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -83,41 +78,32 @@ struct HelloWorldRequestDefaultTypeInternal {
   };
 };
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HelloWorldRequestDefaultTypeInternal
-        _HelloWorldRequest_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+    HelloWorldRequestDefaultTypeInternal _HelloWorldRequest_default_instance_;
 }  // namespace helloworld
-static constexpr const ::_pb::EnumDescriptor* PROTOBUF_NONNULL*
-    PROTOBUF_NULLABLE file_level_enum_descriptors_helloworld_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor* PROTOBUF_NONNULL*
-    PROTOBUF_NULLABLE file_level_service_descriptors_helloworld_2eproto =
-        nullptr;
-const ::uint32_t
-    TableStruct_helloworld_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
-        protodesc_cold) = {
-        0x081,  // bitmap
-        PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldRequest,
-                              _impl_._has_bits_),
-        5,  // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldRequest,
-                              _impl_.increment_),
-        PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldRequest, _impl_.message_),
-        1,
-        0,
-        0x081,  // bitmap
-        PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldResponse,
-                              _impl_._has_bits_),
-        5,  // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldResponse,
-                              _impl_.current_count_),
-        PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldResponse,
-                              _impl_.message_),
-        1,
-        0,
+static constexpr const ::_pb::EnumDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE
+    file_level_enum_descriptors_helloworld_2eproto = nullptr;
+static constexpr const ::_pb::ServiceDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE
+    file_level_service_descriptors_helloworld_2eproto = nullptr;
+const ::uint32_t TableStruct_helloworld_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
+    protodesc_cold) = {
+    0x081,  // bitmap
+    PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldRequest, _impl_._has_bits_),
+    5,  // hasbit index offset
+    PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldRequest, _impl_.increment_),
+    PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldRequest, _impl_.message_),
+    1,
+    0,
+    0x081,  // bitmap
+    PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldResponse, _impl_._has_bits_),
+    5,  // hasbit index offset
+    PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldResponse, _impl_.current_count_),
+    PROTOBUF_FIELD_OFFSET(::helloworld::HelloWorldResponse, _impl_.message_),
+    1,
+    0,
 };
 
-static const ::_pbi::MigrationSchema schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
-    protodesc_cold) = {
+static const ::_pbi::MigrationSchema schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
     {0, sizeof(::helloworld::HelloWorldRequest)},
     {7, sizeof(::helloworld::HelloWorldResponse)},
 };
@@ -125,47 +111,44 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::helloworld::_HelloWorldRequest_default_instance_._instance,
     &::helloworld::_HelloWorldResponse_default_instance_._instance,
 };
-const char descriptor_table_protodef_helloworld_2eproto
-    [] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-        "\n\020helloworld.proto\022\nhelloworld\"7\n\021HelloW"
-        "orldRequest\022\021\n\tincrement\030\001 \001(\003\022\017\n\007messag"
-        "e\030\002 \001(\t\"<\n\022HelloWorldResponse\022\025\n\rcurrent"
-        "_count\030\001 \001(\003\022\017\n\007message\030\002 "
-        "\001(\t2X\n\007Greeter"
-        "\022M\n\nHelloWorld\022\035.helloworld.HelloWorldRe"
-        "quest\032\036.helloworld.HelloWorldResponse\"\000b"
-        "\006proto3"};
+const char descriptor_table_protodef_helloworld_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
+    protodesc_cold) = {
+    "\n\020helloworld.proto\022\nhelloworld\"7\n\021HelloW"
+    "orldRequest\022\021\n\tincrement\030\001 \001(\003\022\017\n\007messag"
+    "e\030\002 \001(\t\"<\n\022HelloWorldResponse\022\025\n\rcurrent"
+    "_count\030\001 \001(\003\022\017\n\007message\030\002 "
+    "\001(\t2X\n\007Greeter"
+    "\022M\n\nHelloWorld\022\035.helloworld.HelloWorldRe"
+    "quest\032\036.helloworld.HelloWorldResponse\"\000b"
+    "\006proto3"};
 static ::absl::once_flag descriptor_table_helloworld_2eproto_once;
-PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable
-    descriptor_table_helloworld_2eproto = {
-        false,
-        false,
-        247,
-        descriptor_table_protodef_helloworld_2eproto,
-        "helloworld.proto",
-        &descriptor_table_helloworld_2eproto_once,
-        nullptr,
-        0,
-        2,
-        schemas,
-        file_default_instances,
-        TableStruct_helloworld_2eproto::offsets,
-        file_level_enum_descriptors_helloworld_2eproto,
-        file_level_service_descriptors_helloworld_2eproto,
+PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_helloworld_2eproto = {
+    false,
+    false,
+    247,
+    descriptor_table_protodef_helloworld_2eproto,
+    "helloworld.proto",
+    &descriptor_table_helloworld_2eproto_once,
+    nullptr,
+    0,
+    2,
+    schemas,
+    file_default_instances,
+    TableStruct_helloworld_2eproto::offsets,
+    file_level_enum_descriptors_helloworld_2eproto,
+    file_level_service_descriptors_helloworld_2eproto,
 };
 namespace helloworld {
 // ===================================================================
 
 class HelloWorldRequest::_Internal {
  public:
-  using HasBits =
-      decltype(::std::declval<HelloWorldRequest>()._impl_._has_bits_);
+  using HasBits = decltype(::std::declval<HelloWorldRequest>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
       8 * PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_._has_bits_);
 };
 
-HelloWorldRequest::HelloWorldRequest(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+HelloWorldRequest::HelloWorldRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, HelloWorldRequest_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -178,13 +161,10 @@ PROTOBUF_NDEBUG_INLINE HelloWorldRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::helloworld::HelloWorldRequest& from_msg)
-    : _has_bits_{from._has_bits_},
-      _cached_size_{0},
-      message_(arena, from.message_) {}
+    : _has_bits_{from._has_bits_}, _cached_size_{0}, message_(arena, from.message_) {}
 
-HelloWorldRequest::HelloWorldRequest(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const HelloWorldRequest& from)
+HelloWorldRequest::HelloWorldRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+                                     const HelloWorldRequest& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, HelloWorldRequest_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
@@ -192,8 +172,7 @@ HelloWorldRequest::HelloWorldRequest(
 #endif  // PROTOBUF_CUSTOM_VTABLE
   HelloWorldRequest* const _this = this;
   (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   _impl_.increment_ = from._impl_.increment_;
 
@@ -204,8 +183,7 @@ PROTOBUF_NDEBUG_INLINE HelloWorldRequest::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
     : _cached_size_{0}, message_(arena) {}
 
-inline void HelloWorldRequest::SharedCtor(
-    ::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void HelloWorldRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   _impl_.increment_ = {};
 }
@@ -221,14 +199,14 @@ inline void HelloWorldRequest::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL HelloWorldRequest::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+inline void* PROTOBUF_NONNULL
+HelloWorldRequest::PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+                                 ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
   return ::new (mem) HelloWorldRequest(arena);
 }
 constexpr auto HelloWorldRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(
-      sizeof(HelloWorldRequest), alignof(HelloWorldRequest));
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(HelloWorldRequest),
+                                                                alignof(HelloWorldRequest));
 }
 constexpr auto HelloWorldRequest::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -248,23 +226,19 @@ constexpr auto HelloWorldRequest::InternalGenerateClassData_() {
           PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_._cached_size_),
           false,
       },
-      &HelloWorldRequest::kDescriptorMethods,
-      &descriptor_table_helloworld_2eproto,
+      &HelloWorldRequest::kDescriptorMethods, &descriptor_table_helloworld_2eproto,
       nullptr,  // tracker
   };
 }
 
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::
-    internal::ClassDataFull HelloWorldRequest_class_data_ =
-        HelloWorldRequest::InternalGenerateClassData_();
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::internal::ClassDataFull
+    HelloWorldRequest_class_data_ = HelloWorldRequest::InternalGenerateClassData_();
 
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
-    PROTOBUF_NONNULL
-    HelloWorldRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      &HelloWorldRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      HelloWorldRequest_class_data_.tc_table);
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+HelloWorldRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&HelloWorldRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(HelloWorldRequest_class_data_.tc_table);
   return HelloWorldRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT
@@ -284,33 +258,27 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 44, 2>
             nullptr,                            // post_loop_handler
             ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-            ::_pbi::TcParser::GetTable<
-                ::helloworld::HelloWorldRequest>(),  // to_prefetch
+            ::_pbi::TcParser::GetTable<::helloworld::HelloWorldRequest>(),  // to_prefetch
 #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
         },
         {{
             // string message = 2;
             {::_pbi::TcParser::FastUS1,
-             {18, 0, 0,
-              PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_)}},
+             {18, 0, 0, PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_)}},
             // int64 increment = 1;
             {::_pbi::TcParser::SingularVarintNoZag1<
-                 ::uint64_t, offsetof(HelloWorldRequest, _impl_.increment_),
-                 1>(),
-             {8, 1, 0,
-              PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_)}},
+                 ::uint64_t, offsetof(HelloWorldRequest, _impl_.increment_), 1>(),
+             {8, 1, 0, PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_)}},
         }},
         {{65535, 65535}},
         {{
             // int64 increment = 1;
             {PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.increment_),
-             _Internal::kHasBitsOffset + 1, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+             _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
             // string message = 2;
             {PROTOBUF_FIELD_OFFSET(HelloWorldRequest, _impl_.message_),
              _Internal::kHasBitsOffset + 0, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
         }},
         // no aux_entries
         {{"\34\0\7\0\0\0\0\0"
@@ -335,15 +303,13 @@ PROTOBUF_NOINLINE void HelloWorldRequest::Clear() {
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 ::uint8_t* PROTOBUF_NONNULL HelloWorldRequest::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base,
-    ::uint8_t* PROTOBUF_NONNULL target,
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
   const HelloWorldRequest& this_ = static_cast<const HelloWorldRequest&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
 ::uint8_t* PROTOBUF_NONNULL HelloWorldRequest::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-        stream) const {
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
   const HelloWorldRequest& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   // @@protoc_insertion_point(serialize_to_array_start:helloworld.HelloWorldRequest)
@@ -353,9 +319,8 @@ PROTOBUF_NOINLINE void HelloWorldRequest::Clear() {
   // int64 increment = 1;
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (this_._internal_increment() != 0) {
-      target = ::google::protobuf::internal::WireFormatLite::
-          WriteInt64ToArrayWithField<1>(stream, this_._internal_increment(),
-                                        target);
+      target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<1>(
+          stream, this_._internal_increment(), target);
     }
   }
 
@@ -373,9 +338,8 @@ PROTOBUF_NOINLINE void HelloWorldRequest::Clear() {
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        this_._internal_metadata_
-            .unknown_fields<::google::protobuf::UnknownFieldSet>(
-                ::google::protobuf::UnknownFieldSet::default_instance),
+        this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance),
         target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:helloworld.HelloWorldRequest)
@@ -403,25 +367,21 @@ PROTOBUF_NOINLINE void HelloWorldRequest::Clear() {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_message().empty()) {
         total_size +=
-            1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                    this_._internal_message());
+            1 + ::google::protobuf::internal::WireFormatLite::StringSize(this_._internal_message());
       }
     }
     // int64 increment = 1;
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (this_._internal_increment() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-            this_._internal_increment());
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this_._internal_increment());
       }
     }
   }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
+  return this_.MaybeComputeUnknownFieldsSize(total_size, &this_._impl_._cached_size_);
 }
 
-void HelloWorldRequest::MergeImpl(
-    ::google::protobuf::MessageLite& to_msg,
-    const ::google::protobuf::MessageLite& from_msg) {
+void HelloWorldRequest::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                                  const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<HelloWorldRequest*>(&to_msg);
   auto& from = static_cast<const HelloWorldRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:helloworld.HelloWorldRequest)
@@ -458,15 +418,13 @@ void HelloWorldRequest::CopyFrom(const HelloWorldRequest& from) {
   MergeFrom(from);
 }
 
-void HelloWorldRequest::InternalSwap(
-    HelloWorldRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void HelloWorldRequest::InternalSwap(HelloWorldRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_,
-                                       &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
   swap(_impl_.increment_, other->_impl_.increment_);
 }
 
@@ -477,17 +435,14 @@ void HelloWorldRequest::InternalSwap(
 
 class HelloWorldResponse::_Internal {
  public:
-  using HasBits =
-      decltype(::std::declval<HelloWorldResponse>()._impl_._has_bits_);
+  using HasBits = decltype(::std::declval<HelloWorldResponse>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
       8 * PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_._has_bits_);
 };
 
-HelloWorldResponse::HelloWorldResponse(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+HelloWorldResponse::HelloWorldResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena,
-                                  HelloWorldResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, HelloWorldResponse_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
@@ -498,23 +453,18 @@ PROTOBUF_NDEBUG_INLINE HelloWorldResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::helloworld::HelloWorldResponse& from_msg)
-    : _has_bits_{from._has_bits_},
-      _cached_size_{0},
-      message_(arena, from.message_) {}
+    : _has_bits_{from._has_bits_}, _cached_size_{0}, message_(arena, from.message_) {}
 
-HelloWorldResponse::HelloWorldResponse(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const HelloWorldResponse& from)
+HelloWorldResponse::HelloWorldResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+                                       const HelloWorldResponse& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena,
-                                  HelloWorldResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, HelloWorldResponse_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   HelloWorldResponse* const _this = this;
   (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   _impl_.current_count_ = from._impl_.current_count_;
 
@@ -525,8 +475,7 @@ PROTOBUF_NDEBUG_INLINE HelloWorldResponse::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
     : _cached_size_{0}, message_(arena) {}
 
-inline void HelloWorldResponse::SharedCtor(
-    ::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void HelloWorldResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   _impl_.current_count_ = {};
 }
@@ -542,14 +491,14 @@ inline void HelloWorldResponse::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL HelloWorldResponse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+inline void* PROTOBUF_NONNULL
+HelloWorldResponse::PlacementNew_(const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+                                  ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
   return ::new (mem) HelloWorldResponse(arena);
 }
 constexpr auto HelloWorldResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(
-      sizeof(HelloWorldResponse), alignof(HelloWorldResponse));
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(HelloWorldResponse),
+                                                                alignof(HelloWorldResponse));
 }
 constexpr auto HelloWorldResponse::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -569,23 +518,19 @@ constexpr auto HelloWorldResponse::InternalGenerateClassData_() {
           PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_._cached_size_),
           false,
       },
-      &HelloWorldResponse::kDescriptorMethods,
-      &descriptor_table_helloworld_2eproto,
+      &HelloWorldResponse::kDescriptorMethods, &descriptor_table_helloworld_2eproto,
       nullptr,  // tracker
   };
 }
 
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::
-    internal::ClassDataFull HelloWorldResponse_class_data_ =
-        HelloWorldResponse::InternalGenerateClassData_();
+PROTOBUF_CONSTINIT
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::google::protobuf::internal::ClassDataFull
+    HelloWorldResponse_class_data_ = HelloWorldResponse::InternalGenerateClassData_();
 
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData*
-    PROTOBUF_NONNULL
-    HelloWorldResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      &HelloWorldResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(
-      HelloWorldResponse_class_data_.tc_table);
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+HelloWorldResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&HelloWorldResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(HelloWorldResponse_class_data_.tc_table);
   return HelloWorldResponse_class_data_.base();
 }
 PROTOBUF_CONSTINIT
@@ -605,34 +550,27 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const ::_pbi::TcParseTable<1, 2, 0, 45, 2>
             nullptr,                            // post_loop_handler
             ::_pbi::TcParser::GenericFallback,  // fallback
 #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-            ::_pbi::TcParser::GetTable<
-                ::helloworld::HelloWorldResponse>(),  // to_prefetch
+            ::_pbi::TcParser::GetTable<::helloworld::HelloWorldResponse>(),  // to_prefetch
 #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
         },
         {{
             // string message = 2;
             {::_pbi::TcParser::FastUS1,
-             {18, 0, 0,
-              PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_)}},
+             {18, 0, 0, PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_)}},
             // int64 current_count = 1;
             {::_pbi::TcParser::SingularVarintNoZag1<
-                 ::uint64_t,
-                 offsetof(HelloWorldResponse, _impl_.current_count_), 1>(),
-             {8, 1, 0,
-              PROTOBUF_FIELD_OFFSET(HelloWorldResponse,
-                                    _impl_.current_count_)}},
+                 ::uint64_t, offsetof(HelloWorldResponse, _impl_.current_count_), 1>(),
+             {8, 1, 0, PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.current_count_)}},
         }},
         {{65535, 65535}},
         {{
             // int64 current_count = 1;
             {PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.current_count_),
-             _Internal::kHasBitsOffset + 1, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+             _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
             // string message = 2;
             {PROTOBUF_FIELD_OFFSET(HelloWorldResponse, _impl_.message_),
              _Internal::kHasBitsOffset + 0, 0,
-             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String |
-              ::_fl::kRepAString)},
+             (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
         }},
         // no aux_entries
         {{"\35\0\7\0\0\0\0\0"
@@ -657,16 +595,13 @@ PROTOBUF_NOINLINE void HelloWorldResponse::Clear() {
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 ::uint8_t* PROTOBUF_NONNULL HelloWorldResponse::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base,
-    ::uint8_t* PROTOBUF_NONNULL target,
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const HelloWorldResponse& this_ =
-      static_cast<const HelloWorldResponse&>(base);
+  const HelloWorldResponse& this_ = static_cast<const HelloWorldResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
 ::uint8_t* PROTOBUF_NONNULL HelloWorldResponse::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL
-        stream) const {
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
   const HelloWorldResponse& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
   // @@protoc_insertion_point(serialize_to_array_start:helloworld.HelloWorldResponse)
@@ -676,9 +611,8 @@ PROTOBUF_NOINLINE void HelloWorldResponse::Clear() {
   // int64 current_count = 1;
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
     if (this_._internal_current_count() != 0) {
-      target = ::google::protobuf::internal::WireFormatLite::
-          WriteInt64ToArrayWithField<1>(stream, this_._internal_current_count(),
-                                        target);
+      target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<1>(
+          stream, this_._internal_current_count(), target);
     }
   }
 
@@ -696,9 +630,8 @@ PROTOBUF_NOINLINE void HelloWorldResponse::Clear() {
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        this_._internal_metadata_
-            .unknown_fields<::google::protobuf::UnknownFieldSet>(
-                ::google::protobuf::UnknownFieldSet::default_instance),
+        this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(
+            ::google::protobuf::UnknownFieldSet::default_instance),
         target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:helloworld.HelloWorldResponse)
@@ -707,8 +640,7 @@ PROTOBUF_NOINLINE void HelloWorldResponse::Clear() {
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
 ::size_t HelloWorldResponse::ByteSizeLong(const MessageLite& base) {
-  const HelloWorldResponse& this_ =
-      static_cast<const HelloWorldResponse&>(base);
+  const HelloWorldResponse& this_ = static_cast<const HelloWorldResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
 ::size_t HelloWorldResponse::ByteSizeLong() const {
   const HelloWorldResponse& this_ = *this;
@@ -727,25 +659,21 @@ PROTOBUF_NOINLINE void HelloWorldResponse::Clear() {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_message().empty()) {
         total_size +=
-            1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                    this_._internal_message());
+            1 + ::google::protobuf::internal::WireFormatLite::StringSize(this_._internal_message());
       }
     }
     // int64 current_count = 1;
     if ((cached_has_bits & 0x00000002u) != 0) {
       if (this_._internal_current_count() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-            this_._internal_current_count());
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this_._internal_current_count());
       }
     }
   }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
+  return this_.MaybeComputeUnknownFieldsSize(total_size, &this_._impl_._cached_size_);
 }
 
-void HelloWorldResponse::MergeImpl(
-    ::google::protobuf::MessageLite& to_msg,
-    const ::google::protobuf::MessageLite& from_msg) {
+void HelloWorldResponse::MergeImpl(::google::protobuf::MessageLite& to_msg,
+                                   const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<HelloWorldResponse*>(&to_msg);
   auto& from = static_cast<const HelloWorldResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:helloworld.HelloWorldResponse)
@@ -789,8 +717,7 @@ void HelloWorldResponse::InternalSwap(
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_,
-                                       &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
   swap(_impl_.current_count_, other->_impl_.current_count_);
 }
 
@@ -803,8 +730,6 @@ namespace google {
 namespace protobuf {}  // namespace protobuf
 }  // namespace google
 // @@protoc_insertion_point(global_scope)
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::std::false_type _static_init2_
-    [[maybe_unused]] =
-        (::_pbi::AddDescriptors(&descriptor_table_helloworld_2eproto),
-         ::std::false_type{});
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::std::false_type _static_init2_ [[maybe_unused]] =
+    (::_pbi::AddDescriptors(&descriptor_table_helloworld_2eproto), ::std::false_type{});
 #include "google/protobuf/port_undef.inc"

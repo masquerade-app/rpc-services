@@ -2,21 +2,21 @@
 
 
 format:
-	@find src -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=google -i
-	@find test -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=google -i
+	@find src -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=file -i
+	@find test -iname '*.h' -o -iname '*.cc' | xargs clang-format -style=file -i
 
 proto:
 	@/deps/bin/protoc --cpp_out=src/genproto --proto_path=src/proto src/proto/*.proto
 	@/deps/bin/protoc --grpc_out=src/genproto --proto_path=src/proto --plugin=protoc-gen-grpc=/deps/bin/grpc_cpp_plugin src/proto/*.proto
 
 build:
-	@cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DSTATIC_CHECK=OFF -DBUILD_TESTING=OFF .. && cmake --build . -j8 && cd ../
+	@cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DSTATIC_CHECK=OFF -DBUILD_TESTING=OFF && cmake --build build -j8
 
 build-release:
-	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=OFF -DBUILD_TESTING=OFF .. && cmake --build . -j8 && cd ../
+	@cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=OFF -DBUILD_TESTING=OFF && cmake --build build -j8
 
 build-test:
-	@cd build && cmake -DCMAKE_BUILD_TYPE=Debug -DSTATIC_CHECK=OFF -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
+	@cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DSTATIC_CHECK=OFF -DBUILD_TESTING=ON && cmake --build build -j8
 
 rebuild:
 	@cd build && cmake --build . && cd ../
@@ -27,7 +27,7 @@ lint:
 check:
 	@find src -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20 --suppress=*:src/genproto/*
 	@find test -iname '*.h' -o -iname '*.cc' | xargs cppcheck --enable=warning,performance,portability --force --language=c++ --std=c++20
-	@cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=ON -DBUILD_TESTING=ON .. && cmake --build . -j8 && cd ../
+	@cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DSTATIC_CHECK=ON -DBUILD_TESTING=ON && cmake --build build -j8
 
 run: 
 	@./build/masquerade

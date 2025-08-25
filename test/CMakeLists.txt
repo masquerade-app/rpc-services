@@ -21,5 +21,18 @@ target_link_libraries(
   database
 )
 
+add_executable(
+  sql_formatter_test
+  sql_formatter_test.cc
+)
+
+target_link_libraries(
+  sql_formatter_test
+  PRIVATE
+  GTest::gtest_main
+  sql_formatter
+)
+
 include(GoogleTest)
 gtest_discover_tests(sqlite_database_test)
+gtest_discover_tests(sql_formatter_test)

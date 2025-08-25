@@ -32,8 +32,7 @@ static const char* Profile_method_names[] = {
 };
 
 std::unique_ptr<Profile::Stub> Profile::NewStub(
-    const std::shared_ptr< ::grpc::ChannelInterface>& channel,
-    const ::grpc::StubOptions& options) {
+    const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
   std::unique_ptr<Profile::Stub> stub(new Profile::Stub(channel, options));
   return stub;
@@ -42,56 +41,52 @@ std::unique_ptr<Profile::Stub> Profile::NewStub(
 Profile::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel,
                     const ::grpc::StubOptions& options)
     : channel_(channel),
-      rpcmethod_CreateProfile_(
-          Profile_method_names[0], options.suffix_for_stats(),
-          ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
+      rpcmethod_CreateProfile_(Profile_method_names[0], options.suffix_for_stats(),
+                               ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
       rpcmethod_GetProfile_(Profile_method_names[1], options.suffix_for_stats(),
                             ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
-      rpcmethod_UpdateProfile_(
-          Profile_method_names[2], options.suffix_for_stats(),
-          ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
-      rpcmethod_ClearProfile_(
-          Profile_method_names[3], options.suffix_for_stats(),
-          ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {}
+      rpcmethod_UpdateProfile_(Profile_method_names[2], options.suffix_for_stats(),
+                               ::grpc::internal::RpcMethod::NORMAL_RPC, channel),
+      rpcmethod_ClearProfile_(Profile_method_names[3], options.suffix_for_stats(),
+                              ::grpc::internal::RpcMethod::NORMAL_RPC, channel) {}
 
-::grpc::Status Profile::Stub::CreateProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
-    ::profile::ProfileResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::profile::ProfileCard, ::profile::ProfileResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+::grpc::Status Profile::Stub::CreateProfile(::grpc::ClientContext* context,
+                                            const ::profile::ProfileCard& request,
+                                            ::profile::ProfileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::profile::ProfileCard, ::profile::ProfileResponse,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_CreateProfile_, context, request, response);
 }
 
-void Profile::Stub::async::CreateProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileCard* request,
-    ::profile::ProfileResponse* response,
-    std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall<
-      ::profile::ProfileCard, ::profile::ProfileResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_CreateProfile_, context, request,
-      response, std::move(f));
+void Profile::Stub::async::CreateProfile(::grpc::ClientContext* context,
+                                         const ::profile::ProfileCard* request,
+                                         ::profile::ProfileResponse* response,
+                                         std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::profile::ProfileCard, ::profile::ProfileResponse,
+                                       ::grpc::protobuf::MessageLite,
+                                       ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_CreateProfile_, context, request, response,
+      std::move(f));
 }
 
 void Profile::Stub::async::CreateProfile(::grpc::ClientContext* context,
                                          const ::profile::ProfileCard* request,
                                          ::profile::ProfileResponse* response,
                                          ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_CreateProfile_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_CreateProfile_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>*
-Profile::Stub::PrepareAsyncCreateProfileRaw(
-    ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
-    ::grpc::CompletionQueue* cq) {
+Profile::Stub::PrepareAsyncCreateProfileRaw(::grpc::ClientContext* context,
+                                            const ::profile::ProfileCard& request,
+                                            ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
-      ::profile::ProfileResponse, ::profile::ProfileCard,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_CreateProfile_, context, request);
+      ::profile::ProfileResponse, ::profile::ProfileCard, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateProfile_, context,
+                                     request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>*
@@ -103,12 +98,12 @@ Profile::Stub::AsyncCreateProfileRaw(::grpc::ClientContext* context,
   return result;
 }
 
-::grpc::Status Profile::Stub::GetProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
-    ::profile::ProfileCard* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::profile::ProfileRequest, ::profile::ProfileCard,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+::grpc::Status Profile::Stub::GetProfile(::grpc::ClientContext* context,
+                                         const ::profile::ProfileRequest& request,
+                                         ::profile::ProfileCard* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::profile::ProfileRequest, ::profile::ProfileCard,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_GetProfile_, context, request, response);
 }
 
@@ -116,80 +111,76 @@ void Profile::Stub::async::GetProfile(::grpc::ClientContext* context,
                                       const ::profile::ProfileRequest* request,
                                       ::profile::ProfileCard* response,
                                       std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall<
-      ::profile::ProfileRequest, ::profile::ProfileCard,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_GetProfile_, context, request,
-      response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall< ::profile::ProfileRequest, ::profile::ProfileCard,
+                                       ::grpc::protobuf::MessageLite,
+                                       ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_GetProfile_, context, request, response,
+      std::move(f));
 }
 
 void Profile::Stub::async::GetProfile(::grpc::ClientContext* context,
                                       const ::profile::ProfileRequest* request,
                                       ::profile::ProfileCard* response,
                                       ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_GetProfile_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_GetProfile_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::profile::ProfileCard>*
-Profile::Stub::PrepareAsyncGetProfileRaw(
+Profile::Stub::PrepareAsyncGetProfileRaw(::grpc::ClientContext* context,
+                                         const ::profile::ProfileRequest& request,
+                                         ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
+      ::profile::ProfileCard, ::profile::ProfileRequest, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProfile_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::profile::ProfileCard>* Profile::Stub::AsyncGetProfileRaw(
     ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
     ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
-      ::profile::ProfileCard, ::profile::ProfileRequest,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_GetProfile_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::profile::ProfileCard>*
-Profile::Stub::AsyncGetProfileRaw(::grpc::ClientContext* context,
-                                  const ::profile::ProfileRequest& request,
-                                  ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncGetProfileRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status Profile::Stub::UpdateProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
-    ::profile::ProfileResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::profile::ProfileCard, ::profile::ProfileResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+::grpc::Status Profile::Stub::UpdateProfile(::grpc::ClientContext* context,
+                                            const ::profile::ProfileCard& request,
+                                            ::profile::ProfileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::profile::ProfileCard, ::profile::ProfileResponse,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_UpdateProfile_, context, request, response);
 }
 
-void Profile::Stub::async::UpdateProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileCard* request,
-    ::profile::ProfileResponse* response,
-    std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall<
-      ::profile::ProfileCard, ::profile::ProfileResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_UpdateProfile_, context, request,
-      response, std::move(f));
+void Profile::Stub::async::UpdateProfile(::grpc::ClientContext* context,
+                                         const ::profile::ProfileCard* request,
+                                         ::profile::ProfileResponse* response,
+                                         std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::profile::ProfileCard, ::profile::ProfileResponse,
+                                       ::grpc::protobuf::MessageLite,
+                                       ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_UpdateProfile_, context, request, response,
+      std::move(f));
 }
 
 void Profile::Stub::async::UpdateProfile(::grpc::ClientContext* context,
                                          const ::profile::ProfileCard* request,
                                          ::profile::ProfileResponse* response,
                                          ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_UpdateProfile_, context, request,
-      response, reactor);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_UpdateProfile_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>*
-Profile::Stub::PrepareAsyncUpdateProfileRaw(
-    ::grpc::ClientContext* context, const ::profile::ProfileCard& request,
-    ::grpc::CompletionQueue* cq) {
+Profile::Stub::PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context,
+                                            const ::profile::ProfileCard& request,
+                                            ::grpc::CompletionQueue* cq) {
   return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
-      ::profile::ProfileResponse, ::profile::ProfileCard,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_UpdateProfile_, context, request);
+      ::profile::ProfileResponse, ::profile::ProfileCard, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateProfile_, context,
+                                     request);
 }
 
 ::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>*
@@ -201,49 +192,47 @@ Profile::Stub::AsyncUpdateProfileRaw(::grpc::ClientContext* context,
   return result;
 }
 
-::grpc::Status Profile::Stub::ClearProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
-    ::profile::ProfileResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall<
-      ::profile::ProfileRequest, ::profile::ProfileResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+::grpc::Status Profile::Stub::ClearProfile(::grpc::ClientContext* context,
+                                           const ::profile::ProfileRequest& request,
+                                           ::profile::ProfileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::profile::ProfileRequest, ::profile::ProfileResponse,
+                                              ::grpc::protobuf::MessageLite,
+                                              ::grpc::protobuf::MessageLite>(
       channel_.get(), rpcmethod_ClearProfile_, context, request, response);
 }
 
-void Profile::Stub::async::ClearProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileRequest* request,
-    ::profile::ProfileResponse* response,
-    std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall<
-      ::profile::ProfileRequest, ::profile::ProfileResponse,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_ClearProfile_, context, request,
-      response, std::move(f));
+void Profile::Stub::async::ClearProfile(::grpc::ClientContext* context,
+                                        const ::profile::ProfileRequest* request,
+                                        ::profile::ProfileResponse* response,
+                                        std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::profile::ProfileRequest, ::profile::ProfileResponse,
+                                       ::grpc::protobuf::MessageLite,
+                                       ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_ClearProfile_, context, request, response,
+      std::move(f));
 }
 
-void Profile::Stub::async::ClearProfile(
-    ::grpc::ClientContext* context, const ::profile::ProfileRequest* request,
-    ::profile::ProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create<
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      stub_->channel_.get(), stub_->rpcmethod_ClearProfile_, context, request,
-      response, reactor);
+void Profile::Stub::async::ClearProfile(::grpc::ClientContext* context,
+                                        const ::profile::ProfileRequest* request,
+                                        ::profile::ProfileResponse* response,
+                                        ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite,
+                                                        ::grpc::protobuf::MessageLite>(
+      stub_->channel_.get(), stub_->rpcmethod_ClearProfile_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>*
-Profile::Stub::PrepareAsyncClearProfileRaw(
+Profile::Stub::PrepareAsyncClearProfileRaw(::grpc::ClientContext* context,
+                                           const ::profile::ProfileRequest& request,
+                                           ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
+      ::profile::ProfileResponse, ::profile::ProfileRequest, ::grpc::protobuf::MessageLite,
+      ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ClearProfile_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>* Profile::Stub::AsyncClearProfileRaw(
     ::grpc::ClientContext* context, const ::profile::ProfileRequest& request,
     ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<
-      ::profile::ProfileResponse, ::profile::ProfileRequest,
-      ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-      channel_.get(), cq, rpcmethod_ClearProfile_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::profile::ProfileResponse>*
-Profile::Stub::AsyncClearProfileRaw(::grpc::ClientContext* context,
-                                    const ::profile::ProfileRequest& request,
-                                    ::grpc::CompletionQueue* cq) {
   auto* result = this->PrepareAsyncClearProfileRaw(context, request, cq);
   result->StartCall();
   return result;
@@ -257,20 +246,16 @@ Profile::Service::Service() {
           ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Profile::Service* service, ::grpc::ServerContext* ctx,
              const ::profile::ProfileCard* req,
-             ::profile::ProfileResponse* resp) {
-            return service->CreateProfile(ctx, req, resp);
-          },
+             ::profile::ProfileResponse* resp) { return service->CreateProfile(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Profile_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler<
-          Profile::Service, ::profile::ProfileRequest, ::profile::ProfileCard,
-          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler<Profile::Service, ::profile::ProfileRequest,
+                                             ::profile::ProfileCard, ::grpc::protobuf::MessageLite,
+                                             ::grpc::protobuf::MessageLite>(
           [](Profile::Service* service, ::grpc::ServerContext* ctx,
              const ::profile::ProfileRequest* req,
-             ::profile::ProfileCard* resp) {
-            return service->GetProfile(ctx, req, resp);
-          },
+             ::profile::ProfileCard* resp) { return service->GetProfile(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Profile_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC,
@@ -279,56 +264,51 @@ Profile::Service::Service() {
           ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Profile::Service* service, ::grpc::ServerContext* ctx,
              const ::profile::ProfileCard* req,
-             ::profile::ProfileResponse* resp) {
-            return service->UpdateProfile(ctx, req, resp);
-          },
+             ::profile::ProfileResponse* resp) { return service->UpdateProfile(ctx, req, resp); },
           this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Profile_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler<
-          Profile::Service, ::profile::ProfileRequest,
-          ::profile::ProfileResponse, ::grpc::protobuf::MessageLite,
-          ::grpc::protobuf::MessageLite>(
+          Profile::Service, ::profile::ProfileRequest, ::profile::ProfileResponse,
+          ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Profile::Service* service, ::grpc::ServerContext* ctx,
              const ::profile::ProfileRequest* req,
-             ::profile::ProfileResponse* resp) {
-            return service->ClearProfile(ctx, req, resp);
-          },
+             ::profile::ProfileResponse* resp) { return service->ClearProfile(ctx, req, resp); },
           this)));
 }
 
 Profile::Service::~Service() {}
 
-::grpc::Status Profile::Service::CreateProfile(
-    ::grpc::ServerContext* context, const ::profile::ProfileCard* request,
-    ::profile::ProfileResponse* response) {
+::grpc::Status Profile::Service::CreateProfile(::grpc::ServerContext* context,
+                                               const ::profile::ProfileCard* request,
+                                               ::profile::ProfileResponse* response) {
   (void)context;
   (void)request;
   (void)response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Profile::Service::GetProfile(
-    ::grpc::ServerContext* context, const ::profile::ProfileRequest* request,
-    ::profile::ProfileCard* response) {
+::grpc::Status Profile::Service::GetProfile(::grpc::ServerContext* context,
+                                            const ::profile::ProfileRequest* request,
+                                            ::profile::ProfileCard* response) {
   (void)context;
   (void)request;
   (void)response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Profile::Service::UpdateProfile(
-    ::grpc::ServerContext* context, const ::profile::ProfileCard* request,
-    ::profile::ProfileResponse* response) {
+::grpc::Status Profile::Service::UpdateProfile(::grpc::ServerContext* context,
+                                               const ::profile::ProfileCard* request,
+                                               ::profile::ProfileResponse* response) {
   (void)context;
   (void)request;
   (void)response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Profile::Service::ClearProfile(
-    ::grpc::ServerContext* context, const ::profile::ProfileRequest* request,
-    ::profile::ProfileResponse* response) {
+::grpc::Status Profile::Service::ClearProfile(::grpc::ServerContext* context,
+                                              const ::profile::ProfileRequest* request,
+                                              ::profile::ProfileResponse* response) {
   (void)context;
   (void)request;
   (void)response;

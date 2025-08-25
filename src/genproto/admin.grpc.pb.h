@@ -43,112 +43,82 @@ class Admin final {
     virtual ::grpc::Status CreateAccount(::grpc::ClientContext* context,
                                          const ::admin::Account& request,
                                          ::admin::AdminResponse* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
-    AsyncCreateAccount(::grpc::ClientContext* context,
-                       const ::admin::Account& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
+    AsyncCreateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
           AsyncCreateAccountRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
-    PrepareAsyncCreateAccount(::grpc::ClientContext* context,
-                              const ::admin::Account& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
+    PrepareAsyncCreateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
           PrepareAsyncCreateAccountRaw(context, request, cq));
     }
     virtual ::grpc::Status GetAccount(::grpc::ClientContext* context,
                                       const ::admin::AccountRequest& request,
                                       ::admin::Account* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>
-    AsyncGetAccount(::grpc::ClientContext* context,
-                    const ::admin::AccountRequest& request,
-                    ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::Account>> AsyncGetAccount(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>(
           AsyncGetAccountRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>
-    PrepareAsyncGetAccount(::grpc::ClientContext* context,
-                           const ::admin::AccountRequest& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>
+    PrepareAsyncGetAccount(::grpc::ClientContext* context, const ::admin::AccountRequest& request,
                            ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::Account>>(
           PrepareAsyncGetAccountRaw(context, request, cq));
     }
     virtual ::grpc::Status UpdateAccount(::grpc::ClientContext* context,
                                          const ::admin::Account& request,
                                          ::admin::AdminResponse* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
-    AsyncUpdateAccount(::grpc::ClientContext* context,
-                       const ::admin::Account& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
+    AsyncUpdateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
           AsyncUpdateAccountRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
-    PrepareAsyncUpdateAccount(::grpc::ClientContext* context,
-                              const ::admin::Account& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
+    PrepareAsyncUpdateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
           PrepareAsyncUpdateAccountRaw(context, request, cq));
     }
     virtual ::grpc::Status DeleteAccount(::grpc::ClientContext* context,
                                          const ::admin::AccountRequest& request,
                                          ::admin::AdminResponse* response) = 0;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
-    AsyncDeleteAccount(::grpc::ClientContext* context,
-                       const ::admin::AccountRequest& request,
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
+    AsyncDeleteAccount(::grpc::ClientContext* context, const ::admin::AccountRequest& request,
                        ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
           AsyncDeleteAccountRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>
     PrepareAsyncDeleteAccount(::grpc::ClientContext* context,
-                              const ::admin::AccountRequest& request,
-                              ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
+                              const ::admin::AccountRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>>(
           PrepareAsyncDeleteAccountRaw(context, request, cq));
     }
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void CreateAccount(::grpc::ClientContext* context,
-                                 const ::admin::Account* request,
+      virtual void CreateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                                  ::admin::AdminResponse* response,
                                  std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateAccount(::grpc::ClientContext* context,
-                                 const ::admin::Account* request,
+      virtual void CreateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                                  ::admin::AdminResponse* response,
                                  ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetAccount(::grpc::ClientContext* context,
-                              const ::admin::AccountRequest* request,
-                              ::admin::Account* response,
+                              const ::admin::AccountRequest* request, ::admin::Account* response,
                               std::function<void(::grpc::Status)>) = 0;
       virtual void GetAccount(::grpc::ClientContext* context,
-                              const ::admin::AccountRequest* request,
-                              ::admin::Account* response,
+                              const ::admin::AccountRequest* request, ::admin::Account* response,
                               ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void UpdateAccount(::grpc::ClientContext* context,
-                                 const ::admin::Account* request,
+      virtual void UpdateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                                  ::admin::AdminResponse* response,
                                  std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateAccount(::grpc::ClientContext* context,
-                                 const ::admin::Account* request,
+      virtual void UpdateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                                  ::admin::AdminResponse* response,
                                  ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void DeleteAccount(::grpc::ClientContext* context,
@@ -166,32 +136,25 @@ class Admin final {
 
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>*
-    AsyncCreateAccountRaw(::grpc::ClientContext* context,
-                          const ::admin::Account& request,
+    AsyncCreateAccountRaw(::grpc::ClientContext* context, const ::admin::Account& request,
                           ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>*
-    PrepareAsyncCreateAccountRaw(::grpc::ClientContext* context,
-                                 const ::admin::Account& request,
+    PrepareAsyncCreateAccountRaw(::grpc::ClientContext* context, const ::admin::Account& request,
                                  ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>*
-    AsyncGetAccountRaw(::grpc::ClientContext* context,
-                       const ::admin::AccountRequest& request,
-                       ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>*
-    PrepareAsyncGetAccountRaw(::grpc::ClientContext* context,
-                              const ::admin::AccountRequest& request,
-                              ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>* AsyncGetAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::Account>* PrepareAsyncGetAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>*
-    AsyncUpdateAccountRaw(::grpc::ClientContext* context,
-                          const ::admin::Account& request,
+    AsyncUpdateAccountRaw(::grpc::ClientContext* context, const ::admin::Account& request,
                           ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>*
-    PrepareAsyncUpdateAccountRaw(::grpc::ClientContext* context,
-                                 const ::admin::Account& request,
+    PrepareAsyncUpdateAccountRaw(::grpc::ClientContext* context, const ::admin::Account& request,
                                  ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>*
-    AsyncDeleteAccountRaw(::grpc::ClientContext* context,
-                          const ::admin::AccountRequest& request,
+    AsyncDeleteAccountRaw(::grpc::ClientContext* context, const ::admin::AccountRequest& request,
                           ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface<::admin::AdminResponse>*
     PrepareAsyncDeleteAccountRaw(::grpc::ClientContext* context,
@@ -202,114 +165,86 @@ class Admin final {
    public:
     Stub(const std::shared_ptr<::grpc::ChannelInterface>& channel,
          const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status CreateAccount(::grpc::ClientContext* context,
-                                 const ::admin::Account& request,
+    ::grpc::Status CreateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                                  ::admin::AdminResponse* response) override;
-    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>
-    AsyncCreateAccount(::grpc::ClientContext* context,
-                       const ::admin::Account& request,
-                       ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>> AsyncCreateAccount(
+        ::grpc::ClientContext* context, const ::admin::Account& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
           AsyncCreateAccountRaw(context, request, cq));
     }
     std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>
-    PrepareAsyncCreateAccount(::grpc::ClientContext* context,
-                              const ::admin::Account& request,
+    PrepareAsyncCreateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
           PrepareAsyncCreateAccountRaw(context, request, cq));
     }
     ::grpc::Status GetAccount(::grpc::ClientContext* context,
                               const ::admin::AccountRequest& request,
                               ::admin::Account* response) override;
-    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::Account>>
-    AsyncGetAccount(::grpc::ClientContext* context,
-                    const ::admin::AccountRequest& request,
-                    ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::Account>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::Account>> AsyncGetAccount(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::Account>>(
           AsyncGetAccountRaw(context, request, cq));
     }
-    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::Account>>
-    PrepareAsyncGetAccount(::grpc::ClientContext* context,
-                           const ::admin::AccountRequest& request,
-                           ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::Account>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::Account>> PrepareAsyncGetAccount(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::Account>>(
           PrepareAsyncGetAccountRaw(context, request, cq));
     }
-    ::grpc::Status UpdateAccount(::grpc::ClientContext* context,
-                                 const ::admin::Account& request,
+    ::grpc::Status UpdateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                                  ::admin::AdminResponse* response) override;
-    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>
-    AsyncUpdateAccount(::grpc::ClientContext* context,
-                       const ::admin::Account& request,
-                       ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>> AsyncUpdateAccount(
+        ::grpc::ClientContext* context, const ::admin::Account& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
           AsyncUpdateAccountRaw(context, request, cq));
     }
     std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>
-    PrepareAsyncUpdateAccount(::grpc::ClientContext* context,
-                              const ::admin::Account& request,
+    PrepareAsyncUpdateAccount(::grpc::ClientContext* context, const ::admin::Account& request,
                               ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
           PrepareAsyncUpdateAccountRaw(context, request, cq));
     }
     ::grpc::Status DeleteAccount(::grpc::ClientContext* context,
                                  const ::admin::AccountRequest& request,
                                  ::admin::AdminResponse* response) override;
-    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>
-    AsyncDeleteAccount(::grpc::ClientContext* context,
-                       const ::admin::AccountRequest& request,
-                       ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>> AsyncDeleteAccount(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
           AsyncDeleteAccountRaw(context, request, cq));
     }
     std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>
     PrepareAsyncDeleteAccount(::grpc::ClientContext* context,
-                              const ::admin::AccountRequest& request,
-                              ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
+                              const ::admin::AccountRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::admin::AdminResponse>>(
           PrepareAsyncDeleteAccountRaw(context, request, cq));
     }
     class async final : public StubInterface::async_interface {
      public:
-      void CreateAccount(::grpc::ClientContext* context,
-                         const ::admin::Account* request,
+      void CreateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                          ::admin::AdminResponse* response,
                          std::function<void(::grpc::Status)>) override;
-      void CreateAccount(::grpc::ClientContext* context,
-                         const ::admin::Account* request,
+      void CreateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                          ::admin::AdminResponse* response,
                          ::grpc::ClientUnaryReactor* reactor) override;
-      void GetAccount(::grpc::ClientContext* context,
-                      const ::admin::AccountRequest* request,
-                      ::admin::Account* response,
-                      std::function<void(::grpc::Status)>) override;
-      void GetAccount(::grpc::ClientContext* context,
-                      const ::admin::AccountRequest* request,
-                      ::admin::Account* response,
-                      ::grpc::ClientUnaryReactor* reactor) override;
-      void UpdateAccount(::grpc::ClientContext* context,
-                         const ::admin::Account* request,
+      void GetAccount(::grpc::ClientContext* context, const ::admin::AccountRequest* request,
+                      ::admin::Account* response, std::function<void(::grpc::Status)>) override;
+      void GetAccount(::grpc::ClientContext* context, const ::admin::AccountRequest* request,
+                      ::admin::Account* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                          ::admin::AdminResponse* response,
                          std::function<void(::grpc::Status)>) override;
-      void UpdateAccount(::grpc::ClientContext* context,
-                         const ::admin::Account* request,
+      void UpdateAccount(::grpc::ClientContext* context, const ::admin::Account* request,
                          ::admin::AdminResponse* response,
                          ::grpc::ClientUnaryReactor* reactor) override;
-      void DeleteAccount(::grpc::ClientContext* context,
-                         const ::admin::AccountRequest* request,
+      void DeleteAccount(::grpc::ClientContext* context, const ::admin::AccountRequest* request,
                          ::admin::AdminResponse* response,
                          std::function<void(::grpc::Status)>) override;
-      void DeleteAccount(::grpc::ClientContext* context,
-                         const ::admin::AccountRequest* request,
+      void DeleteAccount(::grpc::ClientContext* context, const ::admin::AccountRequest* request,
                          ::admin::AdminResponse* response,
                          ::grpc::ClientUnaryReactor* reactor) override;
 
@@ -326,45 +261,37 @@ class Admin final {
     class async async_stub_ {
       this
     };
-    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>*
-    AsyncCreateAccountRaw(::grpc::ClientContext* context,
-                          const ::admin::Account& request,
-                          ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>*
-    PrepareAsyncCreateAccountRaw(::grpc::ClientContext* context,
-                                 const ::admin::Account& request,
-                                 ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>* AsyncCreateAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::Account& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>* PrepareAsyncCreateAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::Account& request,
+        ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader<::admin::Account>* AsyncGetAccountRaw(
         ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
         ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::admin::Account>*
-    PrepareAsyncGetAccountRaw(::grpc::ClientContext* context,
-                              const ::admin::AccountRequest& request,
-                              ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>*
-    AsyncUpdateAccountRaw(::grpc::ClientContext* context,
-                          const ::admin::Account& request,
-                          ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>*
-    PrepareAsyncUpdateAccountRaw(::grpc::ClientContext* context,
-                                 const ::admin::Account& request,
-                                 ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>*
-    AsyncDeleteAccountRaw(::grpc::ClientContext* context,
-                          const ::admin::AccountRequest& request,
-                          ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>*
-    PrepareAsyncDeleteAccountRaw(::grpc::ClientContext* context,
-                                 const ::admin::AccountRequest& request,
-                                 ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::Account>* PrepareAsyncGetAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>* AsyncUpdateAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::Account& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>* PrepareAsyncUpdateAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::Account& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>* AsyncDeleteAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::admin::AdminResponse>* PrepareAsyncDeleteAccountRaw(
+        ::grpc::ClientContext* context, const ::admin::AccountRequest& request,
+        ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateAccount_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAccount_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateAccount_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteAccount_;
   };
-  static std::unique_ptr<Stub> NewStub(
-      const std::shared_ptr<::grpc::ChannelInterface>& channel,
-      const ::grpc::StubOptions& options = ::grpc::StubOptions());
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr<::grpc::ChannelInterface>& channel,
+                                       const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
   class Service : public ::grpc::Service {
    public:
@@ -390,23 +317,20 @@ class Admin final {
 
    public:
     WithAsyncMethod_CreateAccount() { ::grpc::Service::MarkMethodAsync(0); }
-    ~WithAsyncMethod_CreateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_CreateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status CreateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateAccount(
-        ::grpc::ServerContext* context, ::admin::Account* request,
-        ::grpc::ServerAsyncResponseWriter<::admin::AdminResponse>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestCreateAccount(::grpc::ServerContext* context, ::admin::Account* request,
+                              ::grpc::ServerAsyncResponseWriter<::admin::AdminResponse>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -416,9 +340,7 @@ class Admin final {
 
    public:
     WithAsyncMethod_GetAccount() { ::grpc::Service::MarkMethodAsync(1); }
-    ~WithAsyncMethod_GetAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_GetAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/,
                               const ::admin::AccountRequest* /*request*/,
@@ -426,13 +348,12 @@ class Admin final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetAccount(
-        ::grpc::ServerContext* context, ::admin::AccountRequest* request,
-        ::grpc::ServerAsyncResponseWriter<::admin::Account>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestGetAccount(::grpc::ServerContext* context, ::admin::AccountRequest* request,
+                           ::grpc::ServerAsyncResponseWriter<::admin::Account>* response,
+                           ::grpc::CompletionQueue* new_call_cq,
+                           ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -442,23 +363,20 @@ class Admin final {
 
    public:
     WithAsyncMethod_UpdateAccount() { ::grpc::Service::MarkMethodAsync(2); }
-    ~WithAsyncMethod_UpdateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_UpdateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status UpdateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateAccount(
-        ::grpc::ServerContext* context, ::admin::Account* request,
-        ::grpc::ServerAsyncResponseWriter<::admin::AdminResponse>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestUpdateAccount(::grpc::ServerContext* context, ::admin::Account* request,
+                              ::grpc::ServerAsyncResponseWriter<::admin::AdminResponse>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -468,24 +386,20 @@ class Admin final {
 
    public:
     WithAsyncMethod_DeleteAccount() { ::grpc::Service::MarkMethodAsync(3); }
-    ~WithAsyncMethod_DeleteAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_DeleteAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status DeleteAccount(
-        ::grpc::ServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status DeleteAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::AccountRequest* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteAccount(
-        ::grpc::ServerContext* context, ::admin::AccountRequest* request,
-        ::grpc::ServerAsyncResponseWriter<::admin::AdminResponse>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestDeleteAccount(::grpc::ServerContext* context, ::admin::AccountRequest* request,
+                              ::grpc::ServerAsyncResponseWriter<::admin::AdminResponse>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   typedef WithAsyncMethod_CreateAccount<WithAsyncMethod_GetAccount<
@@ -499,37 +413,31 @@ class Admin final {
    public:
     WithCallbackMethod_CreateAccount() {
       ::grpc::Service::MarkMethodCallback(
-          0, new ::grpc::internal::CallbackUnaryHandler<::admin::Account,
-                                                        ::admin::AdminResponse>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::admin::Account* request,
+          0, new ::grpc::internal::CallbackUnaryHandler<::admin::Account, ::admin::AdminResponse>(
+                 [this](::grpc::CallbackServerContext* context, const ::admin::Account* request,
                         ::admin::AdminResponse* response) {
                    return this->CreateAccount(context, request, response);
                  }));
     }
     void SetMessageAllocatorFor_CreateAccount(
-        ::grpc::MessageAllocator<::admin::Account, ::admin::AdminResponse>*
-            allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::admin::Account, ::admin::AdminResponse>*>(handler)
+        ::grpc::MessageAllocator<::admin::Account, ::admin::AdminResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<
+          ::grpc::internal::CallbackUnaryHandler<::admin::Account, ::admin::AdminResponse>*>(
+          handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_CreateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_CreateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status CreateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* CreateAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* CreateAccount(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::admin::Account* /*request*/,
+                                                      ::admin::AdminResponse* /*response*/) {
       return nullptr;
     }
   };
@@ -541,26 +449,21 @@ class Admin final {
    public:
     WithCallbackMethod_GetAccount() {
       ::grpc::Service::MarkMethodCallback(
-          1, new ::grpc::internal::CallbackUnaryHandler<::admin::AccountRequest,
-                                                        ::admin::Account>(
+          1, new ::grpc::internal::CallbackUnaryHandler<::admin::AccountRequest, ::admin::Account>(
                  [this](::grpc::CallbackServerContext* context,
-                        const ::admin::AccountRequest* request,
-                        ::admin::Account* response) {
+                        const ::admin::AccountRequest* request, ::admin::Account* response) {
                    return this->GetAccount(context, request, response);
                  }));
     }
     void SetMessageAllocatorFor_GetAccount(
-        ::grpc::MessageAllocator<::admin::AccountRequest, ::admin::Account>*
-            allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::admin::AccountRequest, ::admin::Account>*>(handler)
+        ::grpc::MessageAllocator<::admin::AccountRequest, ::admin::Account>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<
+          ::grpc::internal::CallbackUnaryHandler<::admin::AccountRequest, ::admin::Account>*>(
+          handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_GetAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_GetAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/,
                               const ::admin::AccountRequest* /*request*/,
@@ -568,10 +471,9 @@ class Admin final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::Account* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* GetAccount(::grpc::CallbackServerContext* /*context*/,
+                                                   const ::admin::AccountRequest* /*request*/,
+                                                   ::admin::Account* /*response*/) {
       return nullptr;
     }
   };
@@ -583,37 +485,31 @@ class Admin final {
    public:
     WithCallbackMethod_UpdateAccount() {
       ::grpc::Service::MarkMethodCallback(
-          2, new ::grpc::internal::CallbackUnaryHandler<::admin::Account,
-                                                        ::admin::AdminResponse>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::admin::Account* request,
+          2, new ::grpc::internal::CallbackUnaryHandler<::admin::Account, ::admin::AdminResponse>(
+                 [this](::grpc::CallbackServerContext* context, const ::admin::Account* request,
                         ::admin::AdminResponse* response) {
                    return this->UpdateAccount(context, request, response);
                  }));
     }
     void SetMessageAllocatorFor_UpdateAccount(
-        ::grpc::MessageAllocator<::admin::Account, ::admin::AdminResponse>*
-            allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(2);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::admin::Account, ::admin::AdminResponse>*>(handler)
+        ::grpc::MessageAllocator<::admin::Account, ::admin::AdminResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<
+          ::grpc::internal::CallbackUnaryHandler<::admin::Account, ::admin::AdminResponse>*>(
+          handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_UpdateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_UpdateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status UpdateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* UpdateAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* UpdateAccount(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::admin::Account* /*request*/,
+                                                      ::admin::AdminResponse* /*response*/) {
       return nullptr;
     }
   };
@@ -628,41 +524,34 @@ class Admin final {
           3, new ::grpc::internal::CallbackUnaryHandler<::admin::AccountRequest,
                                                         ::admin::AdminResponse>(
                  [this](::grpc::CallbackServerContext* context,
-                        const ::admin::AccountRequest* request,
-                        ::admin::AdminResponse* response) {
+                        const ::admin::AccountRequest* request, ::admin::AdminResponse* response) {
                    return this->DeleteAccount(context, request, response);
                  }));
     }
     void SetMessageAllocatorFor_DeleteAccount(
-        ::grpc::MessageAllocator<::admin::AccountRequest,
-                                 ::admin::AdminResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(3);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::admin::AccountRequest, ::admin::AdminResponse>*>(handler)
+        ::grpc::MessageAllocator<::admin::AccountRequest, ::admin::AdminResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<
+          ::grpc::internal::CallbackUnaryHandler<::admin::AccountRequest, ::admin::AdminResponse>*>(
+          handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_DeleteAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_DeleteAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status DeleteAccount(
-        ::grpc::ServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status DeleteAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::AccountRequest* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* DeleteAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* DeleteAccount(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::admin::AccountRequest* /*request*/,
+                                                      ::admin::AdminResponse* /*response*/) {
       return nullptr;
     }
   };
-  typedef WithCallbackMethod_CreateAccount<
-      WithCallbackMethod_GetAccount<WithCallbackMethod_UpdateAccount<
-          WithCallbackMethod_DeleteAccount<Service>>>>
+  typedef WithCallbackMethod_CreateAccount<WithCallbackMethod_GetAccount<
+      WithCallbackMethod_UpdateAccount<WithCallbackMethod_DeleteAccount<Service>>>>
       CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
@@ -672,13 +561,11 @@ class Admin final {
 
    public:
     WithGenericMethod_CreateAccount() { ::grpc::Service::MarkMethodGeneric(0); }
-    ~WithGenericMethod_CreateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_CreateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status CreateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -690,9 +577,7 @@ class Admin final {
 
    public:
     WithGenericMethod_GetAccount() { ::grpc::Service::MarkMethodGeneric(1); }
-    ~WithGenericMethod_GetAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_GetAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/,
                               const ::admin::AccountRequest* /*request*/,
@@ -708,13 +593,11 @@ class Admin final {
 
    public:
     WithGenericMethod_UpdateAccount() { ::grpc::Service::MarkMethodGeneric(2); }
-    ~WithGenericMethod_UpdateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_UpdateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status UpdateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -726,14 +609,11 @@ class Admin final {
 
    public:
     WithGenericMethod_DeleteAccount() { ::grpc::Service::MarkMethodGeneric(3); }
-    ~WithGenericMethod_DeleteAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_DeleteAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status DeleteAccount(
-        ::grpc::ServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status DeleteAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::AccountRequest* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -745,23 +625,20 @@ class Admin final {
 
    public:
     WithRawMethod_CreateAccount() { ::grpc::Service::MarkMethodRaw(0); }
-    ~WithRawMethod_CreateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_CreateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status CreateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateAccount(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestCreateAccount(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                              ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -771,9 +648,7 @@ class Admin final {
 
    public:
     WithRawMethod_GetAccount() { ::grpc::Service::MarkMethodRaw(1); }
-    ~WithRawMethod_GetAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_GetAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/,
                               const ::admin::AccountRequest* /*request*/,
@@ -781,13 +656,12 @@ class Admin final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetAccount(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestGetAccount(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                           ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                           ::grpc::CompletionQueue* new_call_cq,
+                           ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -797,23 +671,20 @@ class Admin final {
 
    public:
     WithRawMethod_UpdateAccount() { ::grpc::Service::MarkMethodRaw(2); }
-    ~WithRawMethod_UpdateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_UpdateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status UpdateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateAccount(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestUpdateAccount(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                              ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -823,24 +694,20 @@ class Admin final {
 
    public:
     WithRawMethod_DeleteAccount() { ::grpc::Service::MarkMethodRaw(3); }
-    ~WithRawMethod_DeleteAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_DeleteAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status DeleteAccount(
-        ::grpc::ServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status DeleteAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::AccountRequest* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteAccount(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestDeleteAccount(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                              ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                              ::grpc::CompletionQueue* new_call_cq,
+                              ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -851,28 +718,23 @@ class Admin final {
    public:
     WithRawCallbackMethod_CreateAccount() {
       ::grpc::Service::MarkMethodRawCallback(
-          0, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          0, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->CreateAccount(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_CreateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_CreateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CreateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status CreateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* CreateAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* CreateAccount(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::grpc::ByteBuffer* /*request*/,
+                                                      ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -884,17 +746,13 @@ class Admin final {
    public:
     WithRawCallbackMethod_GetAccount() {
       ::grpc::Service::MarkMethodRawCallback(
-          1, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          1, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->GetAccount(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_GetAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_GetAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
     ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/,
                               const ::admin::AccountRequest* /*request*/,
@@ -902,10 +760,9 @@ class Admin final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* GetAccount(::grpc::CallbackServerContext* /*context*/,
+                                                   const ::grpc::ByteBuffer* /*request*/,
+                                                   ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -917,28 +774,23 @@ class Admin final {
    public:
     WithRawCallbackMethod_UpdateAccount() {
       ::grpc::Service::MarkMethodRawCallback(
-          2, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          2, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->UpdateAccount(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_UpdateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_UpdateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status UpdateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status UpdateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* UpdateAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* UpdateAccount(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::grpc::ByteBuffer* /*request*/,
+                                                      ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -950,29 +802,23 @@ class Admin final {
    public:
     WithRawCallbackMethod_DeleteAccount() {
       ::grpc::Service::MarkMethodRawCallback(
-          3, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          3, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->DeleteAccount(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_DeleteAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_DeleteAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status DeleteAccount(
-        ::grpc::ServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status DeleteAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::AccountRequest* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* DeleteAccount(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* DeleteAccount(::grpc::CallbackServerContext* /*context*/,
+                                                      const ::grpc::ByteBuffer* /*request*/,
+                                                      ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -985,21 +831,18 @@ class Admin final {
     WithStreamedUnaryMethod_CreateAccount() {
       ::grpc::Service::MarkMethodStreamed(
           0,
-          new ::grpc::internal::StreamedUnaryHandler<::admin::Account,
-                                                     ::admin::AdminResponse>(
-              [this](::grpc::ServerContext* context,
-                     ::grpc::ServerUnaryStreamer<
-                         ::admin::Account, ::admin::AdminResponse>* streamer) {
+          new ::grpc::internal::StreamedUnaryHandler<::admin::Account, ::admin::AdminResponse>(
+              [this](
+                  ::grpc::ServerContext* context,
+                  ::grpc::ServerUnaryStreamer<::admin::Account, ::admin::AdminResponse>* streamer) {
                 return this->StreamedCreateAccount(context, streamer);
               }));
     }
-    ~WithStreamedUnaryMethod_CreateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_CreateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status CreateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status CreateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1017,18 +860,12 @@ class Admin final {
    public:
     WithStreamedUnaryMethod_GetAccount() {
       ::grpc::Service::MarkMethodStreamed(
-          1,
-          new ::grpc::internal::StreamedUnaryHandler<::admin::AccountRequest,
-                                                     ::admin::Account>(
-              [this](::grpc::ServerContext* context,
-                     ::grpc::ServerUnaryStreamer<::admin::AccountRequest,
-                                                 ::admin::Account>* streamer) {
-                return this->StreamedGetAccount(context, streamer);
-              }));
+          1, new ::grpc::internal::StreamedUnaryHandler<::admin::AccountRequest, ::admin::Account>(
+                 [this](::grpc::ServerContext* context,
+                        ::grpc::ServerUnaryStreamer<::admin::AccountRequest, ::admin::Account>*
+                            streamer) { return this->StreamedGetAccount(context, streamer); }));
     }
-    ~WithStreamedUnaryMethod_GetAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_GetAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
     ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/,
                               const ::admin::AccountRequest* /*request*/,
@@ -1051,21 +888,18 @@ class Admin final {
     WithStreamedUnaryMethod_UpdateAccount() {
       ::grpc::Service::MarkMethodStreamed(
           2,
-          new ::grpc::internal::StreamedUnaryHandler<::admin::Account,
-                                                     ::admin::AdminResponse>(
-              [this](::grpc::ServerContext* context,
-                     ::grpc::ServerUnaryStreamer<
-                         ::admin::Account, ::admin::AdminResponse>* streamer) {
+          new ::grpc::internal::StreamedUnaryHandler<::admin::Account, ::admin::AdminResponse>(
+              [this](
+                  ::grpc::ServerContext* context,
+                  ::grpc::ServerUnaryStreamer<::admin::Account, ::admin::AdminResponse>* streamer) {
                 return this->StreamedUpdateAccount(context, streamer);
               }));
     }
-    ~WithStreamedUnaryMethod_UpdateAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_UpdateAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status UpdateAccount(
-        ::grpc::ServerContext* /*context*/, const ::admin::Account* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status UpdateAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::Account* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1083,41 +917,33 @@ class Admin final {
    public:
     WithStreamedUnaryMethod_DeleteAccount() {
       ::grpc::Service::MarkMethodStreamed(
-          3, new ::grpc::internal::StreamedUnaryHandler<::admin::AccountRequest,
-                                                        ::admin::AdminResponse>(
-                 [this](::grpc::ServerContext* context,
-                        ::grpc::ServerUnaryStreamer<::admin::AccountRequest,
-                                                    ::admin::AdminResponse>*
-                            streamer) {
-                   return this->StreamedDeleteAccount(context, streamer);
-                 }));
+          3,
+          new ::grpc::internal::StreamedUnaryHandler<::admin::AccountRequest,
+                                                     ::admin::AdminResponse>(
+              [this](::grpc::ServerContext* context,
+                     ::grpc::ServerUnaryStreamer<::admin::AccountRequest, ::admin::AdminResponse>*
+                         streamer) { return this->StreamedDeleteAccount(context, streamer); }));
     }
-    ~WithStreamedUnaryMethod_DeleteAccount() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_DeleteAccount() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status DeleteAccount(
-        ::grpc::ServerContext* /*context*/,
-        const ::admin::AccountRequest* /*request*/,
-        ::admin::AdminResponse* /*response*/) override {
+    ::grpc::Status DeleteAccount(::grpc::ServerContext* /*context*/,
+                                 const ::admin::AccountRequest* /*request*/,
+                                 ::admin::AdminResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteAccount(
         ::grpc::ServerContext* context,
-        ::grpc::ServerUnaryStreamer<::admin::AccountRequest,
-                                    ::admin::AdminResponse>*
+        ::grpc::ServerUnaryStreamer<::admin::AccountRequest, ::admin::AdminResponse>*
             server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateAccount<
-      WithStreamedUnaryMethod_GetAccount<WithStreamedUnaryMethod_UpdateAccount<
-          WithStreamedUnaryMethod_DeleteAccount<Service>>>>
+  typedef WithStreamedUnaryMethod_CreateAccount<WithStreamedUnaryMethod_GetAccount<
+      WithStreamedUnaryMethod_UpdateAccount<WithStreamedUnaryMethod_DeleteAccount<Service>>>>
       StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateAccount<
-      WithStreamedUnaryMethod_GetAccount<WithStreamedUnaryMethod_UpdateAccount<
-          WithStreamedUnaryMethod_DeleteAccount<Service>>>>
+  typedef WithStreamedUnaryMethod_CreateAccount<WithStreamedUnaryMethod_GetAccount<
+      WithStreamedUnaryMethod_UpdateAccount<WithStreamedUnaryMethod_DeleteAccount<Service>>>>
       StreamedService;
 };
 

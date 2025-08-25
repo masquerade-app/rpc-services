@@ -36,54 +36,44 @@ namespace matching {
 
 class Matching final {
  public:
-  static constexpr char const* service_full_name() {
-    return "matching.Matching";
-  }
+  static constexpr char const* service_full_name() { return "matching.Matching"; }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status CheckMatch(
-        ::grpc::ClientContext* context,
-        const ::matching::CheckMatchRequest& request,
-        ::matching::CheckMatchResponse* response) = 0;
-    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::CheckMatchResponse>>
-    AsyncCheckMatch(::grpc::ClientContext* context,
-                    const ::matching::CheckMatchRequest& request,
+    virtual ::grpc::Status CheckMatch(::grpc::ClientContext* context,
+                                      const ::matching::CheckMatchRequest& request,
+                                      ::matching::CheckMatchResponse* response) = 0;
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::matching::CheckMatchResponse>>
+    AsyncCheckMatch(::grpc::ClientContext* context, const ::matching::CheckMatchRequest& request,
                     ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::matching::CheckMatchResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::matching::CheckMatchResponse>>(
           AsyncCheckMatchRaw(context, request, cq));
     }
-    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::CheckMatchResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::matching::CheckMatchResponse>>
     PrepareAsyncCheckMatch(::grpc::ClientContext* context,
                            const ::matching::CheckMatchRequest& request,
                            ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::matching::CheckMatchResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::matching::CheckMatchResponse>>(
           PrepareAsyncCheckMatchRaw(context, request, cq));
     }
-    virtual ::grpc::Status ListMatches(
-        ::grpc::ClientContext* context,
-        const ::matching::ListMatchesRequest& request,
-        ::matching::ListMatchesResponse* response) = 0;
-    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::ListMatchesResponse>>
-    AsyncListMatches(::grpc::ClientContext* context,
-                     const ::matching::ListMatchesRequest& request,
+    virtual ::grpc::Status ListMatches(::grpc::ClientContext* context,
+                                       const ::matching::ListMatchesRequest& request,
+                                       ::matching::ListMatchesResponse* response) = 0;
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::matching::ListMatchesResponse>>
+    AsyncListMatches(::grpc::ClientContext* context, const ::matching::ListMatchesRequest& request,
                      ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::matching::ListMatchesResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::matching::ListMatchesResponse>>(
           AsyncListMatchesRaw(context, request, cq));
     }
-    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::ListMatchesResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<::matching::ListMatchesResponse>>
     PrepareAsyncListMatches(::grpc::ClientContext* context,
                             const ::matching::ListMatchesRequest& request,
                             ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<::grpc::ClientAsyncResponseReaderInterface<
-          ::matching::ListMatchesResponse>>(
+      return std::unique_ptr<
+          ::grpc::ClientAsyncResponseReaderInterface<::matching::ListMatchesResponse>>(
           PrepareAsyncListMatchesRaw(context, request, cq));
     }
     class async_interface {
@@ -111,23 +101,18 @@ class Matching final {
     class async_interface* experimental_async() { return async(); }
 
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::CheckMatchResponse>*
-    AsyncCheckMatchRaw(::grpc::ClientContext* context,
-                       const ::matching::CheckMatchRequest& request,
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::matching::CheckMatchResponse>*
+    AsyncCheckMatchRaw(::grpc::ClientContext* context, const ::matching::CheckMatchRequest& request,
                        ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::CheckMatchResponse>*
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::matching::CheckMatchResponse>*
     PrepareAsyncCheckMatchRaw(::grpc::ClientContext* context,
                               const ::matching::CheckMatchRequest& request,
                               ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::ListMatchesResponse>*
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::matching::ListMatchesResponse>*
     AsyncListMatchesRaw(::grpc::ClientContext* context,
                         const ::matching::ListMatchesRequest& request,
                         ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface<
-        ::matching::ListMatchesResponse>*
+    virtual ::grpc::ClientAsyncResponseReaderInterface<::matching::ListMatchesResponse>*
     PrepareAsyncListMatchesRaw(::grpc::ClientContext* context,
                                const ::matching::ListMatchesRequest& request,
                                ::grpc::CompletionQueue* cq) = 0;
@@ -136,58 +121,44 @@ class Matching final {
    public:
     Stub(const std::shared_ptr<::grpc::ChannelInterface>& channel,
          const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status CheckMatch(
-        ::grpc::ClientContext* context,
-        const ::matching::CheckMatchRequest& request,
-        ::matching::CheckMatchResponse* response) override;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>
-    AsyncCheckMatch(::grpc::ClientContext* context,
-                    const ::matching::CheckMatchRequest& request,
+    ::grpc::Status CheckMatch(::grpc::ClientContext* context,
+                              const ::matching::CheckMatchRequest& request,
+                              ::matching::CheckMatchResponse* response) override;
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>
+    AsyncCheckMatch(::grpc::ClientContext* context, const ::matching::CheckMatchRequest& request,
                     ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>(
           AsyncCheckMatchRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>
     PrepareAsyncCheckMatch(::grpc::ClientContext* context,
                            const ::matching::CheckMatchRequest& request,
                            ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>>(
           PrepareAsyncCheckMatchRaw(context, request, cq));
     }
-    ::grpc::Status ListMatches(
-        ::grpc::ClientContext* context,
-        const ::matching::ListMatchesRequest& request,
-        ::matching::ListMatchesResponse* response) override;
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>
-    AsyncListMatches(::grpc::ClientContext* context,
-                     const ::matching::ListMatchesRequest& request,
+    ::grpc::Status ListMatches(::grpc::ClientContext* context,
+                               const ::matching::ListMatchesRequest& request,
+                               ::matching::ListMatchesResponse* response) override;
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>
+    AsyncListMatches(::grpc::ClientContext* context, const ::matching::ListMatchesRequest& request,
                      ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>(
           AsyncListMatchesRaw(context, request, cq));
     }
-    std::unique_ptr<
-        ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>
+    std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>
     PrepareAsyncListMatches(::grpc::ClientContext* context,
                             const ::matching::ListMatchesRequest& request,
                             ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr<
-          ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>(
+      return std::unique_ptr<::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>>(
           PrepareAsyncListMatchesRaw(context, request, cq));
     }
     class async final : public StubInterface::async_interface {
      public:
-      void CheckMatch(::grpc::ClientContext* context,
-                      const ::matching::CheckMatchRequest* request,
+      void CheckMatch(::grpc::ClientContext* context, const ::matching::CheckMatchRequest* request,
                       ::matching::CheckMatchResponse* response,
                       std::function<void(::grpc::Status)>) override;
-      void CheckMatch(::grpc::ClientContext* context,
-                      const ::matching::CheckMatchRequest* request,
+      void CheckMatch(::grpc::ClientContext* context, const ::matching::CheckMatchRequest* request,
                       ::matching::CheckMatchResponse* response,
                       ::grpc::ClientUnaryReactor* reactor) override;
       void ListMatches(::grpc::ClientContext* context,
@@ -212,41 +183,34 @@ class Matching final {
     class async async_stub_ {
       this
     };
-    ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>*
-    AsyncCheckMatchRaw(::grpc::ClientContext* context,
-                       const ::matching::CheckMatchRequest& request,
-                       ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>*
-    PrepareAsyncCheckMatchRaw(::grpc::ClientContext* context,
-                              const ::matching::CheckMatchRequest& request,
-                              ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>*
-    AsyncListMatchesRaw(::grpc::ClientContext* context,
-                        const ::matching::ListMatchesRequest& request,
-                        ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>*
-    PrepareAsyncListMatchesRaw(::grpc::ClientContext* context,
-                               const ::matching::ListMatchesRequest& request,
-                               ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>* AsyncCheckMatchRaw(
+        ::grpc::ClientContext* context, const ::matching::CheckMatchRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::matching::CheckMatchResponse>* PrepareAsyncCheckMatchRaw(
+        ::grpc::ClientContext* context, const ::matching::CheckMatchRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>* AsyncListMatchesRaw(
+        ::grpc::ClientContext* context, const ::matching::ListMatchesRequest& request,
+        ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader<::matching::ListMatchesResponse>* PrepareAsyncListMatchesRaw(
+        ::grpc::ClientContext* context, const ::matching::ListMatchesRequest& request,
+        ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CheckMatch_;
     const ::grpc::internal::RpcMethod rpcmethod_ListMatches_;
   };
-  static std::unique_ptr<Stub> NewStub(
-      const std::shared_ptr<::grpc::ChannelInterface>& channel,
-      const ::grpc::StubOptions& options = ::grpc::StubOptions());
+  static std::unique_ptr<Stub> NewStub(const std::shared_ptr<::grpc::ChannelInterface>& channel,
+                                       const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
   class Service : public ::grpc::Service {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* context,
-        const ::matching::CheckMatchRequest* request,
-        ::matching::CheckMatchResponse* response);
-    virtual ::grpc::Status ListMatches(
-        ::grpc::ServerContext* context,
-        const ::matching::ListMatchesRequest* request,
-        ::matching::ListMatchesResponse* response);
+    virtual ::grpc::Status CheckMatch(::grpc::ServerContext* context,
+                                      const ::matching::CheckMatchRequest* request,
+                                      ::matching::CheckMatchResponse* response);
+    virtual ::grpc::Status ListMatches(::grpc::ServerContext* context,
+                                       const ::matching::ListMatchesRequest* request,
+                                       ::matching::ListMatchesResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CheckMatch : public BaseClass {
@@ -255,25 +219,21 @@ class Matching final {
 
    public:
     WithAsyncMethod_CheckMatch() { ::grpc::Service::MarkMethodAsync(0); }
-    ~WithAsyncMethod_CheckMatch() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_CheckMatch() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) override {
+    ::grpc::Status CheckMatch(::grpc::ServerContext* /*context*/,
+                              const ::matching::CheckMatchRequest* /*request*/,
+                              ::matching::CheckMatchResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCheckMatch(
         ::grpc::ServerContext* context, ::matching::CheckMatchRequest* request,
-        ::grpc::ServerAsyncResponseWriter<::matching::CheckMatchResponse>*
-            response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+        ::grpc::ServerAsyncResponseWriter<::matching::CheckMatchResponse>* response,
+        ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq,
+        void* tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -283,29 +243,24 @@ class Matching final {
 
    public:
     WithAsyncMethod_ListMatches() { ::grpc::Service::MarkMethodAsync(1); }
-    ~WithAsyncMethod_ListMatches() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithAsyncMethod_ListMatches() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ListMatches(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::ListMatchesRequest* /*request*/,
-        ::matching::ListMatchesResponse* /*response*/) override {
+    ::grpc::Status ListMatches(::grpc::ServerContext* /*context*/,
+                               const ::matching::ListMatchesRequest* /*request*/,
+                               ::matching::ListMatchesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListMatches(
         ::grpc::ServerContext* context, ::matching::ListMatchesRequest* request,
-        ::grpc::ServerAsyncResponseWriter<::matching::ListMatchesResponse>*
-            response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+        ::grpc::ServerAsyncResponseWriter<::matching::ListMatchesResponse>* response,
+        ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq,
+        void* tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CheckMatch<WithAsyncMethod_ListMatches<Service>>
-      AsyncService;
+  typedef WithAsyncMethod_CheckMatch<WithAsyncMethod_ListMatches<Service>> AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CheckMatch : public BaseClass {
    private:
@@ -314,8 +269,8 @@ class Matching final {
    public:
     WithCallbackMethod_CheckMatch() {
       ::grpc::Service::MarkMethodCallback(
-          0, new ::grpc::internal::CallbackUnaryHandler<
-                 ::matching::CheckMatchRequest, ::matching::CheckMatchResponse>(
+          0, new ::grpc::internal::CallbackUnaryHandler<::matching::CheckMatchRequest,
+                                                        ::matching::CheckMatchResponse>(
                  [this](::grpc::CallbackServerContext* context,
                         const ::matching::CheckMatchRequest* request,
                         ::matching::CheckMatchResponse* response) {
@@ -323,30 +278,24 @@ class Matching final {
                  }));
     }
     void SetMessageAllocatorFor_CheckMatch(
-        ::grpc::MessageAllocator<::matching::CheckMatchRequest,
-                                 ::matching::CheckMatchResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::matching::CheckMatchRequest, ::matching::CheckMatchResponse>*>(
-          handler)
+        ::grpc::MessageAllocator<::matching::CheckMatchRequest, ::matching::CheckMatchResponse>*
+            allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      static_cast<::grpc::internal::CallbackUnaryHandler<::matching::CheckMatchRequest,
+                                                         ::matching::CheckMatchResponse>*>(handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_CheckMatch() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_CheckMatch() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) override {
+    ::grpc::Status CheckMatch(::grpc::ServerContext* /*context*/,
+                              const ::matching::CheckMatchRequest* /*request*/,
+                              ::matching::CheckMatchResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* CheckMatch(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* CheckMatch(::grpc::CallbackServerContext* /*context*/,
+                                                   const ::matching::CheckMatchRequest* /*request*/,
+                                                   ::matching::CheckMatchResponse* /*response*/) {
       return nullptr;
     }
   };
@@ -358,33 +307,27 @@ class Matching final {
    public:
     WithCallbackMethod_ListMatches() {
       ::grpc::Service::MarkMethodCallback(
-          1,
-          new ::grpc::internal::CallbackUnaryHandler<
-              ::matching::ListMatchesRequest, ::matching::ListMatchesResponse>(
-              [this](::grpc::CallbackServerContext* context,
-                     const ::matching::ListMatchesRequest* request,
-                     ::matching::ListMatchesResponse* response) {
-                return this->ListMatches(context, request, response);
-              }));
+          1, new ::grpc::internal::CallbackUnaryHandler<::matching::ListMatchesRequest,
+                                                        ::matching::ListMatchesResponse>(
+                 [this](::grpc::CallbackServerContext* context,
+                        const ::matching::ListMatchesRequest* request,
+                        ::matching::ListMatchesResponse* response) {
+                   return this->ListMatches(context, request, response);
+                 }));
     }
     void SetMessageAllocatorFor_ListMatches(
-        ::grpc::MessageAllocator<::matching::ListMatchesRequest,
-                                 ::matching::ListMatchesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler =
-          ::grpc::Service::GetHandler(1);
-      static_cast<::grpc::internal::CallbackUnaryHandler<
-          ::matching::ListMatchesRequest, ::matching::ListMatchesResponse>*>(
-          handler)
+        ::grpc::MessageAllocator<::matching::ListMatchesRequest, ::matching::ListMatchesResponse>*
+            allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler<::matching::ListMatchesRequest,
+                                                         ::matching::ListMatchesResponse>*>(handler)
           ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_ListMatches() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithCallbackMethod_ListMatches() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ListMatches(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::ListMatchesRequest* /*request*/,
-        ::matching::ListMatchesResponse* /*response*/) override {
+    ::grpc::Status ListMatches(::grpc::ServerContext* /*context*/,
+                               const ::matching::ListMatchesRequest* /*request*/,
+                               ::matching::ListMatchesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -395,8 +338,7 @@ class Matching final {
       return nullptr;
     }
   };
-  typedef WithCallbackMethod_CheckMatch<WithCallbackMethod_ListMatches<Service>>
-      CallbackService;
+  typedef WithCallbackMethod_CheckMatch<WithCallbackMethod_ListMatches<Service>> CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CheckMatch : public BaseClass {
@@ -405,14 +347,11 @@ class Matching final {
 
    public:
     WithGenericMethod_CheckMatch() { ::grpc::Service::MarkMethodGeneric(0); }
-    ~WithGenericMethod_CheckMatch() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_CheckMatch() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) override {
+    ::grpc::Status CheckMatch(::grpc::ServerContext* /*context*/,
+                              const ::matching::CheckMatchRequest* /*request*/,
+                              ::matching::CheckMatchResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -424,14 +363,11 @@ class Matching final {
 
    public:
     WithGenericMethod_ListMatches() { ::grpc::Service::MarkMethodGeneric(1); }
-    ~WithGenericMethod_ListMatches() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithGenericMethod_ListMatches() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ListMatches(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::ListMatchesRequest* /*request*/,
-        ::matching::ListMatchesResponse* /*response*/) override {
+    ::grpc::Status ListMatches(::grpc::ServerContext* /*context*/,
+                               const ::matching::ListMatchesRequest* /*request*/,
+                               ::matching::ListMatchesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -443,24 +379,20 @@ class Matching final {
 
    public:
     WithRawMethod_CheckMatch() { ::grpc::Service::MarkMethodRaw(0); }
-    ~WithRawMethod_CheckMatch() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_CheckMatch() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) override {
+    ::grpc::Status CheckMatch(::grpc::ServerContext* /*context*/,
+                              const ::matching::CheckMatchRequest* /*request*/,
+                              ::matching::CheckMatchResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCheckMatch(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestCheckMatch(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                           ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                           ::grpc::CompletionQueue* new_call_cq,
+                           ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -470,24 +402,20 @@ class Matching final {
 
    public:
     WithRawMethod_ListMatches() { ::grpc::Service::MarkMethodRaw(1); }
-    ~WithRawMethod_ListMatches() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawMethod_ListMatches() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ListMatches(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::ListMatchesRequest* /*request*/,
-        ::matching::ListMatchesResponse* /*response*/) override {
+    ::grpc::Status ListMatches(::grpc::ServerContext* /*context*/,
+                               const ::matching::ListMatchesRequest* /*request*/,
+                               ::matching::ListMatchesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestListMatches(
-        ::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
-        ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
-        ::grpc::CompletionQueue* new_call_cq,
-        ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response,
-                                         new_call_cq, notification_cq, tag);
+    void RequestListMatches(::grpc::ServerContext* context, ::grpc::ByteBuffer* request,
+                            ::grpc::ServerAsyncResponseWriter<::grpc::ByteBuffer>* response,
+                            ::grpc::CompletionQueue* new_call_cq,
+                            ::grpc::ServerCompletionQueue* notification_cq, void* tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq,
+                                         notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -498,29 +426,23 @@ class Matching final {
    public:
     WithRawCallbackMethod_CheckMatch() {
       ::grpc::Service::MarkMethodRawCallback(
-          0, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          0, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->CheckMatch(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_CheckMatch() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_CheckMatch() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) override {
+    ::grpc::Status CheckMatch(::grpc::ServerContext* /*context*/,
+                              const ::matching::CheckMatchRequest* /*request*/,
+                              ::matching::CheckMatchResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* CheckMatch(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* CheckMatch(::grpc::CallbackServerContext* /*context*/,
+                                                   const ::grpc::ByteBuffer* /*request*/,
+                                                   ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -532,29 +454,23 @@ class Matching final {
    public:
     WithRawCallbackMethod_ListMatches() {
       ::grpc::Service::MarkMethodRawCallback(
-          1, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer,
-                                                        ::grpc::ByteBuffer>(
-                 [this](::grpc::CallbackServerContext* context,
-                        const ::grpc::ByteBuffer* request,
+          1, new ::grpc::internal::CallbackUnaryHandler<::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+                 [this](::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request,
                         ::grpc::ByteBuffer* response) {
                    return this->ListMatches(context, request, response);
                  }));
     }
-    ~WithRawCallbackMethod_ListMatches() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithRawCallbackMethod_ListMatches() override { BaseClassMustBeDerivedFromService(this); }
     // disable synchronous version of this method
-    ::grpc::Status ListMatches(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::ListMatchesRequest* /*request*/,
-        ::matching::ListMatchesResponse* /*response*/) override {
+    ::grpc::Status ListMatches(::grpc::ServerContext* /*context*/,
+                               const ::matching::ListMatchesRequest* /*request*/,
+                               ::matching::ListMatchesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* ListMatches(
-        ::grpc::CallbackServerContext* /*context*/,
-        const ::grpc::ByteBuffer* /*request*/,
-        ::grpc::ByteBuffer* /*response*/) {
+    virtual ::grpc::ServerUnaryReactor* ListMatches(::grpc::CallbackServerContext* /*context*/,
+                                                    const ::grpc::ByteBuffer* /*request*/,
+                                                    ::grpc::ByteBuffer* /*response*/) {
       return nullptr;
     }
   };
@@ -566,33 +482,26 @@ class Matching final {
    public:
     WithStreamedUnaryMethod_CheckMatch() {
       ::grpc::Service::MarkMethodStreamed(
-          0,
-          new ::grpc::internal::StreamedUnaryHandler<
-              ::matching::CheckMatchRequest, ::matching::CheckMatchResponse>(
-              [this](
-                  ::grpc::ServerContext* context,
-                  ::grpc::ServerUnaryStreamer<::matching::CheckMatchRequest,
-                                              ::matching::CheckMatchResponse>*
-                      streamer) {
-                return this->StreamedCheckMatch(context, streamer);
-              }));
+          0, new ::grpc::internal::StreamedUnaryHandler<::matching::CheckMatchRequest,
+                                                        ::matching::CheckMatchResponse>(
+                 [this](::grpc::ServerContext* context,
+                        ::grpc::ServerUnaryStreamer<::matching::CheckMatchRequest,
+                                                    ::matching::CheckMatchResponse>* streamer) {
+                   return this->StreamedCheckMatch(context, streamer);
+                 }));
     }
-    ~WithStreamedUnaryMethod_CheckMatch() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_CheckMatch() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status CheckMatch(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::CheckMatchRequest* /*request*/,
-        ::matching::CheckMatchResponse* /*response*/) override {
+    ::grpc::Status CheckMatch(::grpc::ServerContext* /*context*/,
+                              const ::matching::CheckMatchRequest* /*request*/,
+                              ::matching::CheckMatchResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCheckMatch(
         ::grpc::ServerContext* context,
-        ::grpc::ServerUnaryStreamer<::matching::CheckMatchRequest,
-                                    ::matching::CheckMatchResponse>*
+        ::grpc::ServerUnaryStreamer<::matching::CheckMatchRequest, ::matching::CheckMatchResponse>*
             server_unary_streamer) = 0;
   };
   template <class BaseClass>
@@ -603,25 +512,19 @@ class Matching final {
    public:
     WithStreamedUnaryMethod_ListMatches() {
       ::grpc::Service::MarkMethodStreamed(
-          1,
-          new ::grpc::internal::StreamedUnaryHandler<
-              ::matching::ListMatchesRequest, ::matching::ListMatchesResponse>(
-              [this](
-                  ::grpc::ServerContext* context,
-                  ::grpc::ServerUnaryStreamer<::matching::ListMatchesRequest,
-                                              ::matching::ListMatchesResponse>*
-                      streamer) {
-                return this->StreamedListMatches(context, streamer);
-              }));
+          1, new ::grpc::internal::StreamedUnaryHandler<::matching::ListMatchesRequest,
+                                                        ::matching::ListMatchesResponse>(
+                 [this](::grpc::ServerContext* context,
+                        ::grpc::ServerUnaryStreamer<::matching::ListMatchesRequest,
+                                                    ::matching::ListMatchesResponse>* streamer) {
+                   return this->StreamedListMatches(context, streamer);
+                 }));
     }
-    ~WithStreamedUnaryMethod_ListMatches() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
+    ~WithStreamedUnaryMethod_ListMatches() override { BaseClassMustBeDerivedFromService(this); }
     // disable regular version of this method
-    ::grpc::Status ListMatches(
-        ::grpc::ServerContext* /*context*/,
-        const ::matching::ListMatchesRequest* /*request*/,
-        ::matching::ListMatchesResponse* /*response*/) override {
+    ::grpc::Status ListMatches(::grpc::ServerContext* /*context*/,
+                               const ::matching::ListMatchesRequest* /*request*/,
+                               ::matching::ListMatchesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -629,15 +532,12 @@ class Matching final {
     virtual ::grpc::Status StreamedListMatches(
         ::grpc::ServerContext* context,
         ::grpc::ServerUnaryStreamer<::matching::ListMatchesRequest,
-                                    ::matching::ListMatchesResponse>*
-            server_unary_streamer) = 0;
+                                    ::matching::ListMatchesResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CheckMatch<
-      WithStreamedUnaryMethod_ListMatches<Service>>
+  typedef WithStreamedUnaryMethod_CheckMatch<WithStreamedUnaryMethod_ListMatches<Service>>
       StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CheckMatch<
-      WithStreamedUnaryMethod_ListMatches<Service>>
+  typedef WithStreamedUnaryMethod_CheckMatch<WithStreamedUnaryMethod_ListMatches<Service>>
       StreamedService;
 };
 

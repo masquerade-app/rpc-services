@@ -9,26 +9,28 @@
 
 namespace masquerade {
 
+// TODO(whuffman36): Inline SqlFormatter class.
 struct SqlFormatter final {
-  inline std::string& insert_into(std::string_view table,
-                                  std::string_view table_schema) noexcept;
+  static SqlFormatter Query() noexcept;
 
-  inline std::string& select(std::string_view field) noexcept;
+  SqlFormatter& insert_into(std::string_view table, std::string_view table_schema) noexcept;
 
-  inline std::string& from(std::string_view table) noexcept;
+  SqlFormatter& select(std::string_view field) noexcept;
 
-  inline std::string& where(std::string_view field) noexcept;
+  SqlFormatter& from(std::string_view table) noexcept;
 
-  inline consteval std::string& equals() noexcept;
+  SqlFormatter& where(std::string_view field) noexcept;
 
-  inline std::string& value(std::string_view value) noexcept;
+  SqlFormatter& equals() noexcept;
 
-  std::string& values(std::initializer_list<std::string_view>) noexcept;
+  SqlFormatter& value(std::string_view value) noexcept;
+
+  SqlFormatter& values(std::initializer_list<std::string_view>) noexcept;
 
   // Trailing underscore due to delete being a keyword in C++.
-  inline consteval std::string& delete_() noexcept;
+  SqlFormatter& delete_() noexcept;
 
-  [[nodiscard]] inline const std::string& format() noexcept;
+  [[nodiscard]] const std::string& format() noexcept;
 
  private:
   std::string sql_;

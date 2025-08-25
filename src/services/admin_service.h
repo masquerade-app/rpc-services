@@ -10,22 +10,22 @@
 
 namespace masquerade {
 
-struct AdminService final : public admin::Admin::Service {
-  grpc::Status CreateAccount(grpc::ServerContext* context,
-                             const admin::Account* request,
-                             admin::AdminResponse* response) override;
+struct AdminService final : public admin::Admin::CallbackService {
+  grpc::ServerUnaryReactor* CreateAccount(grpc::CallbackServerContext* context,
+                                          const admin::Account* request,
+                                          admin::AdminResponse* response) override;
 
-  grpc::Status GetAccount(grpc::ServerContext* context,
-                          const admin::AccountRequest* request,
-                          admin::Account* response) override;
+  grpc::ServerUnaryReactor* GetAccount(grpc::CallbackServerContext* context,
+                                       const admin::AccountRequest* request,
+                                       admin::Account* response) override;
 
-  grpc::Status UpdateAccount(grpc::ServerContext* context,
-                             const admin::Account* request,
-                             admin::AdminResponse* response) override;
+  grpc::ServerUnaryReactor* UpdateAccount(grpc::CallbackServerContext* context,
+                                          const admin::Account* request,
+                                          admin::AdminResponse* response) override;
 
-  grpc::Status DeleteAccount(grpc::ServerContext* context,
-                             const admin::AccountRequest* request,
-                             admin::AdminResponse* response) override;
+  grpc::ServerUnaryReactor* DeleteAccount(grpc::CallbackServerContext* context,
+                                          const admin::AccountRequest* request,
+                                          admin::AdminResponse* response) override;
 };
 
 }  // namespace masquerade
